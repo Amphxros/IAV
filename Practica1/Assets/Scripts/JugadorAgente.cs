@@ -45,7 +45,7 @@ namespace UCM.IAV.Movimiento
         {
             velocidad.x = Input.GetAxis("Horizontal");
             velocidad.z = Input.GetAxis("Vertical");
-            velocidad *= velocidadMax; 
+           velocidad *= velocidadMax; 
         }
 
         /// <summary>
