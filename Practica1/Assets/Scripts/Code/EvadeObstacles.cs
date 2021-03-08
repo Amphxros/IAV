@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EvadeObstacles : MonoBehaviour
+namespace UCM.IAV.Movimiento 
 {
-    // Start is called before the first frame update
-    void Start()
+    public class EvadeObstacles : ComportamientoAgente
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public float maxAcceleration;
+        public float rd_;
+
+        private Seguir seguir_;
+
+        void Start()
+        {
+            seguir_ = GetComponent<Seguir>();
+        }
+
+    
     }
 }
