@@ -27,6 +27,11 @@ namespace IAV
                     {
 
                     }
+                    if (gameObject.CompareTag("Rat"))
+                    {
+                        GetComponent<Merodear>().enabled = false;
+                        GetComponent<Seguir>().enabled = true;
+                    }
                     break;
 
                 case MESSAGE_ID.NO_TOCARFLAUTA:
@@ -37,6 +42,11 @@ namespace IAV
                     else
                     {
                         GetComponent<Seguir>().enabled = true;
+                    }
+                    if (gameObject.CompareTag("Rat"))
+                    {
+                        GetComponent<Merodear>().enabled = true;
+                        GetComponent<Seguir>().enabled = false;
                     }
                     break;
 
