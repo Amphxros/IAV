@@ -231,11 +231,9 @@ GameObject:
   - component: {fileID: 78873671}
   - component: {fileID: 78873674}
   - component: {fileID: 78873675}
-  - component: {fileID: 78873677}
-  - component: {fileID: 78873676}
   m_Layer: 0
   m_Name: Enemigo
-  m_TagString: Dog
+  m_TagString: Rat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,13 +265,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e27b1398245256a4aa176c4cad05e629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combinarPorPeso: 0
+  combinarPorPeso: 1
   comnbinarPorPrioridad: 0
   umbralPrioridad: 0.2
-  velocidadMax: 8
-  aceleracionMax: 15
-  rotacionMax: 0
-  aceleracionAngularMax: 0
+  velocidadMax: 5
+  aceleracionMax: 10
+  rotacionMax: 50
+  aceleracionAngularMax: 50
   orientacion: 0
   rotacion: 0
   velocidad: {x: 0, y: 0, z: 0}
@@ -313,51 +311,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 78873670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14050dc53e288fd45bd46f2538635329, type: 3}
+  m_Script: {fileID: 11500000, guid: 937b41d4c4fa24840ad2615291f5357b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   peso: 1
   prioridad: 1
-  objetivo: {fileID: 1021455439}
-  targetRadius: 4
-  slowRadius: 2
-  wanderOffset: 0.5
-  wanderRadius: 0.5
-  wanderRate: 0.5
---- !u!114 &78873676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 78873670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 760318147327a2c4b8cd3770bd44a5a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  peso: 1
-  prioridad: 1
-  objetivo: {fileID: 1021455439}
-  targetRadius: 4
-  slowRadius: 2
---- !u!114 &78873677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 78873670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a006dc7bde55f94db1ff8ce5f13e3d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  peso: 1
-  prioridad: 1
-  objetivo: {fileID: 1021455439}
-  targetRadius: 4
-  slowRadius: 2
+  objetivo: {fileID: 0}
+  maxSpeed: 0.8
+  maxRotation: 0.2
+  time: 0
 --- !u!1 &129386687
 GameObject:
   m_ObjectHideFlags: 0
