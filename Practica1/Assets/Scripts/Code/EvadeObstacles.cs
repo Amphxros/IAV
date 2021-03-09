@@ -6,17 +6,39 @@ namespace UCM.IAV.Movimiento
 {
     public class EvadeObstacles : ComportamientoAgente
     {
-
-        public float maxAcceleration;
-        public float rd_;
-
-        private Seguir seguir_;
+        public float look;
+        public float distance;
+        private Seguir seguir_; //seek al que cambiaremos el objetivo
 
         void Start()
         {
             seguir_ = GetComponent<Seguir>();
         }
 
-    
+        //public override Direccion GetDireccion()
+        //{
+        //    Direction result = new Direction();
+        //    if (!seguir_.enabled)
+        //    {
+        //        return result;
+        //    }
+        //    else
+        //    {
+        //        Vector3 ray = agente.velocidad;
+        //        ray.Normalize();
+        //        ray *= look;
+
+        //        RaycastHit hit; //raycast
+
+        //        //si hay colision
+        //        if (Physics.Raycast(transform.position, ray, out hit))
+        //        {
+        //            result.lineal = hit.collider.gameObject.transform.position + hit.normal * distance;
+        //        }
+
+
+        //        return result;
+        //    }
+        // }
     }
 }
