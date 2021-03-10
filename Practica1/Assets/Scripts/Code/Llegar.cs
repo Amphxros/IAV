@@ -18,7 +18,6 @@ namespace UCM.IAV.Movimiento
 
             if (distance < targetRadius)
             {
-                Debug.Log("Direccion nula");
                 return direccion;
             }
 
@@ -44,8 +43,6 @@ namespace UCM.IAV.Movimiento
                 direccion.lineal.Normalize();
                 direccion.lineal *= agente.aceleracionMax;
             }
-
-            Debug.Log("Direccion es " + direccion.lineal);
 
             return direccion;
         }
