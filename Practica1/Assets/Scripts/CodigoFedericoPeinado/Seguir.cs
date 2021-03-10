@@ -16,6 +16,9 @@ namespace UCM.IAV.Movimiento
     /// </summary>
     public class Seguir : ComportamientoAgente
     {
+
+        
+
         /// <summary>
         /// Obtiene la dirección
         /// </summary>
