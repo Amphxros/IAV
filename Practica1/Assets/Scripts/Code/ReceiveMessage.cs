@@ -29,6 +29,7 @@ namespace IAV
                         //GetComponent<Seguir>().enabled = true;
                         GetComponent<Alinear>().enabled = true;
                         GetComponent<Llegar>().enabled = true;
+                        GetComponent<EvadeObstacles>().enabled = false;
                     }
                     break;
 
@@ -43,6 +44,7 @@ namespace IAV
                         //GetComponent<Seguir>().enabled = false;
                         GetComponent<Alinear>().enabled = false;
                         GetComponent<Llegar>().enabled = false;
+                        GetComponent<EvadeObstacles>().enabled = true;
                     }
                     break;
 
