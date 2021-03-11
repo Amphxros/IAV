@@ -26,11 +26,9 @@ namespace IAV
                     }
                     if (gameObject.CompareTag("Rat"))
                     {
-                        GetComponent<MerodeoCinematico>().enabled = false;
-                        //GetComponent<Seguir>().enabled = true;
-                        GetComponent<Alinear>().enabled = true;
+                        GetComponent<Merodear>().enabled = false;
                         GetComponent<Llegar>().enabled = true;
-                        GetComponent<EvadeObstacles>().enabled = false;
+                        //GetComponent<EvadeObstacles>().enabled = false;
                     }
                     if (gameObject.CompareTag("Text"))
                     {
@@ -48,11 +46,9 @@ namespace IAV
                     }
                     if (gameObject.CompareTag("Rat"))
                     {
-                        GetComponent<MerodeoCinematico>().enabled = true;
-                        //GetComponent<Seguir>().enabled = false;
-                        GetComponent<Alinear>().enabled = false;
+                        GetComponent<Merodear>().enabled = true;
                         GetComponent<Llegar>().enabled = false;
-                        GetComponent<EvadeObstacles>().enabled = true;
+                        //GetComponent<EvadeObstacles>().enabled = true;
                     }
                     if (gameObject.CompareTag("Text"))
                     {

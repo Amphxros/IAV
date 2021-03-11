@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace UCM.IAV.Movimiento
 {
-
     public class Encarar : Alinear
     {
         public override Direccion GetDireccion()
