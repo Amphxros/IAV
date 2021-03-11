@@ -301,6 +301,8 @@ GameObject:
   - component: {fileID: 539487259}
   - component: {fileID: 539487260}
   - component: {fileID: 389531735}
+  - component: {fileID: -3342290147930827475}
+  - component: {fileID: -225254274404934950}
   m_Layer: 0
   m_Name: Rata
   m_TagString: Rat
@@ -447,6 +449,41 @@ MonoBehaviour:
   targetRadius: 0
   slowRadius: 0
   timeToTarget: 0.1
+--- !u!114 &-3342290147930827475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4501883285182334610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20259637d3b633b43b5b77db48e969fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peso: 1
+  prioridad: 1
+  objetivo: {fileID: 0}
+  targets: []
+  threshold: 2
+  decayCoefficient: 0.5
+--- !u!114 &-225254274404934950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4501883285182334610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3239a62591c3fb342905e496fb5e7046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peso: 1
+  prioridad: 1
+  objetivo: {fileID: 0}
+  targets: []
+  radius: 15
 --- !u!1 &4884915434422770377
 GameObject:
   m_ObjectHideFlags: 0
