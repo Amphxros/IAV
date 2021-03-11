@@ -4,26 +4,25 @@ using UnityEngine;
 
 
 namespace UCM.IAV.Movimiento{
-    public class EvadeObstacles : ComportamientoAgente
+    public class EvadeObstacles : Seguir
     {
         public float look;
         public float distance;
-        private Seguir seguir_; //seek al que cambiaremos el objetivo
-        private MerodeoCinematico merodeo_;
-        void Start()
-        {
-            seguir_ = GetComponent<Seguir>();
-            merodeo_ = GetComponent<MerodeoCinematico>();
-        }
+        RaycastHit hit; //raycast
 
-        public override Direccion GetDireccion()
-        {
+        //public override Direccion GetDireccion()
+        //{
+        //    return result;
+        //}
+
+        void update() {
+
             Direccion result = new Direccion();
             Vector3 ray = agente.velocidad;
             ray.Normalize();
             ray *= look;
 
-            RaycastHit hit; //raycast
+            Debug.DrawRay(transform.position, ray * 10, Color.white, 2.0f, true);
 
             //si hay colision
             if (Physics.Raycast(transform.position, ray, out hit))
@@ -31,8 +30,7 @@ namespace UCM.IAV.Movimiento{
                 result.lineal = hit.collider.gameObject.transform.position + hit.normal * distance;
             }
 
-
-            return result;
+            agente.SetDireccion(result);
         }
     }
 }
