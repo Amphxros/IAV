@@ -295,14 +295,16 @@ GameObject:
   m_Component:
   - component: {fileID: 5077071450049608858}
   - component: {fileID: 7369215677480060817}
-  - component: {fileID: 352682527132178889}
   - component: {fileID: 1081126199467928626}
   - component: {fileID: 5131748039339034009}
-  - component: {fileID: 539487259}
   - component: {fileID: 539487260}
   - component: {fileID: 389531735}
   - component: {fileID: -3342290147930827475}
   - component: {fileID: -225254274404934950}
+  - component: {fileID: -5981508024772567087}
+  - component: {fileID: -5665644191024973928}
+  - component: {fileID: 613505133}
+  - component: {fileID: -8938605949584842446}
   m_Layer: 0
   m_Name: Rata
   m_TagString: Rat
@@ -340,31 +342,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e27b1398245256a4aa176c4cad05e629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combinarPorPeso: 1
-  comnbinarPorPrioridad: 0
+  combinarPorPeso: 0
+  combinarPorPrioridad: 1
   umbralPrioridad: 0.2
   velocidadMax: 5
-  aceleracionMax: 10
   rotacionMax: 50
+  aceleracionMax: 10
   aceleracionAngularMax: 50
-  orientacion: 0
-  rotacion: 0
   velocidad: {x: 0, y: 0, z: 0}
---- !u!114 &352682527132178889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4501883285182334610}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82e92ec8f463fd84cac92ffd22bc97c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  peso: 1
-  prioridad: 1
-  objetivo: {fileID: 0}
+  rotacion: 0
+  orientacion: 0
 --- !u!114 &1081126199467928626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,7 +371,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4501883285182334610}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 937b41d4c4fa24840ad2615291f5357b, type: 3}
   m_Name: 
@@ -395,24 +382,6 @@ MonoBehaviour:
   maxSpeed: 0.8
   maxRotation: 0.2
   time: 0
---- !u!114 &539487259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4501883285182334610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edd5c1bbfe7d669499c82752611b1a37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  peso: 1
-  prioridad: 1
-  objetivo: {fileID: 0}
-  targetRadius: 4
-  slowRadius: 5
-  timeToTarget: 1
 --- !u!114 &539487260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,7 +389,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4501883285182334610}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22aadc72737f9cf4bbd4c5775d33d411, type: 3}
   m_Name: 
@@ -438,7 +407,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4501883285182334610}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9c3a407988b8744cad14180bb3a7fb0, type: 3}
   m_Name: 
@@ -456,7 +425,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4501883285182334610}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20259637d3b633b43b5b77db48e969fa, type: 3}
   m_Name: 
@@ -474,7 +443,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4501883285182334610}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3239a62591c3fb342905e496fb5e7046, type: 3}
   m_Name: 
@@ -484,6 +453,75 @@ MonoBehaviour:
   objetivo: {fileID: 0}
   targets: []
   radius: 15
+--- !u!114 &-5981508024772567087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4501883285182334610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88cc9fe709938304585026b10148b38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peso: 1
+  prioridad: 1
+  objetivo: {fileID: 0}
+  escapeRadius: 10
+  targetRadius: 10
+  timeToTarget: 0.1
+--- !u!114 &-5665644191024973928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4501883285182334610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6942767976c3fe47917d9d678f20d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peso: 1
+  prioridad: 1
+  objetivo: {fileID: 0}
+  slowRadius: 5
+  targetRadius: 10
+  timeToTarget: 0.1
+--- !u!54 &613505133
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4501883285182334610}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!114 &-8938605949584842446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4501883285182334610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76988f95d28a22348a4482f88ea56389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peso: 1
+  prioridad: 1
+  objetivo: {fileID: 0}
+  look: 20
+  distance: 5
 --- !u!1 &4884915434422770377
 GameObject:
   m_ObjectHideFlags: 0

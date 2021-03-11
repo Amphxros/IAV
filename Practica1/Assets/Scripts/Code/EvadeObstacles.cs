@@ -10,13 +10,9 @@ namespace UCM.IAV.Movimiento{
         public float distance;
         RaycastHit hit; //raycast
 
-        //public override Direccion GetDireccion()
-        //{
-        //    return result;
-        //}
-
-        void update() {
-
+        public override Direccion GetDireccion()
+        {
+          
             Direccion result = new Direccion();
             Vector3 ray = agente.velocidad;
             ray.Normalize();
@@ -25,12 +21,19 @@ namespace UCM.IAV.Movimiento{
             Debug.DrawRay(transform.position, ray * 10, Color.white, 2.0f, true);
 
             //si hay colision
+            Vector3 dir;
             if (Physics.Raycast(transform.position, ray, out hit))
             {
-                result.lineal = hit.collider.gameObject.transform.position + hit.normal * distance;
+                dir= hit.collider.gameObject.transform.position + hit.normal * distance;
             }
+            else 
+                return null;
 
-            agente.SetDireccion(result);
+            result.lineal = dir - transform.position;
+            result.lineal.Normalize();
+            result.lineal = result.lineal * agente.aceleracionMax;
+            result.angular = 0;
+            return result;
         }
     }
 }
