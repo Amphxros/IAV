@@ -24,7 +24,7 @@ namespace IAV
                         GetComponent<Leave>().enabled = true;
                         GetComponent<Arrive>().enabled = false;
                     }
-                    if (gameObject.CompareTag("Rat"))
+                    else if (gameObject.CompareTag("Rat"))
                     {
                         GetComponent<MerodeoCinematico>().enabled = false;
                         //GetComponent<Seguir>().enabled = true;
@@ -40,7 +40,7 @@ namespace IAV
                         GetComponent<Leave>().enabled = false;
                         GetComponent<Arrive>().enabled = true;
                     }
-                    if (gameObject.CompareTag("Rat"))
+                    else if (gameObject.CompareTag("Rat"))
                     {
                         GetComponent<MerodeoCinematico>().enabled = true;
                         //GetComponent<Seguir>().enabled = false;

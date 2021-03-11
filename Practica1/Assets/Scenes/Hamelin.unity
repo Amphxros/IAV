@@ -228,17 +228,18 @@ GameObject:
   m_Component:
   - component: {fileID: 78873673}
   - component: {fileID: 78873672}
-  - component: {fileID: 78873671}
   - component: {fileID: 78873674}
   - component: {fileID: 78873675}
   - component: {fileID: 78873676}
+  - component: {fileID: 78873677}
+  - component: {fileID: 78873671}
   m_Layer: 0
   m_Name: Enemigo
   m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &78873671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,12 +249,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 78873670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82e92ec8f463fd84cac92ffd22bc97c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 88cc9fe709938304585026b10148b38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peso: 2
+  peso: 1
   prioridad: 1
   objetivo: {fileID: 1021455439}
+  escapeRadius: 1
+  targetRadius: 25
+  timeToTarget: 0.1
 --- !u!114 &78873672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78873670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.22, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1649510675}
@@ -326,7 +330,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78873670}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76988f95d28a22348a4482f88ea56389, type: 3}
   m_Name: 
@@ -336,6 +340,24 @@ MonoBehaviour:
   objetivo: {fileID: 1021455439}
   look: 4
   distance: 1
+--- !u!114 &78873677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78873670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6942767976c3fe47917d9d678f20d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peso: 1
+  prioridad: 1
+  objetivo: {fileID: 1021455439}
+  slowRadius: 6
+  targetRadius: 3
+  timeToTarget: 0.1
 --- !u!1 &85869116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,7 +1519,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106173336}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76988f95d28a22348a4482f88ea56389, type: 3}
   m_Name: 
@@ -1776,6 +1798,10 @@ PrefabInstance:
       propertyPath: objetivo
       value: 
       objectReference: {fileID: 1021455439}
+    - target: {fileID: 539487260, guid: 5d400bb109556c54bbf20a7cfdab26fc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 352682527132178889, guid: 5d400bb109556c54bbf20a7cfdab26fc,
         type: 3}
       propertyPath: objetivo
@@ -1839,6 +1865,11 @@ PrefabInstance:
     - target: {fileID: 5077071450049608858, guid: 5d400bb109556c54bbf20a7cfdab26fc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7369215677480060817, guid: 5d400bb109556c54bbf20a7cfdab26fc,
+        type: 3}
+      propertyPath: combinarPorPeso
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
