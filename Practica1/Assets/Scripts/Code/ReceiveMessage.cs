@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 using UCM.IAV.Movimiento;
 namespace IAV
@@ -31,6 +32,13 @@ namespace IAV
                         GetComponent<Llegar>().enabled = true;
                         GetComponent<EvadeObstacles>().enabled = false;
                     }
+                    if (gameObject.CompareTag("Text"))
+                    {
+                        GetComponent<Text>().enabled = false;
+                    }
+                    if (gameObject.CompareTag("Audio")) {
+                        GetComponent<AudioSource>().volume = 1.0f;
+                    }
                     break;
 
                 case MESSAGE_ID.NO_TOCARFLAUTA:
@@ -45,6 +53,14 @@ namespace IAV
                         GetComponent<Alinear>().enabled = false;
                         GetComponent<Llegar>().enabled = false;
                         GetComponent<EvadeObstacles>().enabled = true;
+                    }
+                    if (gameObject.CompareTag("Text"))
+                    {
+                        GetComponent<Text>().enabled = true;
+                    }
+                    if (gameObject.CompareTag("Audio"))
+                    {
+                        GetComponent<AudioSource>().volume = 0.0f;
                     }
                     break;
 
