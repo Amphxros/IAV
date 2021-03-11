@@ -1,12 +1,6 @@
 ﻿/*    
-   Copyright (C) 2020 Federico Peinado
-   http://www.federicopeinado.com
-
-   Este fichero forma parte del material de la asignatura Inteligencia Artificial para Videojuegos.
-   Esta asignatura se imparte en la Facultad de Informática de la Universidad Complutense de Madrid (España).
-
-   Autor: Federico Peinado 
-   Contacto: email@federicopeinado.com
+   Copyright (C) 2020 Grupo 1
+ 
 */
 namespace UCM.IAV.Movimiento
 {
@@ -14,26 +8,16 @@ namespace UCM.IAV.Movimiento
     /// <summary>
     /// Clase para modelar el comportamiento de SEGUIR a otro agente
     /// </summary>
-    public class Arrive : ComportamientoAgente
+    public class Leave : ComportamientoAgente
     {
         /// <summary>
         /// Obtiene la dirección
         /// </summary>
         /// <returns></returns>
-        /// 
 
-        public float slowRadius;
+        public float escapeRadius;
         public float targetRadius;
         public float timeToTarget;
-        bool onTarget;
-
-        public void setOnTarget(bool b) { onTarget = b; }
-        public bool getOnTarget() { return onTarget; }
-
-        public void Start()
-        {
-            onTarget = false;
-        }
 
         public override Direccion GetDireccion()
         {
@@ -41,25 +25,20 @@ namespace UCM.IAV.Movimiento
             UnityEngine.Vector3 targetVelocity;
 
             Direccion result = new Direccion();
-            UnityEngine.Vector3 direction = (objetivo.transform.position - transform.position);
 
-            if (direction.magnitude < targetRadius)
+            UnityEngine.Vector3 direction = -1*(objetivo.transform.position - transform.position);
+
+            if (direction.magnitude > targetRadius)
             {
                 result.lineal = UnityEngine.Vector3.zero;
                 result.angular = 0;
-                if (!onTarget)
-                    onTarget = true;
                 return result;
             }
-
-            if (direction.magnitude < slowRadius)
+            if (direction.magnitude > escapeRadius)
             {
-                targetSpeed = agente.velocidadMax * (direction.magnitude / slowRadius);
+                targetSpeed = agente.velocidadMax * (direction.magnitude / escapeRadius);
             }
             else targetSpeed = agente.velocidadMax;
-
-            if (onTarget)
-                onTarget = false;
 
             targetVelocity = direction;
             targetVelocity.Normalize();

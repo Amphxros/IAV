@@ -21,7 +21,8 @@ namespace IAV
                 case MESSAGE_ID.TOCAR_FLAUTA:
                     if (gameObject.CompareTag("Dog"))
                     {
-                        GetComponent<Seguir>().enabled = true;
+                        GetComponent<Leave>().enabled = true;
+                        GetComponent<Arrive>().enabled = false;
                     }
                     if (gameObject.CompareTag("Rat"))
                     {
@@ -36,7 +37,8 @@ namespace IAV
                 case MESSAGE_ID.NO_TOCARFLAUTA:
                     if (gameObject.CompareTag("Dog"))
                     {
-                        GetComponent<Seguir>().enabled = false;
+                        GetComponent<Leave>().enabled = false;
+                        GetComponent<Arrive>().enabled = true;
                     }
                     if (gameObject.CompareTag("Rat"))
                     {
