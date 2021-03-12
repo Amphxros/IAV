@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Dog
   - Rat
+  - Text
+  - Audio
   layers:
   - Default
   - TransparentFX

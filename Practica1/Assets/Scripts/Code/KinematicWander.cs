@@ -4,10 +4,8 @@ using UnityEngine;
 
 namespace UCM.IAV.Movimiento
 {
-    public class MerodeoCinematico : ComportamientoAgente
+    public class KinematicWander : ComportamientoAgente
     {
-        public float maxSpeed;
-        public float maxRotation;
         /// <summary>
         /// Tiempo en segundos para cambiar de direccion
         /// </summary>
@@ -32,24 +30,23 @@ namespace UCM.IAV.Movimiento
         /// <returns></returns>
         public override Direccion GetDireccion()
         {
-            Direccion direccion = new Direccion();
+            Direccion result = new Direccion();
             time -= Time.deltaTime;
             if (time <= 0.0f)
             {
-                direccion.lineal.x = Random.Range(-1.0f, 1.0f) * maxSpeed;
-                direccion.lineal.z = Random.Range(-1.0f, 1.0f) * maxRotation;
-                prevDireccion = direccion;
-                time = Random.Range(1.0f, 3.0f);
+                result.lineal = new Vector3(Random.onUnitSphere.x * 3f, 0, Random.onUnitSphere.z * 3f);
+                prevDireccion = result;
+                time = Random.Range(1f, 3f);
             }
             else
             {
-                direccion = prevDireccion;
+                result = prevDireccion;
             }
 
-            direccion.lineal.Normalize();
-            direccion.lineal *= agente.aceleracionMax;
+            result.lineal.Normalize();
+            result.lineal *= agente.aceleracionMax;
 
-            return direccion;
+            return result;
         }
     }
 }

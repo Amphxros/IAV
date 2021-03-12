@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 using UCM.IAV.Movimiento;
 namespace IAV
@@ -21,35 +22,39 @@ namespace IAV
                 case MESSAGE_ID.TOCAR_FLAUTA:
                     if (gameObject.CompareTag("Dog"))
                     {
-                        GetComponent<Leave>().enabled = true;
-                        GetComponent<Arrive>().enabled = false;
+                        GetComponent<Seguir>().enabled = true;
                     }
-                    else if (gameObject.CompareTag("Rat"))
+                    if (gameObject.CompareTag("Rat"))
                     {
-                        //GetComponent<MerodeoCinematico>().enabled = false;
-                        //GetComponent<Seguir>().enabled = true;
-                       // GetComponent<Alinear>().enabled = true;
+                        GetComponent<KinematicWander>().enabled = false;
                         GetComponent<Arrive>().enabled = true;
-                        GetComponent<Leave>().enabled = false;
-                        // GetComponent<EvadeObstacles>().enabled = false;
+                    }
+                    if (gameObject.CompareTag("Text"))
+                    {
+                        GetComponent<Text>().enabled = false;
+                    }
+                    if (gameObject.CompareTag("Audio")) {
+                        GetComponent<AudioSource>().volume = 1.0f;
                     }
                     break;
 
                 case MESSAGE_ID.NO_TOCARFLAUTA:
                     if (gameObject.CompareTag("Dog"))
                     {
-                        GetComponent<Leave>().enabled = false;
-                        GetComponent<Arrive>().enabled = true;
+                        GetComponent<Seguir>().enabled = false;
                     }
-                    else if (gameObject.CompareTag("Rat"))
+                    if (gameObject.CompareTag("Rat"))
                     {
-                        //GetComponent<MerodeoCinematico>().enabled = true;
-                        //GetComponent<Seguir>().enabled = false;
-                        //GetComponent<Alinear>().enabled = false;
-                        //GetComponent<Llegar>().enabled = false;
-                        //GetComponent<EvadeObstacles>().enabled = true;
+                        GetComponent<KinematicWander>().enabled = true;
                         GetComponent<Arrive>().enabled = false;
-                        GetComponent<Leave>().enabled = true;
+                    }
+                    if (gameObject.CompareTag("Text"))
+                    {
+                        GetComponent<Text>().enabled = true;
+                    }
+                    if (gameObject.CompareTag("Audio"))
+                    {
+                        GetComponent<AudioSource>().volume = 0.0f;
                     }
                     break;
 
