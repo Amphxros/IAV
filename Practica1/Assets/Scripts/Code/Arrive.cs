@@ -80,5 +80,6 @@ namespace UCM.IAV.Movimiento
             result.angular = 0;
             return result;
         }
+
     }
 }
