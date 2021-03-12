@@ -391,12 +391,14 @@ GameObject:
   - component: {fileID: 1379984005994364160}
   - component: {fileID: 3681524661877212683}
   - component: {fileID: 6508615418425322920}
-  - component: {fileID: 6148488478429523329}
   - component: {fileID: 6148488478101760869}
-  - component: {fileID: 4501883283894645240}
+  - component: {fileID: 2919223951156495042}
+  - component: {fileID: 5119731298993036844}
+  - component: {fileID: 979801813}
+  - component: {fileID: 3874585247106358422}
   m_Layer: 0
   m_Name: RataPrueba
-  m_TagString: Rat
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -436,8 +438,8 @@ MonoBehaviour:
   umbralPrioridad: 0.2
   velocidadMax: 5
   aceleracionMax: 10
-  rotacionMax: 10
-  aceleracionAngularMax: 5
+  rotacionMax: 1000
+  aceleracionAngularMax: 1000
   orientacion: 0
   rotacion: 0
   velocidad: {x: 0, y: 0, z: 0}
@@ -453,24 +455,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b82cf96b94cef47a416f107c063d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6148488478429523329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7722045324595267336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edd5c1bbfe7d669499c82752611b1a37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  peso: 1
-  prioridad: 1
-  objetivo: {fileID: 0}
-  targetRadius: 4
-  slowRadius: 5
-  timeToTarget: 1
 --- !u!54 &6148488478101760869
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -479,15 +463,15 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7722045324595267336}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.5
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &4501883283894645240
+--- !u!114 &2919223951156495042
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -496,15 +480,63 @@ MonoBehaviour:
   m_GameObject: {fileID: 7722045324595267336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1589ae899b505484ab4144b811f8ebbe, type: 3}
+  m_Script: {fileID: 11500000, guid: 937b41d4c4fa24840ad2615291f5357b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peso: 1
+  prioridad: 1
+  objetivo: {fileID: 0}
+  time: 0
+--- !u!114 &5119731298993036844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7722045324595267336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6942767976c3fe47917d9d678f20d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  maxAccel: 10
+  maxSpeed: 20
+  slowRd: 5
+  timeToTarget: 0.5
+--- !u!114 &979801813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7722045324595267336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74686b075a637a444a9297f723f7638c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   peso: 1
   prioridad: 1
   objetivo: {fileID: 0}
   targetRadius: 0.5
-  slowRadius: 0.2
+  slowRadius: 0.5
   timeToTarget: 0.1
-  wanderOffset: 0.5
-  wanderRadius: 0.4
-  wanderRate: 0.1
+--- !u!114 &3874585247106358422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7722045324595267336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855a030c97e436942984a7659f285912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peso: 1
+  prioridad: 1
+  objetivo: {fileID: 0}
+  targetRadius: 0.5
+  slowRadius: 0.5
+  timeToTarget: 0.1

@@ -9,12 +9,13 @@ namespace UCM.IAV.Movimiento
         public override Direccion GetDireccion()
         {
             Vector3 velocity = agente.velocidad;
-            if (velocity.magnitude > 0)
+            if (velocity.magnitude == 0.0f)
             {
-                return base.GetDireccion();
+                return new Direccion();
             }
+            agente.orientacion = Mathf.Atan2(-velocity.x, velocity.z) * Mathf.Rad2Deg;
 
-            else return null;
+            return base.GetDireccion();
         }
     }
 }

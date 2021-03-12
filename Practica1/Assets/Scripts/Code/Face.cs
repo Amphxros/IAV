@@ -12,12 +12,9 @@ namespace UCM.IAV.Movimiento
             // Averigua la posicion del objetivo
             Vector3 direction = objetivo.transform.position - transform.position;
 
-            // Si la posicion es distinta de 0 se deben hacer cambios
             if (direction.magnitude > 0)
             {
-                float objetivoOrientation = Mathf.Atan2(-direction.x, direction.z);
-                objetivoOrientation *= Mathf.Rad2Deg;
-                objetivo.GetComponent<Agente>().orientacion = objetivoOrientation;
+                objetivo.GetComponent<Agente>().orientacion = Mathf.Atan2(-direction.x, direction.z);
             }
 
             return base.GetDireccion();
