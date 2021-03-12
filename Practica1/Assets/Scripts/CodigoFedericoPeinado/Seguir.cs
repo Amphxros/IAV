@@ -17,8 +17,6 @@ namespace UCM.IAV.Movimiento
     public class Seguir : ComportamientoAgente
     {
 
-        
-
         /// <summary>
         /// Obtiene la dirección
         /// </summary>
@@ -29,6 +27,8 @@ namespace UCM.IAV.Movimiento
             direccion.lineal = objetivo.transform.position - transform.position;
             direccion.lineal.Normalize();
             direccion.lineal = direccion.lineal * agente.aceleracionMax;
+            direccion.angular = 0;
+
             return direccion;
         }
     }

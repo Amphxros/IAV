@@ -1,59 +1,84 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿/*    
+   Copyright (C) 2020 Federico Peinado
+   http://www.federicopeinado.com
 
-/*
-algoritmo obtenido en el libr de Ian Millington: AI for games 3rd edition
-class Arrive{
-    character: Kinematic
-    target: Kinematic
+   Este fichero forma parte del material de la asignatura Inteligencia Artificial para Videojuegos.
+   Esta asignatura se imparte en la Facultad de Informática de la Universidad Complutense de Madrid (España).
 
-    maxAccel: float
-    maxSpeed: float
-
-    slowRd: float
-    timeToTarget: float
-
-    function getSteering()-> SteeringOutput{
-    result= new SteeringOutput
-    direction=target.pos-character.pos
-    distance= direction.length
-    if(distance<targetRd){
-    return;
-    }
-    ...
-
-    }
-
-
-
-}
-     
+   Autor: Federico Peinado 
+   Contacto: email@federicopeinado.com
 */
-public class Arrive : MonoBehaviour
+namespace UCM.IAV.Movimiento
 {
-    Transform character;
-    public Transform target;
 
-    public float maxAccel;
-    public float maxSpeed;
-
-    public float slowRd;
-    public float timeToTarget;
-
-    private Vector3 direction_;
-    private Vector3 distance_;
-
-
-    // Start is called before the first frame update
-    void OnEnable()
+    /// <summary>
+    /// Clase para modelar el comportamiento de SEGUIR a otro agente
+    /// </summary>
+    public class Arrive : ComportamientoAgente
     {
-        character = GetComponent<Transform>();
-    }
+        /// <summary>
+        /// Obtiene la dirección
+        /// </summary>
+        /// <returns></returns>
+        /// 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public float slowRadius;
+        public float targetRadius;
+        public float timeToTarget;
+        bool onTarget;
+
+        public void setOnTarget(bool b) { onTarget = b; }
+        public bool getOnTarget() { return onTarget; }
+
+        public void Start()
+        {
+            onTarget = false;
+        }
+
+        public override Direccion GetDireccion()
+        {
+            float targetSpeed;
+            UnityEngine.Vector3 targetVelocity;
+
+            Direccion result = new Direccion();
+            UnityEngine.Vector3 direction = (objetivo.transform.position - transform.position);
+
+            if (direction.magnitude < targetRadius)
+            {
+                result.lineal = UnityEngine.Vector3.zero;
+                result.angular = 0;
+                if (!onTarget)
+                    onTarget = true;
+                return result;
+            }
+
+            if (direction.magnitude < slowRadius)
+            {
+                targetSpeed = agente.velocidadMax * (direction.magnitude / slowRadius);
+            }
+            else targetSpeed = agente.velocidadMax;
+
+            if (onTarget)
+                onTarget = false;
+
+            targetVelocity = direction;
+            targetVelocity.Normalize();
+            targetVelocity *= targetSpeed;
+
+
+            //Acceleration to target velocity
+            result.lineal = targetVelocity - agente.velocidad;
+            result.lineal /= timeToTarget;
+
+            //Check if accel. is over max
+            if (result.lineal.magnitude > agente.aceleracionMax)
+            {
+                result.lineal.Normalize();
+                result.lineal *= agente.aceleracionMax;
+            }
+
+            result.angular = 0;
+            return result;
+        }
     }
 }
