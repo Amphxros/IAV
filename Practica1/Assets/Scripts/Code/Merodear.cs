@@ -25,13 +25,13 @@ namespace UCM.IAV.Movimiento
             float targetOrientation = wanderOrientation + agente.orientacion;
             // Calcular el centro del circulo
             Vector3 vec1 = transform.position + (wanderOffset * OriToVec(agente.orientacion));
-            transform.position = new Vector3(vec1.x, 0, vec1.z);
+            //transform.position = new Vector3(vec1.x, 0, vec1.z);
 
             // Calcular la ubicacion del objetivo
             Vector3 vec2 = wanderRadius * OriToVec(targetOrientation);
-            transform.position += new Vector3(vec2.x, 0, vec2.z)*2;
+            //transform.position += new Vector3(vec2.x, 0, vec2.z)*2;
 
-            // Delegar a Face
+            
             Direccion result = base.GetDireccion();
             //agente.orientacion = targetOrientation + Random.Range(-2.0f, 2.0f);
 

@@ -45,6 +45,7 @@ namespace UCM.IAV.Movimiento
 
             result.lineal.Normalize();
             result.lineal *= agente.aceleracionMax;
+            result.angular = 0;
 
             return result;
         }

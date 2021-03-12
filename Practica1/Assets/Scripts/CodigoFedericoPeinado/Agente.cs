@@ -104,18 +104,18 @@ namespace UCM.IAV.Movimiento {
             if (cuerpoRigido == null)
                 return;
 
-            Vector3 displacement = velocidad * Time.deltaTime;
+            // ... código previo
+            Vector3 desplazamiento = velocidad * Time.deltaTime;
             orientacion += rotacion * Time.deltaTime;
             // Necesitamos "constreñir" inteligentemente la orientación al rango (0, 360)
             if (orientacion < 0.0f)
                 orientacion += 360.0f;
             else if (orientacion > 360.0f)
                 orientacion -= 360.0f;
-            // El ForceMode dependerá de lo que quieras conseguir
-            // Estamos usando VelocityChange sólo con propósitos ilustrativos
-            cuerpoRigido.AddForce(displacement, ForceMode.VelocityChange);
-            Vector3 orientationVector = OriToVec(orientacion);
-            cuerpoRigido.rotation = Quaternion.LookRotation(orientationVector, Vector3.up);
+            transform.Translate(desplazamiento, Space.World);
+            // Restaura la rotación al punto inicial antes de rotar el objeto nuestro valor
+            transform.rotation = new Quaternion();
+            transform.Rotate(Vector3.up,Vector3.Angle(Vector3.right, desplazamiento)-90);
         }
 
         /// <summary>

@@ -22,12 +22,15 @@ namespace IAV
                 case MESSAGE_ID.TOCAR_FLAUTA:
                     if (gameObject.CompareTag("Dog"))
                     {
-                        GetComponent<Seguir>().enabled = true;
+                        GetComponent<Arrive>().enabled = false;
+                        GetComponent<Leave>().enabled = true;
                     }
                     if (gameObject.CompareTag("Rat"))
                     {
-                        GetComponent<KinematicWander>().enabled = false;
+                       GetComponent<KinematicWander>().enabled = false;
                         GetComponent<Arrive>().enabled = true;
+                        GetComponent<Leave>().enabled = false;
+                       // GetComponent<Merodear>().enabled = false;
                     }
                     if (gameObject.CompareTag("Text"))
                     {
@@ -41,12 +44,15 @@ namespace IAV
                 case MESSAGE_ID.NO_TOCARFLAUTA:
                     if (gameObject.CompareTag("Dog"))
                     {
-                        GetComponent<Seguir>().enabled = false;
+                        GetComponent<Arrive>().enabled = true;
+                        GetComponent<Leave>().enabled = false;
                     }
                     if (gameObject.CompareTag("Rat"))
                     {
                         GetComponent<KinematicWander>().enabled = true;
                         GetComponent<Arrive>().enabled = false;
+                        GetComponent<Leave>().enabled = true;
+                       // GetComponent < Merodear >().enabled= true;
                     }
                     if (gameObject.CompareTag("Text"))
                     {

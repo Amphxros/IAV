@@ -8,6 +8,8 @@
    Autor: Federico Peinado 
    Contacto: email@federicopeinado.com
 */
+using UnityEngine;
+
 namespace UCM.IAV.Movimiento
 {
 
@@ -45,8 +47,8 @@ namespace UCM.IAV.Movimiento
 
             if (direction.magnitude < targetRadius)
             {
-                result.lineal = UnityEngine.Vector3.zero;
-                result.angular = 0;
+                result.lineal = Vector3.left;
+                result.angular = Vector3.Angle(transform.position , transform.position +agente.velocidad);
                 if (!onTarget)
                     onTarget = true;
                 return result;
@@ -77,7 +79,7 @@ namespace UCM.IAV.Movimiento
                 result.lineal *= agente.aceleracionMax;
             }
 
-            result.angular = 0;
+            result.angular = Vector3.Angle(agente.transform.position,agente.transform.position+ result.lineal);
             return result;
         }
     }
