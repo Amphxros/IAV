@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UCM.IAV.Movimiento
 {
-    public class MerodeoCinematico : ComportamientoAgente
+    public class KinematicWander : ComportamientoAgente
     {
         /// <summary>
         /// Tiempo en segundos para cambiar de direccion
@@ -34,7 +34,7 @@ namespace UCM.IAV.Movimiento
             time -= Time.deltaTime;
             if (time <= 0.0f)
             {
-                result.lineal = new Vector3(Random.onUnitSphere.x * 3, 0, Random.onUnitSphere.z * 3f);
+                result.lineal = new Vector3(Random.onUnitSphere.x * 3f, 0, Random.onUnitSphere.z * 3f);
                 prevDireccion = result;
                 time = Random.Range(1f, 3f);
             }

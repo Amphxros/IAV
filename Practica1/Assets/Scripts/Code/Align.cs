@@ -51,8 +51,6 @@ namespace UCM.IAV.Movimiento
                 result.angular *= agente.aceleracionAngularMax;
             }
 
-            Debug.Log(result.angular);
-
             return result;
         }
     }

@@ -8,14 +8,6 @@ namespace UCM.IAV.Movimiento{
     {
         public float look;
         public float distance;
-        private Seguir seguir_; //seek al que cambiaremos el objetivo
-        private MerodeoCinematico merodeo_;
-        void Start()
-        {
-            seguir_ = GetComponent<Seguir>();
-            merodeo_ = GetComponent<MerodeoCinematico>();
-        }
-
         public override Direccion GetDireccion()
         {
             Direccion result = new Direccion();
