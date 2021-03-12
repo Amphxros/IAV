@@ -9,6 +9,7 @@ namespace UCM.IAV.Movimiento
         private Separation[] targets;
         public float threshold;
         public float decayCoefficient;
+        public float maxAcceleration;
 
 
         // Start is called before the first frame update
@@ -27,10 +28,10 @@ namespace UCM.IAV.Movimiento
                 if(target!= this)
                 {
                     Vector3 dir = target.GetComponent<Agente>().transform.position - agente.transform.position;
-                    float distance = dir.Magnitude();
+                    float distance = dir.magnitude;
                     if (distance < threshold)
                     {
-                        var strength; //aqui pondre min no se que no se cuantos
+                        var strength= Mathf.Min(decayCoefficient/Mathf.Pow(distance,2),maxAcceleration); //aqui pondre min no se que no se cuantos
                         dir.Normalize();
                         result.lineal += strength * dir;
                         agente.SetDireccion(result);
