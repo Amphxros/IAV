@@ -6,14 +6,10 @@ namespace UCM.IAV.Movimiento
 {
     public class KinematicWander : ComportamientoAgente
     {
-        /// <summary>
-        /// Tiempo en segundos para cambiar de direccion
-        /// </summary>
+        // Variable de tiempo para cambiar direccion
         public float time;
 
-        /// <summary>
-        /// Guarda la direccion hacia la que va la rata antes de girar
-        /// </summary>
+        // Var para guardar la direccion preexistente del agente
         private Direccion prevDireccion;
 
         public override void Awake()
@@ -22,22 +18,20 @@ namespace UCM.IAV.Movimiento
             base.Awake();
         }
 
-        /// <summary>
-        /// Resta a t hasta que sea <= a 0
-        /// Luego crea una nueva direccion aleatoria en los ejes x, z y actualiza dirAnterior
-        /// Finalmente crea un nuevo intervalo de tiempo hasta el siguiente cambio
-        /// </summary>
-        /// <returns></returns>
+        // Resta a time hasta ser menor o igual a 0.0f para crear una nueva direccion para la rata
+        // luego guarda la nueva direccion y reinicia el time
         public override Direccion GetDireccion()
         {
             Direccion result = new Direccion();
             time -= Time.deltaTime;
+            // Si time es menor o igual a 0 calcula una nueva direccion a la cual trasladarse
             if (time <= 0.0f)
             {
                 result.lineal = new Vector3(Random.onUnitSphere.x * 3f, 0, Random.onUnitSphere.z * 3f);
                 prevDireccion = result;
                 time = Random.Range(1f, 3f);
             }
+            // Caso contrario mantiene la direccion que ya tiene
             else
             {
                 result = prevDireccion;

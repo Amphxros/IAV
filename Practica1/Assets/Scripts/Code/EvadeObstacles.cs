@@ -6,21 +6,21 @@ using UnityEngine;
 namespace UCM.IAV.Movimiento{
     public class EvadeObstacles : ComportamientoAgente
     {
-        public float look;
-        public float distance;
+        public float look; // distancia de vista
+        public float distance; //
         RaycastHit hit; //raycast
 
         public override Direccion GetDireccion()
         {
-          
             Direccion result = new Direccion();
-            Vector3 ray = agente.velocidad;
+            Vector3 ray = agente.velocidad; // vector hacia donde irá el raycast
             ray.Normalize();
             ray *= look;
 
-            Debug.DrawRay(transform.position, ray * 10, Color.white, 2.0f, true);
+            // Para poder saber a donde apuntan
+            // Debug.DrawRay(transform.position, ray * 10, Color.white, 2.0f, true); 
 
-            //si hay colision
+            //comprobamos mediante el raycast si hay una colision, en caso de que haya se cambia de direccion
             Vector3 dir;
             if (Physics.Raycast(transform.position, ray, out hit))
             {

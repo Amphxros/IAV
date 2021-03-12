@@ -6,7 +6,7 @@ namespace UCM.IAV.Movimiento
 {
     public class Separacion : ComportamientoAgente
     {
-        public Agente[] targets;
+        public Agente[] targets; 
         public float threshold;
         public float decayCoefficient;
         private Agente character;

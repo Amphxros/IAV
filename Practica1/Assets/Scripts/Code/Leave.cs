@@ -1,13 +1,8 @@
-﻿/*    
-   Copyright (C) 2020 Grupo 1
- 
-*/
-namespace UCM.IAV.Movimiento
+﻿namespace UCM.IAV.Movimiento
 {
 
-    /// <summary>
-    /// Clase para modelar el comportamiento de SEGUIR a otro agente
-    /// </summary>
+
+    // A efectos practicos el componente Leave es completamente opuesto al Arrive
     public class Leave : ComportamientoAgente
     {
         /// <summary>
@@ -15,29 +10,32 @@ namespace UCM.IAV.Movimiento
         /// </summary>
         /// <returns></returns>
 
-        public float escapeRadius;
-        public float targetRadius;
-        public float timeToTarget;
+        public float escapeRadius;  
+        public float targetRadius;  // Radio en el que comienza a disminuir su velocidad
+        public float timeToTarget;  // Tiempo usado para calcular la aceleracion hacia el objetivo
 
         public override Direccion GetDireccion()
         {
             float targetSpeed;
             UnityEngine.Vector3 targetVelocity;
 
-            Direccion result = new Direccion();
+            Direccion result = new Direccion(); 
 
-            UnityEngine.Vector3 direction = -1*(objetivo.transform.position - transform.position);
+            UnityEngine.Vector3 direction = -1 * (objetivo.transform.position - transform.position);
 
+            //si esta fuera del radio del target no necesita moverse mas
             if (direction.magnitude > targetRadius)
             {
                 result.lineal = UnityEngine.Vector3.zero;
                 result.angular = 0;
                 return result;
             }
+            //sin embargo si aun sigue en el radio de escape movera el objeto
             if (direction.magnitude > escapeRadius)
             {
                 targetSpeed = agente.velocidadMax * (direction.magnitude / escapeRadius);
             }
+
             else targetSpeed = agente.velocidadMax;
 
             targetVelocity = direction;
@@ -45,11 +43,11 @@ namespace UCM.IAV.Movimiento
             targetVelocity *= targetSpeed;
 
 
-            //Acceleration to target velocity
+            // Aceleración a la velocidad objetivo
             result.lineal = targetVelocity - agente.velocidad;
             result.lineal /= timeToTarget;
 
-            //Check if accel. is over max
+            // Comprueba si la acceleración está por encima del máximo
             if (result.lineal.magnitude > agente.aceleracionMax)
             {
                 result.lineal.Normalize();

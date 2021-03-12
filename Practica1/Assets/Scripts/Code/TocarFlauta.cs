@@ -6,8 +6,8 @@ namespace IAV
 {
     public class TocarFlauta : MonoBehaviour
     {
-
-        private SendMessage message; // componente que envia un mensaje
+        // componente que envia un mensaje
+        private SendMessage message;
 
         void Start()
         {
@@ -16,7 +16,8 @@ namespace IAV
 
         void Update()
         {
-            //si toca la flauta envia el mensaje correspondiente
+            // Si toca la flauta envia el mensaje correspondiente
+            // Cada ReceiveMessage tiene su comportamiento
             if (Input.GetKey(KeyCode.Space))
             {
                 message.Send(MESSAGE_ID.TOCAR_FLAUTA);

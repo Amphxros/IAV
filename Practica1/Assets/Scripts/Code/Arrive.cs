@@ -1,14 +1,4 @@
-﻿/*    
-   Copyright (C) 2020 Federico Peinado
-   http://www.federicopeinado.com
-
-   Este fichero forma parte del material de la asignatura Inteligencia Artificial para Videojuegos.
-   Esta asignatura se imparte en la Facultad de Informática de la Universidad Complutense de Madrid (España).
-
-   Autor: Federico Peinado 
-   Contacto: email@federicopeinado.com
-*/
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UCM.IAV.Movimiento
 {
@@ -24,9 +14,9 @@ namespace UCM.IAV.Movimiento
         /// <returns></returns>
         /// 
 
-        public float slowRadius;
-        public float targetRadius;
-        public float timeToTarget;
+        public float slowRadius;        //Radio cercano al objetivo en el que la entidad empieza a decelerar
+        public float targetRadius;      //Radio que se considera que la entidad ha llegado al objetivo
+        public float timeToTarget;      //Tiempo al objetivo constante
         bool onTarget;
 
         public void setOnTarget(bool b) { onTarget = b; }
@@ -37,6 +27,7 @@ namespace UCM.IAV.Movimiento
             onTarget = false;
         }
 
+        //Sobreescribe el método GetDireccion que utiliza ComportamientoAgente
         public override Direccion GetDireccion()
         {
             float targetSpeed;
@@ -45,6 +36,7 @@ namespace UCM.IAV.Movimiento
             Direccion result = new Direccion();
             UnityEngine.Vector3 direction = (objetivo.transform.position - transform.position);
 
+            // Si esta dentro del "targetRadius" ha llegado a su destino
             if (direction.magnitude < targetRadius)
             {
                 result.lineal = Vector3.left;
@@ -53,7 +45,7 @@ namespace UCM.IAV.Movimiento
                     onTarget = true;
                 return result;
             }
-
+            // Si esta dentro del "slowRadius" reduce su velocidad
             if (direction.magnitude < slowRadius)
             {
                 targetSpeed = agente.velocidadMax * (direction.magnitude / slowRadius);
@@ -67,12 +59,11 @@ namespace UCM.IAV.Movimiento
             targetVelocity.Normalize();
             targetVelocity *= targetSpeed;
 
-
-            //Acceleration to target velocity
+            // Aceleración a la velocidad objetivo
             result.lineal = targetVelocity - agente.velocidad;
             result.lineal /= timeToTarget;
 
-            //Check if accel. is over max
+            // Comprueba si la acceleración está por encima del máximo
             if (result.lineal.magnitude > agente.aceleracionMax)
             {
                 result.lineal.Normalize();

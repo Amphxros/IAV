@@ -54,6 +54,8 @@ namespace UCM.IAV.Movimiento
                 result.angular /= angularAcceleration;
                 result.angular *= agente.aceleracionAngularMax;
             }
+
+            // Poner la velocidad lineal a 0
             result.lineal = Vector3.zero;
 
             return result;

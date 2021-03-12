@@ -14,10 +14,12 @@ namespace UCM.IAV.Movimiento
 
             if (direction.magnitude > 0)
             {
+                // Para convertir la direccion a formato velocidad (Vector2D to Float) descomponemos las componentes X y Z
+                // Y calculamos la Arcotangente conjunta
                 objetivo.GetComponent<Agente>().orientacion = Mathf.Atan2(-direction.x, direction.z);
             }
 
-            return base.GetDireccion();
+            return base.GetDireccion(); //devlvemos la direccion de la clase padre
         }
     }
 }

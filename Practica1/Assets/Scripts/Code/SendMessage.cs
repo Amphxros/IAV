@@ -10,21 +10,16 @@ namespace IAV
         private ReceiveMessage[] receives; // lista de Receptores 
         void Start()
         {
-            receives = Object.FindObjectsOfType<ReceiveMessage>();
-        }
-
-        // Esto es para cuando añada un GM que con FInd es muy ineficiente
-        public void AddReceiver(ReceiveMessage r)
-        {
-
+            receives = Object.FindObjectsOfType<ReceiveMessage>(); //busca en la escena todos los GO con el componente ReceiveMessage
         }
 
         //envia los mensajes a sus receptores
         public void Send(MESSAGE_ID id)
         {
+            //manda a cada un de los Receivers un mensaje id
             foreach (ReceiveMessage m in receives)
             {
-                m.Receive(id);
+                m.Receive(id); 
             }
         }
     }
