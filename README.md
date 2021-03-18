@@ -7,7 +7,7 @@ Proyecto realizado por el grupo 10 de la asignatura de IAV del año 2020/2021 co
 |--|--|--|--|--|
 
 * [Repositorio de github](https://github.com/amprubio/IAV-G10)
-
+* Version de Unity iusada: 2020.4.1f
 El prototipo muestra una demo de comportamientos de IA de movimiento:
 
 * El Flautista de Hamelín contará con controles de dirección en manos del usuario y podrá tocar la flauta, que resultará en 2 comportamientos, el perro dejará de seguir al Flautista para huir de él, y las ratas comenzarán a seguirle.
