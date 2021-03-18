@@ -7,7 +7,7 @@ Proyecto realizado por el grupo 10 de la asignatura de IAV del año 2020/2021 co
 |--|--|--|--|--|
 
 * [Repositorio de github](https://github.com/amprubio/IAV-G10)
-* Version de Unity usada: 2020.4.1f
+* Version de Unity usada: 2020.1.4f
 
 El prototipo muestra una demo de comportamientos de IA de movimiento:
 
