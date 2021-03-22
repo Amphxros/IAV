@@ -13,6 +13,34 @@ Practica1/[Bb]uilds/
 Practica1/[Ll]ogs/
 Practica1/[Uu]ser[Ss]ettings/
 
+#Ignora archivos generados de la practica 2
+Practica2/[Ll]ibrary/
+Practica2/[Tt]emp/
+Practica2/[Oo]bj/
+Practica2/[Bb]uild/
+Practica2/[Bb]uilds/
+Practica2/[Ll]ogs/
+Practica2/[Uu]ser[Ss]ettings/
+
+#Ignora archivos generados de la practica 3
+Practica3/[Ll]ibrary/
+Practica3/[Tt]emp/
+Practica3/[Oo]bj/
+Practica3/[Bb]uild/
+Practica3/[Bb]uilds/
+Practica3/[Ll]ogs/
+Practica3/[Uu]ser[Ss]ettings/
+
+
+#Ignora archivos generados de la practica 4
+Practica4/[Ll]ibrary/
+Practica4/[Tt]emp/
+Practica4/[Oo]bj/
+Practica4/[Bb]uild/
+Practica4/[Bb]uilds/
+Practica4/[Ll]ogs/
+Practica4/[Uu]ser[Ss]ettings/
+
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
