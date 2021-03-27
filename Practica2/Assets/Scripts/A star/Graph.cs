@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public abstract class Graph : MonoBehaviour
 {
 
@@ -37,17 +36,17 @@ public abstract class Graph : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
     public virtual Vertex[] getNeighbours(Vertex v)
     {
-        if(neighbors.Count==0 || ReferenceEquals(neighbors, null))
+        if (neighbors.Count == 0 || ReferenceEquals(neighbors, null))
         {
             return new Vertex[0];
         }
-       else if (v.id<0 || v.id>= neighbors.Count)
+        else if (v.id < 0 || v.id >= neighbors.Count)
         {
             return new Vertex[0];
         }
@@ -57,9 +56,9 @@ public abstract class Graph : MonoBehaviour
 
 
     //get a star path
-    public List<Vertex> GetPath(GameObject src, GameObject dst, Heuristic h=null)
+    public List<Vertex> GetPath(GameObject src, GameObject dst, Heuristic h = null)
     {
-        if(src==null || dst == null)
+        if (src == null || dst == null)
         {
             return new List<Vertex>(); // si no hay destino o origen 
         }
@@ -68,15 +67,58 @@ public abstract class Graph : MonoBehaviour
             Vertex srcV = src.GetComponent<Vertex>(); //vertice origen
             Vertex dstV = dst.GetComponent<Vertex>(); //vertice destino
 
+            List<Edge> frontier = new List<Edge>(); //cambiar esto por una estructura real
 
 
-
-            return new List<Vertex>(); //de momento es algo
+            Edge[] edges;
+            Edge node, child;
+            int size = vertices.Count;
+            float[] distValue = new float[size];
+            int[] previous = new int[size];
+            node = new Edge(src, 0);
+            frontier.Add(node);
+            distValue[srcV.id] = 0;
+            previous[srcV.id] = srcV.id;
+            for (int i = 0; i < size; i++)
+            {
+                if (i == srcV.id)
+                    continue;
+                distValue[i] = Mathf.Infinity;
+                previous[i] = -1;
+            }
+            while (frontier.Count != 0)
+            {
+               // node = frontier.Remove();
+               //int nodeId = node.vertex.id;
+               // if (ReferenceEquals(node.vertex, dst))
+               // {
+               //     return BuildPath(src.id, node.vertex.id, ref previous);
+               // }
+               // edges = GetEdges(node.vertex);
+               // foreach (Edge e in edges)
+               // {
+               //     int eId = e.vertex.id;
+               //     if (previous[eId] != -1)
+               //         continue;
+               //     float cost = distValue[nodeId] + e.cost;
+               //     // key point
+               //     cost += h(node.vertex, e.vertex);
+               //     if (cost < distValue[e.vertex.id])
+               //     {
+               //         distValue[eId] = cost;
+               //         previous[eId] = nodeId;
+               //         frontier.Remove(e);
+               //         child = new Edge(e.vertex, cost);
+               //         frontier.Add(child);
+               //     }
+               // }
+            }
+            return new List<Vertex>();
         }
 
     }
 
-    private float RecursiveIDAstar( Vertex v,Vertex dst, float bound, Heuristic h, ref Vertex goal, ref bool[] visited)
+    private float RecursiveIDAstar(Vertex v, Vertex dst, float bound, Heuristic h, ref Vertex goal, ref bool[] visited)
     {
         return 0.0f;
     }

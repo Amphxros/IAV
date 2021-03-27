@@ -2,18 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class Edge: MonoBehaviour
+
+/// <summary>
+/// ESTRUCTURA DE NODOS
+/// </summary>
+public class Grid : MonoBehaviour
 {
-    public Edge(GameObject src, int coste)
-    {
-
-    }
-    
-    public Edge()
-    {
-
-    }
     // Start is called before the first frame update
     void Start()
     {
