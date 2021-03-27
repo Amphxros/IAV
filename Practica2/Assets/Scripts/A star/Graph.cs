@@ -75,7 +75,7 @@ public abstract class Graph : MonoBehaviour
             int size = vertices.Count;
             float[] distValue = new float[size];
             int[] previous = new int[size];
-            node = new Edge(src, 0);
+            node = new Edge(srcV, 0);
             frontier.Add(node);
             distValue[srcV.id] = 0;
             previous[srcV.id] = srcV.id;
@@ -95,8 +95,8 @@ public abstract class Graph : MonoBehaviour
                //     return BuildPath(src.id, node.vertex.id, ref previous);
                // }
                // edges = GetEdges(node.vertex);
-               // foreach (Edge e in edges)
-               // {
+               //foreach (Edge e in edges)
+                {
                //     int eId = e.vertex.id;
                //     if (previous[eId] != -1)
                //         continue;
@@ -111,7 +111,7 @@ public abstract class Graph : MonoBehaviour
                //         child = new Edge(e.vertex, cost);
                //         frontier.Add(child);
                //     }
-               // }
+                }
             }
             return new List<Vertex>();
         }
