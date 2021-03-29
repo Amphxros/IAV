@@ -67,7 +67,7 @@ public abstract class Graph : MonoBehaviour
             Vertex srcV = src.GetComponent<Vertex>(); //vertice origen
             Vertex dstV = dst.GetComponent<Vertex>(); //vertice destino
 
-            List<Edge> frontier = new List<Edge>(); //cambiar esto por una estructura real
+            BinaryHeap frontier = new BinaryHeap(); //cambiar esto por una estructura real
 
 
             Edge[] edges;
@@ -76,7 +76,7 @@ public abstract class Graph : MonoBehaviour
             float[] distValue = new float[size];
             int[] previous = new int[size];
             node = new Edge(srcV, 0);
-            frontier.Add(node);
+            frontier.Add(node,0);
             distValue[srcV.id] = 0;
             previous[srcV.id] = srcV.id;
             for (int i = 0; i < size; i++)
@@ -88,29 +88,29 @@ public abstract class Graph : MonoBehaviour
             }
             while (frontier.Count != 0)
             {
-               // node = frontier.Remove();
-               //int nodeId = node.vertex.id;
-               // if (ReferenceEquals(node.vertex, dst))
-               // {
-               //     return BuildPath(src.id, node.vertex.id, ref previous);
-               // }
-               // edges = GetEdges(node.vertex);
-               //foreach (Edge e in edges)
+               node = frontier.Remove();
+               int nodeId = node.vertex.id;
+               if (ReferenceEquals(node.vertex, dst))
                 {
-               //     int eId = e.vertex.id;
-               //     if (previous[eId] != -1)
-               //         continue;
-               //     float cost = distValue[nodeId] + e.cost;
-               //     // key point
-               //     cost += h(node.vertex, e.vertex);
-               //     if (cost < distValue[e.vertex.id])
-               //     {
-               //         distValue[eId] = cost;
-               //         previous[eId] = nodeId;
-               //         frontier.Remove(e);
-               //         child = new Edge(e.vertex, cost);
-               //         frontier.Add(child);
-               //     }
+                    return BuildPath(srcV.id, node.vertex.id, ref previous);
+                }
+                edges = GetEdges(node.vertex);
+               foreach (Edge e in edges)
+                {
+                    int eId = e.vertex.id;
+                    if (previous[eId] != -1)
+                        continue;
+                    float cost = distValue[nodeId] + e.cost;
+                    // key point
+                    cost += h(node.vertex, e.vertex);
+                    if (cost < distValue[e.vertex.id])
+                    {
+                        distValue[eId] = cost;
+                        previous[eId] = nodeId;
+                        frontier.Remove(e);
+                        child = new Edge(e.vertex, cost);
+                        frontier.Add(child,0);
+                    }
                 }
             }
             return new List<Vertex>();
@@ -120,7 +120,35 @@ public abstract class Graph : MonoBehaviour
 
     private float RecursiveIDAstar(Vertex v, Vertex dst, float bound, Heuristic h, ref Vertex goal, ref bool[] visited)
     {
-        return 0.0f;
+        if (ReferenceEquals(v, dst))
+            return Mathf.Infinity;
+       
+        Edge[] edges = GetEdges(v);
+        
+        if (edges.Length == 0)
+            return Mathf.Infinity;
+        
+        float fn = Mathf.Infinity;
+        foreach (Edge e in edges)
+        {
+            int eId = e.vertex.id;
+            if (visited[eId])
+                continue;
+            visited[eId] = true;
+            e.vertex.setVertex(v);
+            float f = h(v, dst);
+            float b;
+        
+            if (f <= bound)
+            {
+                b = RecursiveIDAstar(e.vertex, dst, bound, h, ref goal, ref visited);
+                fn = Mathf.Min(f, b);
+            }
+            
+            else
+                fn = Mathf.Min(fn, f);
+        }
+        return fn;
     }
 
     //una heuristica
@@ -141,6 +169,25 @@ public abstract class Graph : MonoBehaviour
             prev = prevList[prev];
         } while (prev != srcId);
         return path;
+    }
+
+    public virtual Edge[] GetEdges(Vertex v)
+    {
+        if (ReferenceEquals(neighbors, null) || neighbors.Count == 0)
+            return new Edge[0];
+        if (v.id < 0 || v.id >= neighbors.Count)
+            return new Edge[0];
+        int numEdges = neighbors[v.id].Count;
+        Edge[] edges = new Edge[numEdges];
+        List<Vertex> vertexList = neighbors[v.id];
+        List<float> costList = costs[v.id];
+        for (int i = 0; i < numEdges; i++)
+        {
+            edges[i] = new Edge();
+            edges[i].cost = costList[i];
+            edges[i].vertex = vertexList[i];
+        }
+        return edges;
     }
 
 }
