@@ -38,6 +38,10 @@ public abstract class Graph : MonoBehaviour
     {
 
     }
+    public virtual Vertex GetNearestVertex(Vector3 position)
+    {
+        return null;
+    }
 
 
     public virtual Vertex[] getNeighbours(Vertex v)
@@ -64,8 +68,8 @@ public abstract class Graph : MonoBehaviour
         }
         else
         {
-            Vertex srcV = src.GetComponent<Vertex>(); //vertice origen
-            Vertex dstV = dst.GetComponent<Vertex>(); //vertice destino
+            Vertex srcV = GetNearestVertex(src.transform.position); //vertice origen
+            Vertex dstV = GetNearestVertex(dst.transform.position); //vertice destino
 
             BinaryHeap frontier = new BinaryHeap(); //cambiar esto por una estructura real
 
