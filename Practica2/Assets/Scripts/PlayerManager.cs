@@ -9,7 +9,8 @@ public class PlayerManager : MonoBehaviour
 
     // Esto lo deberia tener A*
     public float tamCasilla = 1.0f;
-    
+    public float timeToActiveHelp = 2.5f;
+
     private float SpaceBarPressedTime = 0.0f;
     public bool suavizado = false;
 
@@ -55,7 +56,7 @@ public class PlayerManager : MonoBehaviour
             spaceBar = false;
             Debug.Log("Deja de dibujar");
         }
-        if (SpaceBarPressedTime > 2.5f)
+        if (SpaceBarPressedTime >timeToActiveHelp)
         {
             // Manda mensaje de control automatico
             movAuto.enabled = true;
