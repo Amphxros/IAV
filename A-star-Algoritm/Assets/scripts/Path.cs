@@ -9,18 +9,27 @@ public class Path: MonoBehaviour
     private List<Node> openList;
     private List<Node> closedList;
     private Vector3 start, goal;    // Posiciones de inicio y meta del agente para calcular la heurística
-
+    GameObject src_, dst_;
+    Node start_, final_;
     private Path() { }
 
-    public Path(Grid2D g, Vector3 src, Vector3 dst)
+    public Path(Grid2D g, GameObject src, GameObject dst)
     {
         this.grid = g;
-        this.start = src;
-        this.goal = dst;
+        this.src_ = src;
+        this.dst_ = dst;
+
+        this.start = src.transform.position;
+        this.goal = dst.transform.position;
 
         openList = new List<Node>();
         closedList = new List<Node>();
-        Debug.Log("path creado" + start + goal + grid!=null);
+        Debug.Log("path creado" + start +" "+ goal +" ");
+    }
+
+    public void setPlayerPos(Vector3 v)
+    {
+        start = v;
     }
 
     public Node[] Astar()
@@ -28,8 +37,12 @@ public class Path: MonoBehaviour
         openList.Clear();
         closedList.Clear();
 
-        Node priNode = grid.FindNodeByPosition(start);
-        Node finalNode = grid.FindNodeByPosition(goal);
+        Node priNode = src_.GetComponent<ObjectNodeInGrid>().getNode();
+        Debug.Log("pri node");
+        Debug.Log(priNode != null);
+        Node finalNode = dst_.GetComponent<ObjectNodeInGrid>().getNode();
+        Debug.Log("final node");
+        Debug.Log(finalNode != null);
         if (priNode != null)
         {
             Debug.Log("primer nodo");
@@ -50,6 +63,7 @@ public class Path: MonoBehaviour
                     {
                         if (finalNode == node)
                         {
+                            Debug.Log("found da wae");
                             node.parent = edge;
                             return CreatePath(node);
                         }
@@ -83,9 +97,10 @@ public class Path: MonoBehaviour
                 node = edge;
                 Debug.Log(node.position.x + " " + node.position.z);
             }
-           return CreatePath(node); 
+
+            Debug.Log("path");
+            return CreatePath(node); 
         }
-        Debug.Log("null path");
         return null;
 
     }

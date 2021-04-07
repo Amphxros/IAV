@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Contiene el mapa de nodos y utilidades para busqueda
 [System.Serializable]
 public class Grid2D: MonoBehaviour
 {
-    public int width, height;
+    public int width, height;       // Dimensiones del mapa
     public float yHeight;
     private GameObject cas_, obs_;
     public Node[] nodes;
@@ -40,6 +41,7 @@ public class Grid2D: MonoBehaviour
 
     }
 
+    // Devuelve los nodos en las 4 direcciones
     public Node[] GetNextNeighbours(Node n) {
         var result = new Node[4];
 
@@ -74,6 +76,7 @@ public class Grid2D: MonoBehaviour
         return result;
     }
 
+    // Entrada la posición de un nodo devuelve el objeto nodo
     public Node FindNodeByPosition(Vector3 pos)
     {
         int x = (int)pos.x;
@@ -85,8 +88,8 @@ public class Grid2D: MonoBehaviour
             var cell = nodes[index];
             return cell;
         }
-
-        throw new System.Exception(string.Format("No hay nodo en  {0}", pos));
+        else
+            throw new System.Exception(string.Format("No hay nodo en  {0}", pos));
     }
    
     public void OnDrawGizmos()

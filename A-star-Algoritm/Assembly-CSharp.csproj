@@ -52,11 +52,13 @@
     <UnityVersion>2020.1.4f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\scripts\A_star_Manager.cs" />
     <Compile Include="Assets\scripts\Grid2D.cs" />
     <Compile Include="Assets\scripts\Node.cs" />
-    <Compile Include="Assets\scripts\Path.cs" />
+    <Compile Include="Assets\scripts\A_star_Manager.cs" />
     <Compile Include="Assets\scripts\Actor.cs" />
+    <Compile Include="Assets\scripts\Path.cs" />
+    <Compile Include="Assets\scripts\setNodeToObject.cs" />
+    <Compile Include="Assets\scripts\ObjectNodeInGrid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
