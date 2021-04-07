@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Grid2D
+public class Grid2D: MonoBehaviour
 {
     public int width, height;
     public float yHeight;
-
+    private GameObject cas_, obs_;
     public Node[] nodes;
 
     private Grid2D()
     {
     }
 
-    public Grid2D(int w, int h, float y)
+    public Grid2D(int w, int h, float y, GameObject cas, GameObject obs)
     {
         width = w;
         height = h;
         yHeight = y;
+        cas_ = cas;
+        obs_ = obs;
     }
 
     public void CreateGrid()
@@ -29,9 +31,9 @@ public class Grid2D
         {
             for(int j = 0; j < height; j++)
             {
-                int ind = i * height + 1;
+                int ind = i * height + j;
                 Vector3 p = new Vector3(i, yHeight, j);
-                var node = new Node(p);
+                var node = new Node(p,cas_,obs_);
                 nodes[ind] = node;
             }
         }
@@ -86,5 +88,14 @@ public class Grid2D
 
         throw new System.Exception(string.Format("No hay nodo en  {0}", pos));
     }
-
+   
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        foreach (Node nd in nodes)
+        {
+            UnityEngine.Vector3 targetPos = nd.position;
+            Gizmos.DrawSphere(targetPos, 0.5f);
+        }
+    }
 }

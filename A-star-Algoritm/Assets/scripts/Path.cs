@@ -20,6 +20,7 @@ public class Path: MonoBehaviour
 
         openList = new List<Node>();
         closedList = new List<Node>();
+        Debug.Log("path creado" + start + goal + grid!=null);
     }
 
     public Node[] Astar()
@@ -31,9 +32,11 @@ public class Path: MonoBehaviour
         Node finalNode = grid.FindNodeByPosition(goal);
         if (priNode != null)
         {
+            Debug.Log("primer nodo");
             priNode.heuristic = (goal - start).magnitude;   // Distancia en magnitud del agente a la meta
             openList.Add(priNode);
 
+            var node = priNode;
             while (openList.Count > 0)
             {
                 var edge = GetBestNode();
@@ -42,7 +45,7 @@ public class Path: MonoBehaviour
                 var vecinos = grid.GetNextNeighbours(edge);
                 for (int i = 0; i < 4; i++)
                 {
-                    var node = vecinos[i];
+                    node = vecinos[i];
                     if (vecinos != null)
                     {
                         if (finalNode == node)
@@ -77,8 +80,12 @@ public class Path: MonoBehaviour
                 {
                     closedList.Add(edge);
                 }
+                node = edge;
+                Debug.Log(node.position.x + " " + node.position.z);
             }
+           return CreatePath(node); 
         }
+        Debug.Log("null path");
         return null;
 
     }

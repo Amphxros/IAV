@@ -7,7 +7,7 @@ using UnityEngine;
 public class A_star_Manager : MonoBehaviour
 {
     public int width, height;       // Tamaño del mapa a evaluar
-    public GameObject goal;     // Punto en el que se encuentra el agente y meta
+    public GameObject goal, cas, obs;     // Punto en el que se encuentra el agente y meta
 
     private Grid2D grid;            // Red de nodos con costes y obstaculos
     public Path astar;              // Algoritmo de busqueda
@@ -19,20 +19,27 @@ public class A_star_Manager : MonoBehaviour
 
     void Awake()
     {
-        grid = new Grid2D(width, height,0);
+        grid = new Grid2D(width, height,0,cas,obs);
         a = player.GetComponent<Actor>();
     }
     void Start()
     {
         grid.CreateGrid();  // Creación inicial del mapa
         astar = new Path(grid, player.transform.position, goal.transform.position);
+
+        Debug.Log("Start");
     }
 
     void Update()
     {
         if (Input.GetKey(KeyCode.Space))
         {
+
+            Debug.Log("Astar activado");
             CreateAstarPath();
+
+            Debug.Log("Astar done");
+
         }
     }
 
@@ -41,13 +48,17 @@ public class A_star_Manager : MonoBehaviour
         var crono = new System.Diagnostics.Stopwatch();
         crono.Start();  // Timer para Debug
         n= astar.Astar();
+
+        Debug.Log("Calculando camino");
         crono.Stop();
-    
+
         if(astar!=null && n.Length > 0)
         {
             var pos = new List <UnityEngine.Vector3>();
             pos = ArrayToList(n);
             a.Move(pos.ToArray());
+
+            Debug.Log("Personaje Movido");
         }
     }
 
@@ -64,13 +75,5 @@ public class A_star_Manager : MonoBehaviour
         }
         return result;
     }
-    
-    public void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        foreach (Node nd in n){
-            UnityEngine.Vector3 targetPos = nd.position;
-            Gizmos.DrawSphere(targetPos,0.5f);
-        }
-    }
+  
 }
