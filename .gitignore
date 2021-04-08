@@ -23,6 +23,15 @@ Practica2/[Ll]ogs/
 Practica2/[Uu]ser[Ss]ettings/
 
 #Ignora archivos generados de la practica 2
+Practica2VersionBuena/[Ll]ibrary/
+Practica2VersionBuena/[Tt]emp/
+Practica2VersionBuena/[Oo]bj/
+Practica2VersionBuena/[Bb]uild/
+Practica2VersionBuena/[Bb]uilds/
+Practica2VersionBuena/[Ll]ogs/
+Practica2VersionBuena/[Uu]ser[Ss]ettings/
+
+#Ignora archivos generados de la practica 2
 A-star-Algoritm/[Ll]ibrary/
 A-star-Algoritm/[Tt]emp/
 A-star-Algoritm/[Oo]bj/
