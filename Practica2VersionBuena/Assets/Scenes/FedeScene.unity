@@ -488,8 +488,6 @@ MonoBehaviour:
   smoothPath: 0
   vertexTag: Vertex
   obstacleTag: Wall
-  materialAntes: {fileID: 2100000, guid: 1c9809277b102f04a88ff0f3b551830e, type: 2}
-  materialDespues: {fileID: 2100000, guid: ac519883e012df249b67ddd50daab77f, type: 2}
   pathColor: {r: 1, g: 0.99106956, b: 0, a: 0}
   pathNodeRadius: 1
   teseo: {fileID: 758937}
@@ -1003,6 +1001,7 @@ MonoBehaviour:
   cellSize: 1
   defaultCost: 1
   maximumCost: 10
+  player: {fileID: 758937}
 --- !u!4 &1250881723
 Transform:
   m_ObjectHideFlags: 0

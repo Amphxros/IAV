@@ -35,8 +35,8 @@ namespace UCM.IAV.Navegacion
         public bool smoothPath;
         public string vertexTag = "Vertex"; // Etiqueta de un nodo normal
         public string obstacleTag = "Wall"; // Etiqueta de un obstáculo, tipo pared...
-        public Material materialAntes;
-        public Material materialDespues;
+        //public Material materialAntes;
+        //public Material materialDespues;
         public Color pathColor;
         [Range(0.1f, 1f)]
         public float pathNodeRadius = .3f;
@@ -61,7 +61,6 @@ namespace UCM.IAV.Navegacion
             teseo.SetActive(true);
             salida.SetActive(true);
             minotauro.SetActive(true);
-            teseo.transform.position = graph.getSalida();
             salida.transform.position = graph.getSalida();
             minotauro.transform.position = new Vector3(graph.getCol() / 2 * graph.cellSize, 0, graph.getRow() / 2 * graph.cellSize);
 
@@ -104,20 +103,15 @@ namespace UCM.IAV.Navegacion
 
                 if (Input.GetKeyUp(KeyCode.Space))
                 {
-                    // Llamar a A* para que deje de dibujar
                     ShowPath(path, false);
                     SpaceBarPressedTime = 0.0f;
                     spaceBar = false;
-                    //Debug.Log("Deja de dibujar");
                     modoAutomatico = false;
-
                     teseo.GetComponent<PlayerAutomatic>().enabled = false;
                     teseo.GetComponent<PlayerMovement>().enabled = true;
-                    //Debug.Log("Cambiando a modo manual");
-
                 }
 
-                if (SpaceBarPressedTime > timeToActiveHelp )
+                if (SpaceBarPressedTime > timeToActiveHelp)
                 {
                     if (!modoAutomatico)
                     {
@@ -127,19 +121,17 @@ namespace UCM.IAV.Navegacion
                         automatic.GetPathToExit(path);
                         teseo.GetComponent<PlayerMovement>().enabled = false;
 
-                        ShowPath(path, false);
+                        ShowPath(path, true);
                        // Debug.Log("Cambiando a modo automatico");
                         modoAutomatico = true;
                     }
                 }
                 else if (SpaceBarPressedTime > 0.0f)
                 {
-
                     teseo.GetComponent<PlayerMovement>().enabled =false;
                     path = new List<Vertex>();
                     switch (algorithm)
                     {
-
                         case TesterGraphAlgorithm.ASTAR:
                             path = graph.GetPathAstar(teseo, salida, null); // Se pasa la heurística
                             break;
@@ -157,15 +149,12 @@ namespace UCM.IAV.Navegacion
                     if (smoothPath)
                         path = graph.Smooth(path); // Suavizar el camino, una vez calculado
 
-                    if (path.Count >1 )
+                    if (path.Count > 1)
                     {
                         ShowPath(path, true);
                       //  Debug.Log("Dibuja el camino de A*");
                     }
-                }             
-
-
-
+                }
             }
         }
 
@@ -237,13 +226,12 @@ namespace UCM.IAV.Navegacion
                     continue;
                 }
                 if (visible)
-                    r.material = materialDespues;
+                    r.material.color = Color.yellow;
                 else
-                    r.material = materialAntes;
+                    r.material.color = Color.black;
                 //Debug.Log("color cambiado");
             }
         }
-
 
     }
 }

@@ -20,15 +20,12 @@ public class PlayerMovement : MonoBehaviour
         playerTr = GetComponent<Transform>();
     }
 
-
     void Update()
     {
         if (timeInput < 0.0f)
         {
-
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-
                 nextPos = playerTr.position;
                 nextPos.x -= grid.cellSize;
                 col = (int)(nextPos.x / grid.cellSize);
@@ -108,8 +105,4 @@ public class PlayerMovement : MonoBehaviour
             timeInput -= Time.deltaTime;
         }
     }
-
-
-
-
 }

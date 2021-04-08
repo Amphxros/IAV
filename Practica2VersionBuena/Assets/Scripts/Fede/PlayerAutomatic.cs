@@ -29,6 +29,8 @@ public class PlayerAutomatic : MonoBehaviour
         {
             // Cambiar la posicion del player a la del vertice que sigue
             playerTr.position = path[puesto].transform.position;
+            // Despinta el vertice sobre el que ha pasado ya
+            path[puesto].GetComponentInChildren<Renderer>().material.color = Color.black;
             puesto--;
             timePass = timeToUpdate;
            // Debug.Log("automatico");

@@ -33,6 +33,8 @@ namespace UCM.IAV.Navegacion
         [Range(0, Mathf.Infinity)]
         public float maximumCost = Mathf.Infinity;
 
+        public GameObject player;
+
         int numCols;
         int numRows;
         GameObject[] vertexObjs;
@@ -97,6 +99,10 @@ namespace UCM.IAV.Navegacion
                             {
                                 salida = new Vector3(j * cellSize, 0, i * cellSize);
                             }
+                            else if (line[j] == 'P')
+                            {
+                                player.transform.position = new Vector3(j * cellSize, 0, i * cellSize);
+                            }
                             else if (line[j] != '.')
                                 isGround = false;
                             mapVertices[i, j] = isGround;
@@ -126,15 +132,10 @@ namespace UCM.IAV.Navegacion
                     {
                         for (j = 0; j < numCols; j++)
                         {
-                            SetNeighbours(j, i,get8Vicinity);
+                            SetNeighbours(j, i, get8Vicinity);
                         }
                     }
-
-
-
-
                 }
-
             }
             catch (Exception e)
             {
@@ -231,10 +232,11 @@ namespace UCM.IAV.Navegacion
                         }
                     }
                 }
-            } while (queue.Count != 0);
+            }
+            
+            while (queue.Count != 0);
+            
             return null;
         }
-
-
     }
 }
