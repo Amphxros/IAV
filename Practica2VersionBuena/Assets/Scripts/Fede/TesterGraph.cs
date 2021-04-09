@@ -18,6 +18,7 @@ namespace UCM.IAV.Navegacion
 
     using UnityEngine;
     using System.Collections.Generic;
+    using UnityEngine.SceneManagement;
 
     // Posibles algoritmos para buscar caminos en grafos
     public enum TesterGraphAlgorithm
@@ -154,6 +155,17 @@ namespace UCM.IAV.Navegacion
                         ShowPath(path, true);
                       //  Debug.Log("Dibuja el camino de A*");
                     }
+                }
+                
+                if (teseo.transform.position == salida.transform.position)
+                {
+                    teseo.SetActive(false);
+                    minotauro.SetActive(false);
+                }
+
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    SceneManager.LoadScene(0);
                 }
             }
         }
