@@ -148,13 +148,16 @@ namespace UCM.IAV.Navegacion
                             break;
                     }
                     if (smoothPath)
+                    {
                         path = graph.Smooth(path); // Suavizar el camino, una vez calculado
+                    }
 
                     if (path.Count > 1)
                     {
                         ShowPath(path, true);
-                      //  Debug.Log("Dibuja el camino de A*");
+                        //  Debug.Log("Dibuja el camino de A*");
                     }
+                    Debug.Log("Numero de nodos en el camino: " + path.Count);
                 }
                 
                 if (teseo.transform.position == salida.transform.position)

@@ -271,7 +271,6 @@ namespace UCM.IAV.Navegacion
         public List<Vertex> Smooth(List<Vertex> path)
         {
             // IMPLEMENTACIÓN DEL ALGORITMO DE SUAVIZADO
-
             List<Vertex> newPath = new List<Vertex>();
             if (path.Count == 0)
                 return newPath;

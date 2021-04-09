@@ -393,7 +393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 175}
+  m_AnchoredPosition: {x: 0, y: 185}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &246300239
@@ -1075,7 +1075,7 @@ MonoBehaviour:
   isFinished: 0
   obstaclePrefab: {fileID: 6158507562334698816, guid: fa8ac7fb30cd4774caf8306c867a7088, type: 3}
   mapsDir: Maps
-  mapName: mapa3.map
+  mapName: arena.map
   get8Vicinity: 0
   cellSize: 1
   defaultCost: 1

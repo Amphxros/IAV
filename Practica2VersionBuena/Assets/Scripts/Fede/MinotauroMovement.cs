@@ -1,106 +1,103 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UCM.IAV.Navegacion;
 using UnityEngine;
 
-public class MinotauroMovement : MonoBehaviour
+namespace UCM.IAV.Navegacion
 {
-    public float timeToUpdate =1.0f;
-    public GraphGrid graph;
-    private Transform minotauroTransform;
-    private float timeActual;
-    private Edge[] vecinos;
-    private Vertex vertActual;
-    private bool followPlayer = false;
-    public Transform playerTr;
-    private Vector3 dir;
-    int col, row;
-    void Start()
+    public class MinotauroMovement : MonoBehaviour
     {
-        minotauroTransform = GetComponent<Transform>();
-        timeActual = timeToUpdate;
-    }
+        public float timeToUpdate = 1.0f;
+        public GraphGrid graph;
+        private Transform minotauroTransform;
+        private float timeActual;
+        private Edge[] vecinos;
+        private Vertex vertActual;
+        private bool followPlayer = false;
+        public Transform playerTr;
+        private Vector3 dir;
+        int col, row;
 
-    
-    void Update()
-    {
-        if (playerTr.position.x == minotauroTransform.position.x || playerTr.position.z == minotauroTransform.position.z)
+        void Start()
         {
-
-            followPlayer = true;
-        }
-        else
-        {
-            followPlayer = false;
+            minotauroTransform = GetComponent<Transform>();
+            timeActual = timeToUpdate;
         }
 
-       
 
-        if (timeToUpdate < 0.0f )
+        void Update()
         {
-           setDamage(graph.defaultCost* 5);
-
-            if (!followPlayer)
+            if (playerTr.position.x == minotauroTransform.position.x || playerTr.position.z == minotauroTransform.position.z)
             {
-                movAleatorio();
+
+                followPlayer = true;
             }
             else
             {
-                dir = playerTr.position - minotauroTransform.position;
-                if (dir.magnitude == 1)
+                followPlayer = false;
+            }
+
+
+
+            if (timeToUpdate < 0.0f)
+            {
+                setDamage(graph.defaultCost);
+                if (!followPlayer)
                 {
-                    if (vecinos[0].vertex.transform.position == playerTr.position)
-                    {
-                        int ran = Random.Range(1, vecinos.Length);
-                        minotauroTransform.position = vecinos[ran].vertex.transform.position;
-                    }
-                    else 
-                        minotauroTransform.position= vecinos[0].vertex.transform.position;
+                    movAleatorio();
                 }
                 else
                 {
-                    dir /= dir.magnitude;
-                    col = (int)((transform.position + dir).x / graph.cellSize);
-                    row = (int)((transform.position + dir).z / graph.cellSize);
-                    if (graph.getVertexById(graph.GridToId(col, row)).tag == "Wall")
+                    dir = playerTr.position - minotauroTransform.position;
+                    if (dir.magnitude == 1)
                     {
-                        followPlayer = false;
-                        movAleatorio();
+                        if (vecinos[0].vertex.transform.position == playerTr.position)
+                        {
+                            int ran = Random.Range(1, vecinos.Length);
+                            minotauroTransform.position = vecinos[ran].vertex.transform.position;
+                        }
+                        else
+                            minotauroTransform.position = vecinos[0].vertex.transform.position;
                     }
                     else
                     {
-                        minotauroTransform.position = graph.getVertexById(graph.GridToId(col, row)).transform.position;
+                        dir /= dir.magnitude;
+                        col = (int)((transform.position + dir).x / graph.cellSize);
+                        row = (int)((transform.position + dir).z / graph.cellSize);
+                        if (graph.getVertexById(graph.GridToId(col, row)).tag == "Wall")
+                        {
+                            followPlayer = false;
+                            movAleatorio();
+                        }
+                        else
+                        {
+                            minotauroTransform.position = graph.getVertexById(graph.GridToId(col, row)).transform.position;
+                        }
                     }
                 }
+                timeToUpdate = timeActual;
+                setDamage(graph.defaultCost * 5);
             }
-            timeToUpdate = timeActual;
-            setDamage(graph.defaultCost * 5);
+            else
+            {
+                timeToUpdate -= Time.deltaTime;
+            }
         }
-        else
+
+        void setDamage(float damage)
         {
-            timeToUpdate -= Time.deltaTime;
+            vertActual = graph.GetNearestVertex(minotauroTransform.position);
+            vecinos = graph.GetEdges(vertActual);
+
+            for (int i = 0; i < vecinos.Length; i++)
+            {
+                vecinos[i].cost = damage;
+            }
         }
-    }
 
-    void setDamage(float damage)
-    {
-        vertActual = graph.GetNearestVertex(minotauroTransform.position);
-        vecinos = graph.GetEdges(vertActual);
-
-        for (int i = 0; i < vecinos.Length; i++)
+        void movAleatorio()
         {
-            vecinos[i].cost = damage;
+            int ran = Random.Range(0, vecinos.Length);
+            transform.position = vecinos[ran].vertex.transform.position;
         }
-        
-
     }
-
-    void movAleatorio()
-    {
-
-        int ran = Random.Range(0, vecinos.Length);
-        transform.position = vecinos[ran].vertex.transform.position;
-    }
-
-    
 }
