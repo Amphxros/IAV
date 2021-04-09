@@ -38,7 +38,7 @@ public class MinotauroMovement : MonoBehaviour
 
         if (timeToUpdate < 0.0f )
         {
-           setDamage(graph.defaultCost);
+           setDamage(graph.defaultCost* 5);
 
             if (!followPlayer)
             {
