@@ -4,6 +4,8 @@ Proyecto realizado por el grupo 10 de la asignatura de IAV del año 2020/2021 co
 |Amparo Rubio Bellón | Marcos Llinares Montes | Alejandro Plázer Arnaz | Liyuan Li |Jorge Zurdo Izquierdo|
 |--|--|--|--|--|
 
+[Repositorio](https://github.com/amprubio/IAV-G10/)
+
 El prototipo muestra la implementación del algoritmo de pathfinding conocido como A* (A-estrella o A-star)
 
 * Teseo contará con controles de dirección en manos del usuario y podrá usar el hilo de Ariadna, cuando el jugador mantenga pulsado el espacio Teseo activará su pathfinding hasta la salida representando el camino visualmente como si fuese el hilo.
