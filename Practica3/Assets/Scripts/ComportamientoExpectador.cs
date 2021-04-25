@@ -1,40 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace UCM.IAV.Movimiento
 {
     public class ComportamientoExpectador : MonoBehaviour
     {
+        public GameObject destination;
+        NavMeshAgent navmeshAgent;
+        bool moving = false;
         bool huir = false;
+        Vector3 origPosition;
 
-        // Si una lampara se cae los expectadores huiran
-        public void LamparaCaida()
+        private void Start()
         {
-            huir = true;
-        }
-
-        public void LamparaReparada()
-        {
-            huir = false;
+            navmeshAgent = GetComponent<NavMeshAgent>();
+            origPosition = transform.position;
         }
 
         // Update is called once per frame
         void Update()
         {
-            //Si estan huyendo, los expectadores saldran del palco al patio. Caso contrario regresaran
-            if (huir)
+            if (moving)
             {
-                if (transform.position.z >= -25)
-                    transform.Translate(new Vector3(0, 0, -0.2f));
-            }
-            else
-            {
-                if (transform.position.z <= -12.7f)
+                if (huir)
                 {
-                    transform.Translate(new Vector3(0, 0, 0.2f));
+                    navmeshAgent.destination = destination.transform.position;
                 }
+                else navmeshAgent.destination = origPosition;
             }
+            if (transform.position == navmeshAgent.destination) moving = false;
+        }
+
+        void ExpectadorHuye()
+        {
+            moving = true;
+            huir = !huir;
         }
     }
 }
