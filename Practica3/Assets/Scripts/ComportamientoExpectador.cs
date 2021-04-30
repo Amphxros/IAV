@@ -7,36 +7,34 @@ namespace UCM.IAV.Movimiento
 {
     public class ComportamientoExpectador : MonoBehaviour
     {
-        public GameObject destination;
-        NavMeshAgent navmeshAgent;
-        bool moving = false;
-        bool huir = false;
-        Vector3 origPosition;
+        bool escapar;
 
         private void Start()
         {
-            navmeshAgent = GetComponent<NavMeshAgent>();
-            origPosition = transform.position;
+            escapar = false;
         }
 
-        // Update is called once per frame
         void Update()
         {
-            if (moving)
+            if (escapar)
             {
-                if (huir)
+                if (transform.position.z != -73f)
                 {
-                    navmeshAgent.destination = destination.transform.position;
+                    transform.Translate(new Vector3(0, 0, -0.2f));
                 }
-                else navmeshAgent.destination = origPosition;
             }
-            if (transform.position == navmeshAgent.destination) moving = false;
+            else
+            {
+                if (transform.position.z != -56f)
+                {
+                    transform.Translate(new Vector3(0, 0, 0.2f));
+                }
+            }
         }
 
-        void ExpectadorHuye()
+        public void Actualizar()
         {
-            moving = true;
-            huir = !huir;
+            escapar = !escapar;
         }
     }
 }
