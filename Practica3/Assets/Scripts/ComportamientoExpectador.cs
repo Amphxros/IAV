@@ -7,28 +7,30 @@ namespace UCM.IAV.Movimiento
 {
     public class ComportamientoExpectador : MonoBehaviour
     {
+        public GameObject patio;
+        Vector3 posIni;
         bool escapar;
+
+        NavMeshAgent agent;
 
         private void Start()
         {
             escapar = false;
+            posIni = transform.position;
+            agent = GetComponent<NavMeshAgent>();
+            agent.destination = posIni;
+            agent.enabled = true;
         }
 
         void Update()
         {
             if (escapar)
             {
-                if (transform.position.z != -73f)
-                {
-                    transform.Translate(new Vector3(0, 0, -0.2f));
-                }
+                agent.destination = patio.transform.position;
             }
             else
             {
-                if (transform.position.z != -56f)
-                {
-                    transform.Translate(new Vector3(0, 0, 0.2f));
-                }
+                agent.destination = posIni;
             }
         }
 

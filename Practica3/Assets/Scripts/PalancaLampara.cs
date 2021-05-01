@@ -11,7 +11,6 @@ public class PalancaLampara : MonoBehaviour
     {
         if (col.gameObject.tag == "Fantasma")
         {
-            Debug.Log("Entra");
             Izquierda.Caer();
             Derecha.Caer();
         }
