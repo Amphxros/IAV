@@ -593,6 +593,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\GameObject\FindWithTag.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\GetTime.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Behaviour\SetEnabled.cs" />
+    <Compile Include="Assets\Scripts\Interactuar.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />
