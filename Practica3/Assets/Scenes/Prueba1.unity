@@ -228,7 +228,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.29
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
@@ -432,7 +432,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a5960e5dd76d8014a8c8c875c35c0746,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.33
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a5960e5dd76d8014a8c8c875c35c0746,
         type: 3}
@@ -462,7 +462,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a5960e5dd76d8014a8c8c875c35c0746,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a5960e5dd76d8014a8c8c875c35c0746,
         type: 3}
@@ -493,6 +493,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wallWood
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5960e5dd76d8014a8c8c875c35c0746,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5960e5dd76d8014a8c8c875c35c0746, type: 3}
@@ -541,7 +546,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 31c9c308b28142f45847f9058adb33a8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31c9c308b28142f45847f9058adb33a8,
         type: 3}
@@ -781,103 +786,13 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 35315881362c3f04a9b80c0178a71c05, type: 3}
---- !u!1001 &71343051
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 637977430}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
+    - target: {fileID: 919132149155446097, guid: 35315881362c3f04a9b80c0178a71c05,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.919
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.248
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_RootOrder
+      propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3212976540736961966, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: -1696546888734786457, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -1696546888734786457, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.3675
-      objectReference: {fileID: 0}
-    - target: {fileID: -1696546888734786457, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.7351034
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_Name
-      value: planksHalf
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 511c9700f3adac743913140d37ad3904, type: 3}
---- !u!4 &71343052 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-    type: 3}
-  m_PrefabInstance: {fileID: 71343051}
-  m_PrefabAsset: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 35315881362c3f04a9b80c0178a71c05, type: 3}
 --- !u!1 &75946269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa9179ba5508a2b44901f03766dc3f62,
@@ -960,7 +875,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
@@ -1867,7 +1782,7 @@ PrefabInstance:
     - target: {fileID: 521256764599757161, guid: 2775b336b39cf6942a29e6941ca31084,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.86800003
+      value: 0.712
       objectReference: {fileID: 0}
     - target: {fileID: 521256764599757161, guid: 2775b336b39cf6942a29e6941ca31084,
         type: 3}
@@ -2565,7 +2480,7 @@ PrefabInstance:
     - target: {fileID: 521256764599757161, guid: 2775b336b39cf6942a29e6941ca31084,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.86800003
+      value: 0.712
       objectReference: {fileID: 0}
     - target: {fileID: 521256764599757161, guid: 2775b336b39cf6942a29e6941ca31084,
         type: 3}
@@ -2629,91 +2544,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 521256764599757161, guid: 2775b336b39cf6942a29e6941ca31084,
     type: 3}
   m_PrefabInstance: {fileID: 246302081}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &264548077
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 637977430}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.389
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.283
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3212976540736961966, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: -1696546888734786457, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_Name
-      value: planksHalf (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 511c9700f3adac743913140d37ad3904, type: 3}
---- !u!4 &264548078 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-    type: 3}
-  m_PrefabInstance: {fileID: 264548077}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &268219999
 PrefabInstance:
@@ -3940,6 +3770,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 35315881362c3f04a9b80c0178a71c05,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35315881362c3f04a9b80c0178a71c05, type: 3}
 --- !u!1001 &394382194
@@ -4884,7 +4719,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.053333364
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
         type: 3}
@@ -4964,6 +4799,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 477221070}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &484221662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 484221663}
+  m_Layer: 0
+  m_Name: NavMesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &484221663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484221662}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &484731993 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa9179ba5508a2b44901f03766dc3f62,
@@ -5435,7 +5300,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ba6a114e033f63e469ec49851d5c6ad9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0969
+      value: 0.109
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ba6a114e033f63e469ec49851d5c6ad9,
         type: 3}
@@ -5445,7 +5310,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ba6a114e033f63e469ec49851d5c6ad9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.0288
+      value: 1.029
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ba6a114e033f63e469ec49851d5c6ad9,
         type: 3}
@@ -5490,7 +5355,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ba6a114e033f63e469ec49851d5c6ad9,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.18619768
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ba6a114e033f63e469ec49851d5c6ad9,
         type: 3}
@@ -5669,7 +5534,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
         type: 3}
@@ -5857,7 +5722,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
@@ -5977,7 +5842,7 @@ PrefabInstance:
     - target: {fileID: 521256764599757161, guid: 2775b336b39cf6942a29e6941ca31084,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.86800003
+      value: 0.712
       objectReference: {fileID: 0}
     - target: {fileID: 521256764599757161, guid: 2775b336b39cf6942a29e6941ca31084,
         type: 3}
@@ -6057,7 +5922,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a5960e5dd76d8014a8c8c875c35c0746,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a5960e5dd76d8014a8c8c875c35c0746,
         type: 3}
@@ -6087,7 +5952,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a5960e5dd76d8014a8c8c875c35c0746,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a5960e5dd76d8014a8c8c875c35c0746,
         type: 3}
@@ -6118,6 +5983,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wallWood (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5960e5dd76d8014a8c8c875c35c0746,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5960e5dd76d8014a8c8c875c35c0746, type: 3}
@@ -6619,6 +6489,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: wallDoorwayRound
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cf512f64a0588048bfd2860282680b3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cf512f64a0588048bfd2860282680b3,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cf512f64a0588048bfd2860282680b3, type: 3}
 --- !u!4 &609963337 stripped
@@ -6829,13 +6709,11 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children:
   - {fileID: 1399976418}
-  - {fileID: 71343052}
-  - {fileID: 264548078}
-  - {fileID: 2124407332}
   - {fileID: 1423351846}
   - {fileID: 1338101226}
   - {fileID: 524593964}
   - {fileID: 37591555}
+  - {fileID: 2117851766}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -7533,6 +7411,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d190fcb5071c2ef4b90cd5865b21bcd9,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d190fcb5071c2ef4b90cd5865b21bcd9, type: 3}
 --- !u!4 &710855444 stripped
@@ -7749,6 +7632,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: wallWood (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5960e5dd76d8014a8c8c875c35c0746,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5960e5dd76d8014a8c8c875c35c0746,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5960e5dd76d8014a8c8c875c35c0746, type: 3}
 --- !u!4 &725970766 stripped
@@ -7867,6 +7760,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d190fcb5071c2ef4b90cd5865b21bcd9,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d190fcb5071c2ef4b90cd5865b21bcd9, type: 3}
@@ -8787,6 +8685,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: wallWood
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5960e5dd76d8014a8c8c875c35c0746,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5960e5dd76d8014a8c8c875c35c0746,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5960e5dd76d8014a8c8c875c35c0746, type: 3}
 --- !u!1 &772018774
@@ -9231,7 +9139,7 @@ PrefabInstance:
     - target: {fileID: 521256764599757161, guid: 2775b336b39cf6942a29e6941ca31084,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.86800003
+      value: 0.712
       objectReference: {fileID: 0}
     - target: {fileID: 521256764599757161, guid: 2775b336b39cf6942a29e6941ca31084,
         type: 3}
@@ -9942,7 +9850,7 @@ PrefabInstance:
     - target: {fileID: 521256764599757161, guid: 2775b336b39cf6942a29e6941ca31084,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.86800003
+      value: 0.712
       objectReference: {fileID: 0}
     - target: {fileID: 521256764599757161, guid: 2775b336b39cf6942a29e6941ca31084,
         type: 3}
@@ -11471,7 +11379,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.71333337
+      value: 0.704
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
         type: 3}
@@ -11636,36 +11544,39 @@ MonoBehaviour:
         Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"Calmado","IsShared":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(67.79602,104.128784)"},"ID":4,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":0},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-153.475708,95.19141)","Comment":"Si
         escucha a la diva\ncantar, se dirige\na buscarla a las\nbambalinas"},"ID":5,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-144.78009,103.887085)","Comment":"La
         diva est\u00e1 cantando"},"ID":6,"Name":"Compare Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaCantando","IsShared":true,"IsGlobal":true,"BooleanmValue":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(-44.7801132,200.62619)","Comment":"El
-        fantasma deja\nde estar calmado"},"ID":7,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"Calmado","IsShared":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(42.083992,320.769531)"},"ID":8,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":1},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(117.504883,200.094269)","Comment":"Ve
-        a la diva"},"ID":9,"Name":"Can See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":2},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1000},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(124.27179,98.12846)","Comment":"Si
+        fantasma deja\nde estar calmado"},"ID":7,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"Calmado","IsShared":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(42.083992,320.769531)","Comment":"Va
+        a las Bambalinas"},"ID":8,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":1},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(117.504883,200.094269)","Comment":"Ve
+        a la diva"},"ID":9,"Name":"Can See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":2},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":360},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":4},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":3}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(124.27179,98.12846)","Comment":"Si
         no encuentra a la diva\nen las bambalinas despeja\nel escenario y la busca\nah\u00ed"},"ID":10,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-26.3665161,95.14978)","Comment":"Regresa
-        a la sala\nde m\u00fasica"},"ID":11,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":3},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.ReturnSuccess","NodeData":{"Offset":"(114.68457,103.766785)"},"ID":12,"Name":"Return
+        a la sala\nde m\u00fasica"},"ID":11,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":4},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.ReturnSuccess","NodeData":{"Offset":"(114.68457,103.766785)"},"ID":12,"Name":"Return
         Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,100)","Comment":"Si
-        el p\u00fablico sigue\nen las butacas tira\nlas l\u00e1mparas"},"ID":13,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-111.31543,110.766785)"},"ID":14,"Name":"Compare
-        Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"LamparasCaidas","IsShared":true,"IsGlobal":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(16.4079742,107.766785)"},"ID":15,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":4},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(133.840149,114.460449)"},"ID":16,"Name":"Set
-        Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"LamparasCaidas","IsShared":true,"IsGlobal":true,"BooleanmValue":false}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(244.036682,104.612152)","Comment":"Va
-        al escenario"},"ID":17,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":5},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(373.833923,98.9278259)","Comment":"Ve
-        a la diva"},"ID":18,"Name":"Can See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":6},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1000},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(641.0586,100.221893)"},"ID":19,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(4.04797363,101.190552)","Comment":"Si
-        el p\u00fablico sigue\nen las butacas tira\nlas l\u00e1mparas"},"ID":20,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-114.5238,112.61908)"},"ID":21,"Name":"Compare
-        Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"LamparasCaidas","IsShared":true,"IsGlobal":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-23.34731,200.854309)"},"ID":22,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":7},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(48.77722,111.479309)"},"ID":23,"Name":"Set
-        Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"LamparasCaidas","IsShared":true,"IsGlobal":true,"BooleanmValue":false}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.RandomSelector","NodeData":{"Offset":"(374.382263,96.24762)","Comment":"Busca
+        el p\u00fablico sigue\nen las butacas tira\nlas l\u00e1mparas"},"ID":13,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-111.31543,110.766785)","Comment":"Comprueba
+        si las lamparas estan en pie"},"ID":14,"Name":"Compare Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"LamparasCaidas","IsShared":true,"IsGlobal":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(26.4079742,237.766785)","Comment":"Busca
+        la palanca"},"ID":15,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":5},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(133.840149,114.460449)","Comment":"Pone
+        las lamparas en caido"},"ID":16,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"LamparasCaidas","IsShared":true,"IsGlobal":true,"BooleanmValue":false}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(244.036682,104.612152)","Comment":"Va
+        al escenario"},"ID":17,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":6},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(373.833923,98.9278259)","Comment":"Ve
+        a la diva"},"ID":18,"Name":"Can See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":7},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":360},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":4},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":8}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(641.0586,100.221893)"},"ID":19,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(4.04797363,101.190552)","Comment":"Si
+        el p\u00fablico sigue\nen las butacas tira\nlas l\u00e1mparas"},"ID":20,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-114.5238,112.61908)","Comment":"Comprueba
+        el publico"},"ID":21,"Name":"Compare Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"LamparasCaidas","IsShared":true,"IsGlobal":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-23.34731,200.854309)","Comment":"Busca
+        Palanca"},"ID":22,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":9},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(48.77722,111.479309)","Comment":"Pone
+        Lamparas caidas"},"ID":23,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"LamparasCaidas","IsShared":true,"IsGlobal":true,"BooleanmValue":false}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.RandomSelector","NodeData":{"Offset":"(374.382263,96.24762)","Comment":"Busca
         a la diva en\nlas salas del teatro\naleatoriamente"},"ID":24,"Name":"Random
         Selector","Instant":true,"Int32seed":0,"BooleanuseSeed":false,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-104.383545,105.164337)","Comment":"En
-        el palco\noeste"},"ID":25,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-73.10034,98.95599)"},"ID":26,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":8},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(46.89966,98.95599)"},"ID":27,"Name":"Can
-        See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":9},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1000},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(143.404541,109.361664)","Comment":"En
-        el palco\neste"},"ID":28,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-71.0636,98.72339)"},"ID":29,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":10},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(48.9364,98.72339)"},"ID":30,"Name":"Can
-        See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":11},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1000},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(377.447266,109.361664)","Comment":"En
-        el s\u00f3tano\noeste"},"ID":31,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-71.0636,98.72339)"},"ID":32,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":12},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(48.9364,98.72339)"},"ID":33,"Name":"Can
-        See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":13},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1000},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(620,113)","Comment":"En
-        el s\u00f3tano\neste"},"ID":34,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-70,103)"},"ID":35,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":14},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(50,103)"},"ID":36,"Name":"Can
-        See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":15},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1000},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(855.5554,109.999969)","Comment":"En
-        las butacas"},"ID":37,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-70,100)"},"ID":38,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":16},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(50,100)"},"ID":39,"Name":"Can
-        See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":17},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1000},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}}]}]}]}]},"DetachedTasks":[{"Type":"BehaviorDesigner.Runtime.Tasks.ReturnFailure","NodeData":{"Offset":"(-800,260)"},"ID":40,"Name":"Return
+        el palco\noeste"},"ID":25,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-73.10034,98.95599)"},"ID":26,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":10},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(46.89966,98.95599)"},"ID":27,"Name":"Can
+        See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":11},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1000},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(143.404541,109.361664)","Comment":"En
+        el palco\neste"},"ID":28,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-71.0636,98.72339)"},"ID":29,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":12},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(48.9364,98.72339)"},"ID":30,"Name":"Can
+        See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":13},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1000},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(377.447266,109.361664)","Comment":"En
+        el s\u00f3tano\noeste"},"ID":31,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-71.0636,98.72339)"},"ID":32,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":14},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(48.9364,98.72339)"},"ID":33,"Name":"Can
+        See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":15},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1000},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(620,113)","Comment":"En
+        el s\u00f3tano\neste"},"ID":34,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-70,103)"},"ID":35,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":16},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(50,103)"},"ID":36,"Name":"Can
+        See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":17},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1000},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(855.5554,109.999969)","Comment":"En
+        las butacas"},"ID":37,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-70,100)"},"ID":38,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":18},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(50,100)"},"ID":39,"Name":"Can
+        See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":19},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1000},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}}]}]}]}]},"DetachedTasks":[{"Type":"BehaviorDesigner.Runtime.Tasks.ReturnFailure","NodeData":{"Offset":"(-800,260)"},"ID":40,"Name":"Return
         Failure","Instant":true,"Disabled":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,120)"},"ID":41,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-76.69046,105.230347)"},"ID":42,"Name":"Compare
         Shared Bool","Instant":true,"Disabled":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaEncarcelada","IsShared":true,"IsGlobal":true,"BooleanmValue":false},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(77.22424,112.285889)"},"ID":43,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-61.7757568,98.28589)"},"ID":44,"Name":"Compare
-        Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"LamparaCaida","IsShared":true,"IsGlobal":true,"BooleanmValue":false},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(88.22424,98.28589)"},"ID":45,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":18},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(256.5,109)"},"ID":46,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":19},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(402.7549,281.713867)"},"ID":47,"Name":"seek","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaInmovilizada","IsShared":true,"IsGlobal":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(523.864136,277.7466)"},"ID":48,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":20},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(651.8844,280.9245)"},"ID":49,"Name":"Set
+        Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"LamparaCaida","IsShared":true,"IsGlobal":true,"BooleanmValue":false},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(88.22424,98.28589)"},"ID":45,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":20},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(256.5,109)"},"ID":46,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":21},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(402.7549,281.713867)"},"ID":47,"Name":"seek","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaInmovilizada","IsShared":true,"IsGlobal":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(523.864136,277.7466)"},"ID":48,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":22},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(651.8844,280.9245)"},"ID":49,"Name":"Set
         Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaEncarcelada","IsShared":true,"IsGlobal":true,"BooleanmValue":false}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(-660,240)"},"ID":50,"Name":"Idle","Instant":true,"Disabled":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-980,240)"},"ID":51,"Name":"Sequence","Instant":true,"Disabled":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(-93.93947,110)"},"ID":52,"Name":"Can
-        See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":21},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":45},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":30},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"\u0004\u0000\u0000\u0000Seek\u0001\u0000\u0000\u0000\ufffdB\u0000\u0000\ufffdB"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(50.719677,110)"},"ID":53,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1.5},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":22},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}}]}],"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"Calmado","IsShared":true,"BooleanmValue":false}]}'
+        See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":23},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":45},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":30},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"\u0004\u0000\u0000\u0000Seek\u0001\u0000\u0000\u0000\ufffdB\u0000\u0000\ufffdB"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(50.719677,110)"},"ID":53,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1.5},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":24},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}}]}],"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"Calmado","IsShared":true,"BooleanmValue":false}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -11675,9 +11586,11 @@ MonoBehaviour:
         - {fileID: 744614961}
         - {fileID: 1731155060}
         - {fileID: 2093407620}
+        - {fileID: 2093407620}
         - {fileID: 744614961}
         - {fileID: 1057751882}
         - {fileID: 822354184}
+        - {fileID: 2093407620}
         - {fileID: 2093407620}
         - {fileID: 1057751882}
         - {fileID: 512245286}
@@ -11779,7 +11692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024487237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 70.49633, y: 93.371506, z: 2.4902}
+  m_LocalPosition: {x: 89.87, y: 93.371506, z: -43.35}
   m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children:
   - {fileID: 807865368}
@@ -12009,6 +11922,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d190fcb5071c2ef4b90cd5865b21bcd9,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d190fcb5071c2ef4b90cd5865b21bcd9, type: 3}
 --- !u!1 &1080235855 stripped
@@ -12091,7 +12009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"nest":{"source":"Embed","macro":null,"embed":{"title":"Behavior","summary":null,"pan":{"x":0.0,"y":0.0},"zoom":1.0,"elements":[{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Start","summary":null,"pan":{"x":0.0,"y":0.0},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-205.0,"y":-215.0},"guid":"324d4968-bf29-4a72-bef1-6baf023478c3","$version":"A","$type":"Bolt.OnEnterState"},{"coroutine":false,"defaultValues":{},"position":{"x":-161.0,"y":-38.0},"guid":"e3e6c4cb-de49-428c-b4fd-6fe7efda4312","$version":"A","$type":"Bolt.Update"},{"coroutine":false,"defaultValues":{},"position":{"x":-205.0,"y":145.0},"guid":"6dd02d19-8e85-44fb-ae79-22a6665797e5","$version":"A","$type":"Bolt.OnExitState"}],"$version":"A"}},"isStart":true,"position":{"x":-281.0,"y":-112.0},"width":170.0,"guid":"b9ac9700-24ca-4954-9ed2-23ab8fc9e46f","$version":"A","$type":"Bolt.FlowState","$id":"4"},{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":0.0,"y":0.0},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-241.0,"y":-246.0},"guid":"7fa7a1ff-7665-4957-b9a4-16e9e79f60a4","$version":"A","$type":"Bolt.OnEnterState","$id":"30"},{"coroutine":false,"defaultValues":{},"position":{"x":-144.0,"y":4.0},"guid":"04420879-f5b8-4d8d-86dd-270261796d83","$version":"A","$type":"Bolt.Update"},{"chainable":false,"member":{"name":"SetDestination","parameterTypes":["UnityEngine.Vector3"],"targetType":"UnityEngine.AI.NavMeshAgent","targetTypeName":"UnityEngine.AI.NavMeshAgent","$version":"A"},"defaultValues":{"target":null,"%target":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"}},"position":{"x":139.0,"y":-213.0},"guid":"62dbd6e0-06c7-4d92-b933-1a47caf13f60","$version":"A","$type":"Bolt.InvokeMember","$id":"34"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Target","$type":"System.String"},"object":null},"position":{"x":-386.0,"y":-110.0},"guid":"944fc470-e1b3-4262-8fd3-ac6a35702a3f","$version":"A","$type":"Bolt.GetVariable","$id":"37"},{"member":{"name":"position","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null},"position":{"x":-132.0,"y":-136.0},"guid":"5bbfead6-4ac2-4acd-9cc9-266f788ccdc7","$version":"A","$type":"Bolt.GetMember","$id":"39"},{"chainable":false,"member":{"name":"Move","parameterTypes":["UnityEngine.Vector3"],"targetType":"UnityEngine.AI.NavMeshAgent","targetTypeName":"UnityEngine.AI.NavMeshAgent","$version":"A"},"defaultValues":{"target":null,"%offset":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"}},"position":{"x":100.0,"y":-16.0},"guid":"210c5b4d-5cda-4791-bd34-3b9ed6c301be","$version":"A","$type":"Bolt.InvokeMember"},{"sourceUnit":{"$ref":"30"},"sourceKey":"trigger","destinationUnit":{"$ref":"34"},"destinationKey":"enter","guid":"6f75eb67-bb54-4783-98e0-5fe7aed59a45","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"37"},"sourceKey":"value","destinationUnit":{"$ref":"39"},"destinationKey":"target","guid":"7bdd6b32-9c78-415d-a3c6-ca275957e00b","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"39"},"sourceKey":"value","destinationUnit":{"$ref":"34"},"destinationKey":"%target","guid":"cd5b983f-1ff2-4a16-8bff-b6352ac52bb6","$type":"Bolt.ValueConnection"}],"$version":"A"}},"isStart":false,"position":{"x":174.0,"y":-101.0},"width":170.0,"guid":"263fc304-6bcf-442f-add2-9c807202d5d4","$version":"A","$type":"Bolt.FlowState","$id":"20"},{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":22.40934,"y":0.0},"zoom":1.0,"elements":[{"defaultValues":{},"position":{"x":400.0,"y":90.0},"guid":"66922e84-501c-4ea9-81bb-2be5b4782988","$version":"A","$type":"Bolt.TriggerStateTransition","$id":"58"},{"defaultValues":{},"position":{"x":28.0,"y":-198.0},"guid":"d44ff7e0-f65e-417c-8ad0-bf1579b5174d","$version":"A","$type":"Bolt.Vector3Distance","$id":"60"},{"defaultValues":{},"position":{"x":-384.0,"y":-191.0},"guid":"eaaff675-f9aa-47c2-a52c-b86d92c684df","$version":"A","$type":"Bolt.Self","$id":"62"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Target","$type":"System.String"},"object":null},"position":{"x":-369.0,"y":-84.0},"guid":"b932ac34-9d3c-4c33-9ce5-510f8cdf19e9","$version":"A","$type":"Bolt.GetVariable","$id":"64"},{"coroutine":false,"defaultValues":{},"position":{"x":198.0,"y":-265.0},"guid":"5301efb4-0ab3-4406-b6ff-0fa0fac5e9e9","$version":"A","$type":"Bolt.Update","$id":"66"},{"member":{"name":"position","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null},"position":{"x":-161.0,"y":-228.0},"guid":"f4ddffb3-0cb4-4054-8ea8-e0942aafd3fa","$version":"A","$type":"Bolt.GetMember","$id":"68"},{"numeric":true,"defaultValues":{"b":{"$content":0.0,"$type":"System.Single"}},"position":{"x":258.0,"y":-170.0},"guid":"b65f0b22-c995-4f0b-b26b-442372f96a31","$version":"A","$type":"Bolt.LessOrEqual","$id":"71"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Distance","$type":"System.String"},"object":null},"position":{"x":-38.0,"y":-30.0},"guid":"d1b10efb-df88-46fc-9318-f2f1aa598810","$version":"A","$type":"Bolt.GetVariable","$id":"73"},{"defaultValues":{},"position":{"x":410.0,"y":-267.0},"guid":"0a4b9dd5-6af6-4cb6-8d22-5748de6f8092","$version":"A","$type":"Bolt.Branch","$id":"75"},{"member":{"name":"position","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null},"position":{"x":-165.0,"y":-121.0},"guid":"6871a326-84e2-4930-b27e-3502df9a3472","$version":"A","$type":"Bolt.GetMember","$id":"77"},{"sourceUnit":{"$ref":"75"},"sourceKey":"ifTrue","destinationUnit":{"$ref":"58"},"destinationKey":"trigger","guid":"0281e68b-37b0-428d-82f9-98c5ce9034d9","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"66"},"sourceKey":"trigger","destinationUnit":{"$ref":"75"},"destinationKey":"enter","guid":"190e4703-1d4d-4e71-b7a4-aed193dbcd32","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"60"},"sourceKey":"distance","destinationUnit":{"$ref":"71"},"destinationKey":"a","guid":"56c80a03-157c-4ea8-a319-a28c1be81366","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"73"},"sourceKey":"value","destinationUnit":{"$ref":"71"},"destinationKey":"b","guid":"4633e5a5-3662-45a3-b1ab-b47397371346","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"62"},"sourceKey":"self","destinationUnit":{"$ref":"68"},"destinationKey":"target","guid":"fd5b0218-799f-4e49-967e-bc0a1b245b6f","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"68"},"sourceKey":"value","destinationUnit":{"$ref":"60"},"destinationKey":"a","guid":"2aa4e82e-d236-4fcc-a0f4-8c833a4791e8","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"64"},"sourceKey":"value","destinationUnit":{"$ref":"77"},"destinationKey":"target","guid":"90168cc2-972c-4f3a-9e37-cb2fa619558c","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"77"},"sourceKey":"value","destinationUnit":{"$ref":"60"},"destinationKey":"b","guid":"7bf08494-5cda-4463-b892-982ecc801afd","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"71"},"sourceKey":"comparison","destinationUnit":{"$ref":"75"},"destinationKey":"condition","guid":"5bf024b0-024a-4fa7-ba2a-61cd031abc7c","$type":"Bolt.ValueConnection"}],"$version":"A"}},"source":{"$ref":"4"},"destination":{"$ref":"20"},"guid":"23d6a7f4-4ff4-4919-ae95-6bd13ad1b61f","$version":"A","$type":"Bolt.FlowStateTransition"},{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":0.0,"y":0.0},"zoom":1.0,"elements":[{"defaultValues":{},"position":{"x":314.0,"y":140.0},"guid":"acf8b643-4c9a-4ceb-8d8b-2bce826ce1fb","$version":"A","$type":"Bolt.TriggerStateTransition","$id":"99"},{"defaultValues":{},"position":{"x":-58.0,"y":-148.0},"guid":"bdbb5e1a-5eb6-489c-bc07-236b3ed1e362","$version":"A","$type":"Bolt.Vector3Distance","$id":"101"},{"defaultValues":{},"position":{"x":-470.0,"y":-142.0},"guid":"b357fa1a-395a-4a77-8af8-2652f23f4a6d","$version":"A","$type":"Bolt.Self","$id":"103"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Target","$type":"System.String"},"object":null},"position":{"x":-454.0,"y":-34.0},"guid":"1241a17a-2265-4bcb-a9a1-8a27b94c67d0","$version":"A","$type":"Bolt.GetVariable","$id":"105"},{"numeric":true,"defaultValues":{"b":{"$content":0.0,"$type":"System.Single"}},"position":{"x":170.0,"y":-97.0},"guid":"6994a336-3502-4734-b2f6-3480e8862ac3","$version":"A","$type":"Bolt.Greater","$id":"107"},{"member":{"name":"position","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null},"position":{"x":-246.0,"y":-178.0},"guid":"d0029997-0ffe-4402-a73d-dafe7068709b","$version":"A","$type":"Bolt.GetMember","$id":"109"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Distance","$type":"System.String"},"object":null},"position":{"x":-124.0,"y":20.0},"guid":"9bb863c2-cfa6-47e5-b3bb-06b38b9bb878","$version":"A","$type":"Bolt.GetVariable","$id":"112"},{"defaultValues":{},"position":{"x":324.0,"y":-218.0},"guid":"6b973a87-217f-43a7-bfed-de44a65bec98","$version":"A","$type":"Bolt.Branch","$id":"114"},{"coroutine":false,"defaultValues":{},"position":{"x":112.0,"y":-216.0},"guid":"df5d3a63-dd2e-48da-b0ae-aaab64613d9e","$version":"A","$type":"Bolt.Update","$id":"116"},{"member":{"name":"position","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null},"position":{"x":-250.0,"y":-72.0},"guid":"a2bc7bab-703a-4851-be82-72ab9145b025","$version":"A","$type":"Bolt.GetMember","$id":"118"},{"sourceUnit":{"$ref":"114"},"sourceKey":"ifTrue","destinationUnit":{"$ref":"99"},"destinationKey":"trigger","guid":"8b59bbd3-b616-4b4f-8d97-98d313a2f82c","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"116"},"sourceKey":"trigger","destinationUnit":{"$ref":"114"},"destinationKey":"enter","guid":"f28a82a7-22f2-4831-9ad7-40906931c7cc","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"101"},"sourceKey":"distance","destinationUnit":{"$ref":"107"},"destinationKey":"a","guid":"8fbd37ae-b42a-435e-b219-f1b9e10e25be","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"112"},"sourceKey":"value","destinationUnit":{"$ref":"107"},"destinationKey":"b","guid":"f32b05cf-e213-4c74-9ce6-d06d76a8424f","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"109"},"sourceKey":"value","destinationUnit":{"$ref":"101"},"destinationKey":"a","guid":"ae107492-a4a4-4ac7-87cc-8d702914f382","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"118"},"sourceKey":"value","destinationUnit":{"$ref":"101"},"destinationKey":"b","guid":"a3884481-759b-4b6c-92e5-31960a8fd3c7","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"103"},"sourceKey":"self","destinationUnit":{"$ref":"109"},"destinationKey":"target","guid":"98ced24f-39e2-4cbc-88d1-bd0fd6ab6db2","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"105"},"sourceKey":"value","destinationUnit":{"$ref":"118"},"destinationKey":"target","guid":"64dad8db-47e2-420d-ae11-341c79a05280","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"107"},"sourceKey":"comparison","destinationUnit":{"$ref":"114"},"destinationKey":"condition","guid":"43b44f90-a8da-4c3b-8b3b-c5a512356639","$type":"Bolt.ValueConnection"}],"$version":"A"}},"source":{"$ref":"20"},"destination":{"$ref":"4"},"guid":"9d2e7543-311d-42dc-829f-975286d64ae0","$version":"A","$type":"Bolt.FlowStateTransition"}],"$version":"A"}}}'
+    _json: '{"nest":{"source":"Embed","macro":null,"embed":{"title":"Behavior","summary":null,"pan":{"x":0.0,"y":0.0},"zoom":1.0,"elements":[{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Start","summary":null,"pan":{"x":0.0,"y":0.0},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-205.0,"y":-215.0},"guid":"324d4968-bf29-4a72-bef1-6baf023478c3","$version":"A","$type":"Bolt.OnEnterState"},{"coroutine":false,"defaultValues":{},"position":{"x":-161.0,"y":-38.0},"guid":"e3e6c4cb-de49-428c-b4fd-6fe7efda4312","$version":"A","$type":"Bolt.Update"},{"coroutine":false,"defaultValues":{},"position":{"x":-205.0,"y":145.0},"guid":"6dd02d19-8e85-44fb-ae79-22a6665797e5","$version":"A","$type":"Bolt.OnExitState"}],"$version":"A"}},"isStart":true,"position":{"x":-281.0,"y":-112.0},"width":170.0,"guid":"b9ac9700-24ca-4954-9ed2-23ab8fc9e46f","$version":"A","$type":"Bolt.FlowState","$id":"4"},{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":0.0,"y":0.0},"zoom":1.0,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-241.0,"y":-246.0},"guid":"7fa7a1ff-7665-4957-b9a4-16e9e79f60a4","$version":"A","$type":"Bolt.OnEnterState","$id":"30"},{"coroutine":false,"defaultValues":{},"position":{"x":-144.0,"y":4.0},"guid":"04420879-f5b8-4d8d-86dd-270261796d83","$version":"A","$type":"Bolt.Update"},{"chainable":false,"member":{"name":"SetDestination","parameterTypes":["UnityEngine.Vector3"],"targetType":"UnityEngine.AI.NavMeshAgent","targetTypeName":"UnityEngine.AI.NavMeshAgent","$version":"A"},"defaultValues":{"target":null,"%target":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"}},"position":{"x":139.0,"y":-213.0},"guid":"62dbd6e0-06c7-4d92-b933-1a47caf13f60","$version":"A","$type":"Bolt.InvokeMember","$id":"34"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Target","$type":"System.String"},"object":null},"position":{"x":-386.0,"y":-110.0},"guid":"944fc470-e1b3-4262-8fd3-ac6a35702a3f","$version":"A","$type":"Bolt.GetVariable","$id":"37"},{"member":{"name":"position","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null},"position":{"x":-132.0,"y":-136.0},"guid":"5bbfead6-4ac2-4acd-9cc9-266f788ccdc7","$version":"A","$type":"Bolt.GetMember","$id":"39"},{"chainable":false,"member":{"name":"Move","parameterTypes":["UnityEngine.Vector3"],"targetType":"UnityEngine.AI.NavMeshAgent","targetTypeName":"UnityEngine.AI.NavMeshAgent","$version":"A"},"defaultValues":{"target":null,"%offset":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"}},"position":{"x":100.0,"y":-16.0},"guid":"210c5b4d-5cda-4791-bd34-3b9ed6c301be","$version":"A","$type":"Bolt.InvokeMember"},{"sourceUnit":{"$ref":"30"},"sourceKey":"trigger","destinationUnit":{"$ref":"34"},"destinationKey":"enter","guid":"6f75eb67-bb54-4783-98e0-5fe7aed59a45","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"37"},"sourceKey":"value","destinationUnit":{"$ref":"39"},"destinationKey":"target","guid":"7bdd6b32-9c78-415d-a3c6-ca275957e00b","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"39"},"sourceKey":"value","destinationUnit":{"$ref":"34"},"destinationKey":"%target","guid":"cd5b983f-1ff2-4a16-8bff-b6352ac52bb6","$type":"Bolt.ValueConnection"}],"$version":"A"}},"isStart":false,"position":{"x":174.0,"y":-101.0},"width":170.0,"guid":"263fc304-6bcf-442f-add2-9c807202d5d4","$version":"A","$type":"Bolt.FlowState","$id":"20"},{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":22.40934,"y":0.0},"zoom":1.0,"elements":[{"defaultValues":{},"position":{"x":400.0,"y":90.0},"guid":"66922e84-501c-4ea9-81bb-2be5b4782988","$version":"A","$type":"Bolt.TriggerStateTransition","$id":"58"},{"defaultValues":{},"position":{"x":410.0,"y":-267.0},"guid":"0a4b9dd5-6af6-4cb6-8d22-5748de6f8092","$version":"A","$type":"Bolt.Branch","$id":"60"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Distance","$type":"System.String"},"object":null},"position":{"x":-38.0,"y":-30.0},"guid":"d1b10efb-df88-46fc-9318-f2f1aa598810","$version":"A","$type":"Bolt.GetVariable","$id":"62"},{"numeric":true,"defaultValues":{"b":{"$content":0.0,"$type":"System.Single"}},"position":{"x":258.0,"y":-170.0},"guid":"b65f0b22-c995-4f0b-b26b-442372f96a31","$version":"A","$type":"Bolt.LessOrEqual","$id":"64"},{"member":{"name":"position","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null},"position":{"x":-161.0,"y":-228.0},"guid":"f4ddffb3-0cb4-4054-8ea8-e0942aafd3fa","$version":"A","$type":"Bolt.GetMember","$id":"66"},{"member":{"name":"position","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null},"position":{"x":-165.0,"y":-121.0},"guid":"6871a326-84e2-4930-b27e-3502df9a3472","$version":"A","$type":"Bolt.GetMember","$id":"69"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Target","$type":"System.String"},"object":null},"position":{"x":-369.0,"y":-84.0},"guid":"b932ac34-9d3c-4c33-9ce5-510f8cdf19e9","$version":"A","$type":"Bolt.GetVariable","$id":"72"},{"defaultValues":{},"position":{"x":-384.0,"y":-191.0},"guid":"eaaff675-f9aa-47c2-a52c-b86d92c684df","$version":"A","$type":"Bolt.Self","$id":"74"},{"defaultValues":{},"position":{"x":28.0,"y":-198.0},"guid":"d44ff7e0-f65e-417c-8ad0-bf1579b5174d","$version":"A","$type":"Bolt.Vector3Distance","$id":"76"},{"coroutine":false,"defaultValues":{},"position":{"x":198.0,"y":-265.0},"guid":"5301efb4-0ab3-4406-b6ff-0fa0fac5e9e9","$version":"A","$type":"Bolt.Update","$id":"78"},{"sourceUnit":{"$ref":"60"},"sourceKey":"ifTrue","destinationUnit":{"$ref":"58"},"destinationKey":"trigger","guid":"0281e68b-37b0-428d-82f9-98c5ce9034d9","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"78"},"sourceKey":"trigger","destinationUnit":{"$ref":"60"},"destinationKey":"enter","guid":"190e4703-1d4d-4e71-b7a4-aed193dbcd32","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"69"},"sourceKey":"value","destinationUnit":{"$ref":"76"},"destinationKey":"b","guid":"7bf08494-5cda-4463-b892-982ecc801afd","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"76"},"sourceKey":"distance","destinationUnit":{"$ref":"64"},"destinationKey":"a","guid":"56c80a03-157c-4ea8-a319-a28c1be81366","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"62"},"sourceKey":"value","destinationUnit":{"$ref":"64"},"destinationKey":"b","guid":"4633e5a5-3662-45a3-b1ab-b47397371346","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"74"},"sourceKey":"self","destinationUnit":{"$ref":"66"},"destinationKey":"target","guid":"fd5b0218-799f-4e49-967e-bc0a1b245b6f","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"66"},"sourceKey":"value","destinationUnit":{"$ref":"76"},"destinationKey":"a","guid":"2aa4e82e-d236-4fcc-a0f4-8c833a4791e8","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"72"},"sourceKey":"value","destinationUnit":{"$ref":"69"},"destinationKey":"target","guid":"90168cc2-972c-4f3a-9e37-cb2fa619558c","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"64"},"sourceKey":"comparison","destinationUnit":{"$ref":"60"},"destinationKey":"condition","guid":"5bf024b0-024a-4fa7-ba2a-61cd031abc7c","$type":"Bolt.ValueConnection"}],"$version":"A"}},"source":{"$ref":"4"},"destination":{"$ref":"20"},"guid":"23d6a7f4-4ff4-4919-ae95-6bd13ad1b61f","$version":"A","$type":"Bolt.FlowStateTransition"},{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":0.0,"y":0.0},"zoom":1.0,"elements":[{"defaultValues":{},"position":{"x":314.0,"y":140.0},"guid":"acf8b643-4c9a-4ceb-8d8b-2bce826ce1fb","$version":"A","$type":"Bolt.TriggerStateTransition","$id":"99"},{"coroutine":false,"defaultValues":{},"position":{"x":112.0,"y":-216.0},"guid":"df5d3a63-dd2e-48da-b0ae-aaab64613d9e","$version":"A","$type":"Bolt.Update","$id":"101"},{"defaultValues":{},"position":{"x":324.0,"y":-218.0},"guid":"6b973a87-217f-43a7-bfed-de44a65bec98","$version":"A","$type":"Bolt.Branch","$id":"103"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Distance","$type":"System.String"},"object":null},"position":{"x":-124.0,"y":20.0},"guid":"9bb863c2-cfa6-47e5-b3bb-06b38b9bb878","$version":"A","$type":"Bolt.GetVariable","$id":"105"},{"member":{"name":"position","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null},"position":{"x":-246.0,"y":-178.0},"guid":"d0029997-0ffe-4402-a73d-dafe7068709b","$version":"A","$type":"Bolt.GetMember","$id":"107"},{"member":{"name":"position","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null},"position":{"x":-250.0,"y":-72.0},"guid":"a2bc7bab-703a-4851-be82-72ab9145b025","$version":"A","$type":"Bolt.GetMember","$id":"110"},{"specifyFallback":false,"kind":"Object","defaultValues":{"name":{"$content":"Target","$type":"System.String"},"object":null},"position":{"x":-454.0,"y":-34.0},"guid":"1241a17a-2265-4bcb-a9a1-8a27b94c67d0","$version":"A","$type":"Bolt.GetVariable","$id":"113"},{"defaultValues":{},"position":{"x":-470.0,"y":-142.0},"guid":"b357fa1a-395a-4a77-8af8-2652f23f4a6d","$version":"A","$type":"Bolt.Self","$id":"115"},{"defaultValues":{},"position":{"x":-58.0,"y":-148.0},"guid":"bdbb5e1a-5eb6-489c-bc07-236b3ed1e362","$version":"A","$type":"Bolt.Vector3Distance","$id":"117"},{"numeric":true,"defaultValues":{"b":{"$content":0.0,"$type":"System.Single"}},"position":{"x":170.0,"y":-97.0},"guid":"6994a336-3502-4734-b2f6-3480e8862ac3","$version":"A","$type":"Bolt.Greater","$id":"119"},{"sourceUnit":{"$ref":"103"},"sourceKey":"ifTrue","destinationUnit":{"$ref":"99"},"destinationKey":"trigger","guid":"8b59bbd3-b616-4b4f-8d97-98d313a2f82c","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"101"},"sourceKey":"trigger","destinationUnit":{"$ref":"103"},"destinationKey":"enter","guid":"f28a82a7-22f2-4831-9ad7-40906931c7cc","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"113"},"sourceKey":"value","destinationUnit":{"$ref":"110"},"destinationKey":"target","guid":"64dad8db-47e2-420d-ae11-341c79a05280","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"117"},"sourceKey":"distance","destinationUnit":{"$ref":"119"},"destinationKey":"a","guid":"8fbd37ae-b42a-435e-b219-f1b9e10e25be","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"105"},"sourceKey":"value","destinationUnit":{"$ref":"119"},"destinationKey":"b","guid":"f32b05cf-e213-4c74-9ce6-d06d76a8424f","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"107"},"sourceKey":"value","destinationUnit":{"$ref":"117"},"destinationKey":"a","guid":"ae107492-a4a4-4ac7-87cc-8d702914f382","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"110"},"sourceKey":"value","destinationUnit":{"$ref":"117"},"destinationKey":"b","guid":"a3884481-759b-4b6c-92e5-31960a8fd3c7","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"115"},"sourceKey":"self","destinationUnit":{"$ref":"107"},"destinationKey":"target","guid":"98ced24f-39e2-4cbc-88d1-bd0fd6ab6db2","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"119"},"sourceKey":"comparison","destinationUnit":{"$ref":"103"},"destinationKey":"condition","guid":"43b44f90-a8da-4c3b-8b3b-c5a512356639","$type":"Bolt.ValueConnection"}],"$version":"A"}},"source":{"$ref":"20"},"destination":{"$ref":"4"},"guid":"9d2e7543-311d-42dc-829f-975286d64ae0","$version":"A","$type":"Bolt.FlowStateTransition"}],"$version":"A"}}}'
     _objectReferences: []
 --- !u!114 &1084406224
 MonoBehaviour:
@@ -12235,12 +12153,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2866664
+      value: 3.314
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.71333337
+      value: 0.711
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
         type: 3}
@@ -12573,13 +12491,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146254492}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.2, y: 0, z: 21}
+  m_LocalRotation: {x: 0, y: -0.69189125, z: 0, w: 0.7220018}
+  m_LocalPosition: {x: -3.7, y: 0.55, z: 18.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 566167114}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -87.56, z: 0}
 --- !u!1001 &1149682430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13517,6 +13435,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: wallWood (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5960e5dd76d8014a8c8c875c35c0746,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a5960e5dd76d8014a8c8c875c35c0746,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5960e5dd76d8014a8c8c875c35c0746, type: 3}
 --- !u!4 &1237555363 stripped
@@ -13747,6 +13675,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 35315881362c3f04a9b80c0178a71c05,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35315881362c3f04a9b80c0178a71c05, type: 3}
 --- !u!1001 &1267661067
@@ -13830,6 +13763,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wallDoorwayRound (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cf512f64a0588048bfd2860282680b3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cf512f64a0588048bfd2860282680b3,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cf512f64a0588048bfd2860282680b3, type: 3}
@@ -14140,6 +14083,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 35315881362c3f04a9b80c0178a71c05,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35315881362c3f04a9b80c0178a71c05, type: 3}
 --- !u!1001 &1287922770
@@ -14275,6 +14223,95 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0185839, y: 2.7506397, z: 1.0185839}
   m_Center: {x: 0, y: 1.3753198, z: 0}
+--- !u!1001 &1291183475
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 637977430}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.165
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.04
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.666
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.8791501
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.47654516
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 123.08
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.61
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_Name
+      value: overhang (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d8a192079f103f24486ad787ef5fea58,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8a192079f103f24486ad787ef5fea58, type: 3}
 --- !u!1001 &1297370727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14290,7 +14327,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
@@ -14750,12 +14787,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.04
+      value: -1.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3697
+      value: -1.232
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
         type: 3}
@@ -14780,7 +14817,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
         type: 3}
@@ -14800,7 +14837,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.4034908
+      value: 2.55
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d8a192079f103f24486ad787ef5fea58,
         type: 3}
@@ -15040,17 +15077,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d190fcb5071c2ef4b90cd5865b21bcd9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.31
+      value: 1.65
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d190fcb5071c2ef4b90cd5865b21bcd9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.74666667
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d190fcb5071c2ef4b90cd5865b21bcd9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.94
+      value: 1.52
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d190fcb5071c2ef4b90cd5865b21bcd9,
         type: 3}
@@ -15140,7 +15177,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: aa9179ba5508a2b44901f03766dc3f62,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.13085999
+      value: 0.1188
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa9179ba5508a2b44901f03766dc3f62,
         type: 3}
@@ -15150,7 +15187,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: aa9179ba5508a2b44901f03766dc3f62,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.07839999
+      value: 0.0744
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa9179ba5508a2b44901f03766dc3f62,
         type: 3}
@@ -15613,7 +15650,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8cf512f64a0588048bfd2860282680b3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8cf512f64a0588048bfd2860282680b3,
         type: 3}
@@ -15639,6 +15676,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wallDoorwayRound
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cf512f64a0588048bfd2860282680b3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cf512f64a0588048bfd2860282680b3,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cf512f64a0588048bfd2860282680b3, type: 3}
@@ -16169,6 +16216,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 35315881362c3f04a9b80c0178a71c05,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35315881362c3f04a9b80c0178a71c05, type: 3}
 --- !u!1001 &1451707583
@@ -16257,6 +16309,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 35315881362c3f04a9b80c0178a71c05,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35315881362c3f04a9b80c0178a71c05, type: 3}
@@ -16920,6 +16977,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 35315881362c3f04a9b80c0178a71c05,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35315881362c3f04a9b80c0178a71c05, type: 3}
 --- !u!1 &1559734927 stripped
@@ -17450,6 +17512,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 35315881362c3f04a9b80c0178a71c05,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35315881362c3f04a9b80c0178a71c05, type: 3}
@@ -20958,6 +21025,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: wallDoorwayRound (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cf512f64a0588048bfd2860282680b3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cf512f64a0588048bfd2860282680b3,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cf512f64a0588048bfd2860282680b3, type: 3}
 --- !u!4 &1933153673 stripped
@@ -23113,7 +23190,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093407620}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
   m_Name: 
@@ -23404,6 +23481,12 @@ Transform:
   m_Father: {fileID: 566167114}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2117851766 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d8a192079f103f24486ad787ef5fea58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1291183475}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2118141559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23529,101 +23612,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 521256764599757161, guid: 2775b336b39cf6942a29e6941ca31084,
     type: 3}
   m_PrefabInstance: {fileID: 2118141559}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2124407331
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 637977430}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.155
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.417
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3212976540736961966, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: -1696546888734786457, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -1696546888734786457, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.1807
-      objectReference: {fileID: 0}
-    - target: {fileID: -1696546888734786457, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.361323
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 511c9700f3adac743913140d37ad3904,
-        type: 3}
-      propertyPath: m_Name
-      value: planksHalf (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 511c9700f3adac743913140d37ad3904, type: 3}
---- !u!4 &2124407332 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 511c9700f3adac743913140d37ad3904,
-    type: 3}
-  m_PrefabInstance: {fileID: 2124407331}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2130659192
 PrefabInstance:
@@ -23761,7 +23749,7 @@ PrefabInstance:
     - target: {fileID: 521256764599757161, guid: 2775b336b39cf6942a29e6941ca31084,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.86800003
+      value: 0.712
       objectReference: {fileID: 0}
     - target: {fileID: 521256764599757161, guid: 2775b336b39cf6942a29e6941ca31084,
         type: 3}
