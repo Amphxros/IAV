@@ -21,20 +21,11 @@ public class Interactuar : MonoBehaviour
     void OnTriggerStay(Collider col)
     {
         CaidaLampara c = col.gameObject.GetComponent<CaidaLampara>();
-        Barca b = col.gameObject.GetComponent<Barca>();
-
         if (c != null)
         {
             if (isInteracting)
             {
                 c.Restaurar();
-            }
-        }
-        if (b != null)
-        {
-            if (isInteracting)
-            {
-                b.UsarBarca();
             }
         }
     }
