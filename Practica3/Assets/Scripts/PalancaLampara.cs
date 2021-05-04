@@ -14,10 +14,5 @@ public class PalancaLampara : MonoBehaviour
             Izquierda.Caer();
             Derecha.Caer();
         }
-        else if (col.gameObject.tag == "Vizconde")
-        {
-            Izquierda.Restaurar();
-            Derecha.Restaurar();
-        }
     }
 }
