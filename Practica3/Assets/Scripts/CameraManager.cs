@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public GameObject[] cameras = new GameObject[3];
+    public GameObject[] cameras = new GameObject[4];
 
   
     void Start()
     {
         cameras[0].GetComponent<Camera>().enabled = true;   
         cameras[1].GetComponent<Camera>().enabled =false;   
-        cameras[2].GetComponent<Camera>().enabled =false;    
+        cameras[2].GetComponent<Camera>().enabled =false;   
+        cameras[3].GetComponent<Camera>().enabled =false;    
     }
 
     // Update is called once per frame
@@ -23,7 +24,7 @@ public class CameraManager : MonoBehaviour
             cameras[0].GetComponent<Camera>().enabled = true;
             cameras[1].GetComponent<Camera>().enabled = false;
             cameras[2].GetComponent<Camera>().enabled = false;
-          
+            cameras[3].GetComponent<Camera>().enabled = false;
         }   
         else if (Input.GetKeyUp(KeyCode.O))
         {
@@ -31,6 +32,7 @@ public class CameraManager : MonoBehaviour
             cameras[0].GetComponent<Camera>().enabled = false;
             cameras[1].GetComponent<Camera>().enabled = true;
             cameras[2].GetComponent<Camera>().enabled = false;
+            cameras[3].GetComponent<Camera>().enabled = false;
         }   
         else if (Input.GetKeyUp(KeyCode.I))
         {
@@ -38,6 +40,15 @@ public class CameraManager : MonoBehaviour
             cameras[0].GetComponent<Camera>().enabled = false;
             cameras[1].GetComponent<Camera>().enabled = false;
             cameras[2].GetComponent<Camera>().enabled = true;
+            cameras[3].GetComponent<Camera>().enabled = false;
         }   
+        else if (Input.GetKeyUp(KeyCode.U))
+        {
+            cameras[0].GetComponent<Camera>().enabled = false;
+            cameras[1].GetComponent<Camera>().enabled = false;
+            cameras[2].GetComponent<Camera>().enabled = false;
+            cameras[3].GetComponent<Camera>().enabled = true;
+
+        }
     }
 }
