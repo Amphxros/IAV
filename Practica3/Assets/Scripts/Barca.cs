@@ -39,7 +39,7 @@ public class Barca : MonoBehaviour
                 }                
                 else if (other.tag == "Vizconde")
                 {
-                    other.GetComponent<NavMeshAgent>().enabled = true;
+                    other.transform.position = new Vector3(pos.transform.position.x, other.transform.position.y, pos.transform.position.z);
                 }
             }
         }
