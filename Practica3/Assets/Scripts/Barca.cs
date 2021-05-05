@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Barca : MonoBehaviour
 {
@@ -30,7 +31,16 @@ public class Barca : MonoBehaviour
                     Vector3 pos = logica.UsarBarca3();
                 }
 
-                other.transform.position = new Vector3(pos.transform.position.x, other.transform.position.y, pos.transform.position.z);
+                if (other.tag == "Fantasma")
+                {
+                    other.GetComponent<NavMeshAgent>().enabled = false;
+                    other.transform.position = new Vector3(pos.transform.position.x, other.transform.position.y, pos.transform.position.z);
+                    other.GetComponent<NavMeshAgent>().enabled = true;
+                }                
+                else if (other.tag == "Vizconde")
+                {
+                    other.GetComponent<NavMeshAgent>().enabled = true;
+                }
             }
         }
     }
