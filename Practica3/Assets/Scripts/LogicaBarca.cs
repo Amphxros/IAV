@@ -18,18 +18,12 @@ public class LogicaBarca : MonoBehaviour
     public OffMeshLink sotanoEste__Musica;
 
     // representaciones graficas de las barcas
-    public MeshRenderer barca1_1;
-    public MeshRenderer barca1_2;
-    public MeshRenderer barca2_1;
-    public MeshRenderer barca2_2;
-    public MeshRenderer barca3_1;
-    public MeshRenderer barca3_2;
-
-    // Estas están a true si están en la posición en la que
-    // empieza la simulación
-    private bool barca1 = true;
-    private bool barca2 = true;
-    private bool barca3 = true;
+    public GameObject barca1_1;
+    public GameObject barca1_2;
+    public GameObject barca2_1;
+    public GameObject barca2_2;
+    public GameObject barca3_1;
+    public GameObject barca3_2;
 
     public Vector3 UsarBarca1()
     {
@@ -37,10 +31,8 @@ public class LogicaBarca : MonoBehaviour
         {
             celda.activated = false;
             sotanoOeste.activated = true;
-            barca1_1.enabled = false;
-            barca1_2.enabled = true;
-
-            barca1 = false;
+            barca1_1.SetActive(false);
+            barca1_2.SetActive(true);
 
             return sotanoOeste.transform.position;
         }
@@ -48,10 +40,8 @@ public class LogicaBarca : MonoBehaviour
         {
             celda.activated = true;
             sotanoOeste.activated = false;
-            barca1_1.enabled = true;
-            barca1_2.enabled = false;
-
-            barca1 = true;
+            barca1_1.SetActive(true);
+            barca1_2.SetActive(false);
 
             return celda.transform.position;
         }
@@ -63,10 +53,8 @@ public class LogicaBarca : MonoBehaviour
         {
             sotanoNorte.activated = false;
             sotanoEste_Norte.activated = true;
-            barca2_1.enabled = false;
-            barca2_2.enabled = true;
-            
-            barca2 = false;
+            barca2_1.SetActive(false);
+            barca2_2.SetActive(true);
 
             return sotanoEste_Norte.transform.position;
         }
@@ -74,10 +62,8 @@ public class LogicaBarca : MonoBehaviour
         {
             sotanoNorte.activated = true;
             sotanoEste_Norte.activated = false;
-            barca2_1.enabled = true;
-            barca2_2.enabled = false;
-
-            barca2 = true;
+            barca2_1.SetActive(true);
+            barca2_2.SetActive(false);
 
             return sotanoNorte.transform.position;
         }
@@ -89,10 +75,8 @@ public class LogicaBarca : MonoBehaviour
         {
             patioMusica.activated = false;
             sotanoEste__Musica.activated = true;
-            barca3_1.enabled = false;
-            barca3_2.enabled = true;
-
-            barca3 = false;
+            barca3_1.SetActive(false);
+            barca3_2.SetActive(true);
 
             return sotanoEste__Musica.transform.position;
         }
@@ -100,16 +84,10 @@ public class LogicaBarca : MonoBehaviour
         {
             patioMusica.activated = true;
             sotanoEste__Musica.activated = false;
-            barca3_1.enabled = true;
-            barca3_2.enabled = false;
-
-            barca3 = true;
+            barca3_1.SetActive(true);
+            barca3_2.SetActive(false);
 
             return patioMusica.transform.position;
         }
     }
-
-    public bool GetBarca1() { return barca1; }
-    public bool GetBarca2() { return barca2; }
-    public bool GetBarca3() { return barca3; }
 }

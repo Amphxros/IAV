@@ -6,6 +6,7 @@ public class Barca : MonoBehaviour
 {
     public int barca;
     public LogicaBarca logica;
+    public GameObject pos;
 
     private bool siendoUsada = false;
 
@@ -18,20 +19,18 @@ public class Barca : MonoBehaviour
             {
                 if (barca == 1)
                 {
-                    Vector3 pos = logica.UsarBarca1();
-                    other.transform.position = pos;
+                    logica.UsarBarca1();
                 }
                 else if (barca == 2)
                 {
                     Vector3 pos = logica.UsarBarca2();
-                    other.transform.position = pos;
                 }
                 else if (barca == 3)
                 {
                     Vector3 pos = logica.UsarBarca3();
-                    pos.y = 94;
-                    other.transform.position = pos;
                 }
+
+                other.transform.position = new Vector3(pos.transform.position.x, other.transform.position.y, pos.transform.position.z);
             }
         }
     }
