@@ -31,7 +31,7 @@ public class LogicaBarca : MonoBehaviour
     private bool barca2 = true;
     private bool barca3 = true;
 
-    public void UsarBarca1()
+    public Vector3 UsarBarca1()
     {
         if (celda.activated)
         {
@@ -41,6 +41,8 @@ public class LogicaBarca : MonoBehaviour
             barca1_2.enabled = true;
 
             barca1 = false;
+
+            return sotanoOeste.transform.position;
         }
         else
         {
@@ -50,10 +52,12 @@ public class LogicaBarca : MonoBehaviour
             barca1_2.enabled = false;
 
             barca1 = true;
+
+            return celda.transform.position;
         }
     }
 
-    public void UsarBarca2()
+    public Vector3 UsarBarca2()
     {
         if (sotanoNorte.activated)
         {
@@ -63,6 +67,8 @@ public class LogicaBarca : MonoBehaviour
             barca2_2.enabled = true;
             
             barca2 = false;
+
+            return sotanoEste_Norte.transform.position;
         }
         else
         {
@@ -72,10 +78,12 @@ public class LogicaBarca : MonoBehaviour
             barca2_2.enabled = false;
 
             barca2 = true;
+
+            return sotanoNorte.transform.position;
         }
     }
 
-    public void UsarBarca3()
+    public Vector3 UsarBarca3()
     {
         if (patioMusica.activated)
         {
@@ -85,6 +93,8 @@ public class LogicaBarca : MonoBehaviour
             barca3_2.enabled = true;
 
             barca3 = false;
+
+            return sotanoEste__Musica.transform.position;
         }
         else
         {
@@ -94,6 +104,8 @@ public class LogicaBarca : MonoBehaviour
             barca3_2.enabled = false;
 
             barca3 = true;
+
+            return patioMusica.transform.position;
         }
     }
 

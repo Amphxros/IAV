@@ -7,33 +7,37 @@ public class Barca : MonoBehaviour
     public int barca;
     public LogicaBarca logica;
 
-    public GameObject posIni;
-    public GameObject posFin;
-    private GameObject pos;
+    private bool siendoUsada = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Vizconde" || other.tag == "Fantasma")
+        if (!siendoUsada)
         {
-            if (barca == 1)
+            siendoUsada = true;
+            if (other.tag == "Vizconde" || other.tag == "Fantasma")
             {
-                logica.UsarBarca1();
-                if (logica.GetBarca1()) pos = posIni;
-                else pos = posFin;
+                if (barca == 1)
+                {
+                    Vector3 pos = logica.UsarBarca1();
+                    other.transform.position = pos;
+                }
+                else if (barca == 2)
+                {
+                    Vector3 pos = logica.UsarBarca2();
+                    other.transform.position = pos;
+                }
+                else if (barca == 3)
+                {
+                    Vector3 pos = logica.UsarBarca3();
+                    pos.y = 94;
+                    other.transform.position = pos;
+                }
             }
-            else if (barca == 2)
-            {
-                logica.UsarBarca2();
-                if (logica.GetBarca2()) pos = posIni;
-                else pos = posFin;
-            }
-            else if (barca == 3)
-            {
-                logica.UsarBarca3();
-                if (logica.GetBarca3()) pos = posIni;
-                else pos = posFin;
-            }
-            other.transform.position = pos.transform.position;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        siendoUsada = false;
     }
 }
