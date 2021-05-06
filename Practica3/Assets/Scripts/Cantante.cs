@@ -22,18 +22,18 @@ public class Cantante : MonoBehaviour
             meshAgent.enabled = false;
             if (secuestrada.Value)
             {
-                if (gameObject.GetComponent<MeshRenderer>().enabled)
-                {
-                    gameObject.GetComponent<MeshRenderer>().enabled = false;
-                    transform.position = celda.transform.position;
-                }
+               // if (gameObject.GetComponent<MeshRenderer>().enabled)
+               // {
+               //     gameObject.GetComponent<MeshRenderer>().enabled = false;
+               //     transform.position = celda.transform.position;
+               // }
             }
             if (encarcelada.Value)
             {
-                if (!gameObject.GetComponent<MeshRenderer>().enabled)
-                {
-                    gameObject.GetComponent<MeshRenderer>().enabled = true;
-                }
+                //if (!gameObject.GetComponent<MeshRenderer>().enabled)
+                //{
+                //    gameObject.GetComponent<MeshRenderer>().enabled = true;
+                //}
             }
         }
     }
