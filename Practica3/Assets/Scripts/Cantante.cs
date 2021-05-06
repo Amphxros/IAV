@@ -19,20 +19,20 @@ public class Cantante : MonoBehaviour
 
         if (inmovilizada.Value)
         {
+            meshAgent.enabled = false;
             if (secuestrada.Value)
             {
-                if (gameObject.activeSelf)
+                if (gameObject.GetComponent<MeshRenderer>().enabled)
                 {
-                    gameObject.SetActive(false);
+                    gameObject.GetComponent<MeshRenderer>().enabled = false;
                     transform.position = celda.transform.position;
                 }
             }
             if (encarcelada.Value)
             {
-                if (!gameObject.activeSelf)
+                if (!gameObject.GetComponent<MeshRenderer>().enabled)
                 {
-                    gameObject.SetActive(true);
-                    meshAgent.enabled = false;
+                    gameObject.GetComponent<MeshRenderer>().enabled = true;
                 }
             }
         }
