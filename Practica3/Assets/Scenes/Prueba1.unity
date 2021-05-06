@@ -2446,7 +2446,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
@@ -2560,7 +2560,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.38
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
@@ -3132,7 +3132,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dc3ce489784b22f4c9e39e016b16b211,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.72
+      value: -15.65
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc3ce489784b22f4c9e39e016b16b211,
         type: 3}
@@ -4830,13 +4830,13 @@ MonoBehaviour:
   celda: {fileID: 609812218}
   sotanoOeste: {fileID: 734596679}
   sotanoNorte: {fileID: 1945928458}
-  sotanoEste_Norte: {fileID: 0}
+  sotanoEste_Norte: {fileID: 376465734}
   patioMusica: {fileID: 524710646}
   sotanoEste__Musica: {fileID: 130531200}
   barca1_1: {fileID: 1242223123}
   barca1_2: {fileID: 2015097405}
-  barca2_1: {fileID: 1253436418}
-  barca2_2: {fileID: 574859066}
+  barca2_1: {fileID: 574859066}
+  barca2_2: {fileID: 1253436418}
   barca3_1: {fileID: 2020547262}
   barca3_2: {fileID: 259266735}
 --- !u!1001 &404070051
@@ -6349,7 +6349,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ba6a114e033f63e469ec49851d5c6ad9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ba6a114e033f63e469ec49851d5c6ad9,
         type: 3}
@@ -6795,7 +6795,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dc3ce489784b22f4c9e39e016b16b211,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc3ce489784b22f4c9e39e016b16b211,
         type: 3}
@@ -6830,7 +6830,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dc3ce489784b22f4c9e39e016b16b211,
         type: 3}
       propertyPath: m_Name
-      value: barca2_2
+      value: barca2_1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc3ce489784b22f4c9e39e016b16b211,
         type: 3}
@@ -12960,7 +12960,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.475
+      value: 0.389
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
@@ -13190,7 +13190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &1024487238
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14298,7 +14298,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 31c9c308b28142f45847f9058adb33a8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.39000002
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31c9c308b28142f45847f9058adb33a8,
         type: 3}
@@ -15564,7 +15564,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dc3ce489784b22f4c9e39e016b16b211,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.85
+      value: 2.91
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc3ce489784b22f4c9e39e016b16b211,
         type: 3}
@@ -15844,7 +15844,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: dc3ce489784b22f4c9e39e016b16b211,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: dc3ce489784b22f4c9e39e016b16b211,
         type: 3}
@@ -15874,7 +15874,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: dc3ce489784b22f4c9e39e016b16b211,
         type: 3}
       propertyPath: m_Name
-      value: barca2_1
+      value: barca2_2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc3ce489784b22f4c9e39e016b16b211,
         type: 3}
@@ -19057,7 +19057,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ba6a114e033f63e469ec49851d5c6ad9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ba6a114e033f63e469ec49851d5c6ad9,
         type: 3}
@@ -19087,7 +19087,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ba6a114e033f63e469ec49851d5c6ad9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ba6a114e033f63e469ec49851d5c6ad9,
         type: 3}
@@ -22079,7 +22079,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8cf512f64a0588048bfd2860282680b3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8cf512f64a0588048bfd2860282680b3,
         type: 3}
@@ -22971,8 +22971,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1253436417}
   - {fileID: 574859065}
+  - {fileID: 1253436417}
   m_Father: {fileID: 399718389}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26396,7 +26396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2093407621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26803,6 +26803,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 31c9c308b28142f45847f9058adb33a8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: fe8e00b3fe15cc3408c2ce7e28bedce4, type: 2}
     - target: {fileID: 919132149155446097, guid: 31c9c308b28142f45847f9058adb33a8,
         type: 3}
       propertyPath: m_Name
@@ -26816,7 +26821,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 31c9c308b28142f45847f9058adb33a8,
         type: 3}
       propertyPath: m_NavMeshLayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31c9c308b28142f45847f9058adb33a8, type: 3}

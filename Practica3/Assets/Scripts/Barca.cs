@@ -10,7 +10,6 @@ public class Barca : MonoBehaviour
     public GameObject pos;
 
     private bool siendoUsada = false;
-
     private void OnTriggerEnter(Collider other)
     {
         if (!siendoUsada)
@@ -24,11 +23,11 @@ public class Barca : MonoBehaviour
                 }
                 else if (barca == 2)
                 {
-                    Vector3 pos = logica.UsarBarca2();
+                    logica.UsarBarca2();
                 }
                 else if (barca == 3)
                 {
-                    Vector3 pos = logica.UsarBarca3();
+                    logica.UsarBarca3();
                 }
 
                 if (other.tag == "Fantasma")

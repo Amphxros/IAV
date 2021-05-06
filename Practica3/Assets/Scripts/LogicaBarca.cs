@@ -25,7 +25,7 @@ public class LogicaBarca : MonoBehaviour
     public GameObject barca3_1;
     public GameObject barca3_2;
 
-    public Vector3 UsarBarca1()
+    public void UsarBarca1()
     {
         if (celda.activated)
         {
@@ -33,8 +33,6 @@ public class LogicaBarca : MonoBehaviour
             sotanoOeste.activated = true;
             barca1_1.SetActive(false);
             barca1_2.SetActive(true);
-
-            return sotanoOeste.transform.position;
         }
         else
         {
@@ -42,12 +40,10 @@ public class LogicaBarca : MonoBehaviour
             sotanoOeste.activated = false;
             barca1_1.SetActive(true);
             barca1_2.SetActive(false);
-
-            return celda.transform.position;
         }
     }
 
-    public Vector3 UsarBarca2()
+    public void UsarBarca2()
     {
         if (sotanoNorte.activated)
         {
@@ -55,8 +51,6 @@ public class LogicaBarca : MonoBehaviour
             sotanoEste_Norte.activated = true;
             barca2_1.SetActive(false);
             barca2_2.SetActive(true);
-
-            return sotanoEste_Norte.transform.position;
         }
         else
         {
@@ -64,30 +58,24 @@ public class LogicaBarca : MonoBehaviour
             sotanoEste_Norte.activated = false;
             barca2_1.SetActive(true);
             barca2_2.SetActive(false);
-
-            return sotanoNorte.transform.position;
         }
     }
 
-    public Vector3 UsarBarca3()
+    public void UsarBarca3()
     {
         if (patioMusica.activated)
         {
             patioMusica.activated = false;
             sotanoEste__Musica.activated = true;
-            barca3_1.SetActive(false);
-            barca3_2.SetActive(true);
-
-            return sotanoEste__Musica.transform.position;
+            barca3_2.SetActive(false);
+            barca3_1.SetActive(true);
         }
         else
         {
             patioMusica.activated = true;
             sotanoEste__Musica.activated = false;
-            barca3_1.SetActive(true);
-            barca3_2.SetActive(false);
-
-            return patioMusica.transform.position;
+            barca3_2.SetActive(true);
+            barca3_1.SetActive(false);
         }
     }
 }
