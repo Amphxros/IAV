@@ -107,7 +107,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.4
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -115,7 +115,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.13333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -1023,7 +1023,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.23
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 54d7947f668ec614592153b1ffc764cb,
         type: 3}
@@ -13209,17 +13209,17 @@ MonoBehaviour:
         Failure","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(4.497101,101.833435)"},"ID":6,"Name":"Set
         Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"Calmado","IsShared":true,"BooleanmValue":false}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-3.94503784,111.210083)"},"ID":7,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-460,109.375)","Comment":"Si
         el fantasma est\u00e1 calmado\nva a la sala de m\u00fasica"},"ID":8,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-73.48058,113.503792)"},"ID":9,"Name":"Compare
-        Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"Calmado","IsShared":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(74.71092,112.699524)"},"ID":10,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":0},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-136.960632,106.030914)","Comment":"Si
-        la ve"},"ID":11,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(-118.64917,105.600212)"},"ID":12,"Name":"Can
-        See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":1},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1000},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(-42.0533142,188.578979)","Comment":"La
-        secuestra"},"ID":13,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaSecuestrada","IsShared":true,"IsGlobal":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(43.05307,294.9621)","Comment":"Va
-        a la celda"},"ID":14,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":2},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(120.712646,393.89856)","Comment":"La
-        suelta"},"ID":15,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaSecuestrada","IsShared":true,"IsGlobal":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(205.819092,489.6433)"},"ID":16,"Name":"Set
-        Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaEncarcelada","IsShared":true,"IsGlobal":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(285.1975,568.1908)","Comment":"Se
-        calma"},"ID":17,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"Calmado","IsShared":true,"BooleanmValue":false}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(300.967773,109.3617)","Comment":"Va
-        a buscarla a\nlas bambalinas"},"ID":18,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-73.67525,107.165009)","Comment":"Va
-        a las Bambalinas"},"ID":19,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":3},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(70.6358,111.419128)","Comment":"Ve
-        a la diva"},"ID":20,"Name":"Can See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":4},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":360},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":5}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(598.8888,105.016312)","Comment":"Si
+        Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"Calmado","IsShared":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(74.71092,112.699524)"},"ID":10,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":0},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-199.032318,138.773468)","Comment":"Va
+        a buscarla a\nlas bambalinas"},"ID":11,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-3.9077816,223.444153)","Comment":"Va
+        a las Bambalinas"},"ID":12,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":1},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(70.6358,111.419128)","Comment":"Ve
+        a la diva"},"ID":13,"Name":"Can See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":2},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":360},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":3}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(142.4512,91.32503)","Comment":"Si
+        la ve"},"ID":14,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(-118.64917,105.600212)"},"ID":15,"Name":"Can
+        See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":4},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1000},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(-54.24844,227.801147)","Comment":"La
+        secuestra"},"ID":16,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaSecuestrada","IsShared":true,"IsGlobal":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(5.478901,118.297577)","Comment":"Va
+        a la celda"},"ID":17,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":5},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(84.45688,229.927)","Comment":"La
+        suelta"},"ID":18,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaSecuestrada","IsShared":true,"IsGlobal":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(157.3682,122.734406)"},"ID":19,"Name":"Set
+        Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaEncarcelada","IsShared":true,"IsGlobal":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(236.179382,230.26062)","Comment":"Se
+        calma"},"ID":20,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"Calmado","IsShared":true,"BooleanmValue":false}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(598.8888,105.016312)","Comment":"Si
         no encuentra a la diva\nen las bambalinas despeja\nel escenario y la busca\nah\u00ed"},"ID":21,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.ReturnSuccess","NodeData":{"Offset":"(-88.01803,110.187668)"},"ID":22,"Name":"Return
         Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,112.500008)","Comment":"Si
         el p\u00fablico sigue\nen las butacas tira\nlas l\u00e1mparas"},"ID":23,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-111.31543,110.766785)","Comment":"Comprueba
@@ -13254,11 +13254,11 @@ MonoBehaviour:
         dataPosition: 
         unityObjects:
         - {fileID: 1432252218}
-        - {fileID: 2093407620}
-        - {fileID: 2047295103}
         - {fileID: 1731155060}
         - {fileID: 2093407620}
         - {fileID: 2093407620}
+        - {fileID: 2093407620}
+        - {fileID: 2047295103}
         - {fileID: 1057751882}
         - {fileID: 1370722762}
         - {fileID: 2093407620}
@@ -13928,17 +13928,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 31c9c308b28142f45847f9058adb33a8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.67
+      value: 6.61
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31c9c308b28142f45847f9058adb33a8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.44
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31c9c308b28142f45847f9058adb33a8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.24
+      value: 5.439
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31c9c308b28142f45847f9058adb33a8,
         type: 3}
@@ -13988,7 +13988,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 31c9c308b28142f45847f9058adb33a8,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 4.250506
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 31c9c308b28142f45847f9058adb33a8,
         type: 3}
@@ -20901,7 +20901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731155060}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.2, y: -1.12, z: 19.3}
+  m_LocalPosition: {x: -1.2, y: -1.03, z: 19.3}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 704503054}
@@ -23796,7 +23796,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964437380}
   m_LocalRotation: {x: -0, y: 0.7043545, z: -0, w: 0.7098484}
-  m_LocalPosition: {x: -6.5, y: 0, z: 19.7}
+  m_LocalPosition: {x: -5.36, y: 0, z: 19.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2100786924}
@@ -26020,11 +26020,11 @@ MonoBehaviour:
         Failure","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(3.97142887,105.817909)","Comment":"Si
         la diva no est\u00e1 agobiada\no aterrada o encarcelada,\nsube al escenario
         a cantar"},"ID":7,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-204.3587,126.012589)","Comment":"Inmovilizada"},"ID":8,"Name":"Compare
-        Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaInmovilizada","IsShared":true,"IsGlobal":true,"BooleanmValue":false},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-80.3059158,228.054153)","Comment":"Encarcelada"},"ID":9,"Name":"Compare
+        Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaInmovilizada","IsShared":true,"IsGlobal":true,"BooleanmValue":true},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-80.3059158,228.054153)","Comment":"Encarcelada"},"ID":9,"Name":"Compare
         Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaEncarcelada","IsShared":true,"IsGlobal":true,"BooleanmValue":false},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(0.476594925,335.167419)","Comment":"Ansiedad"},"ID":10,"Name":"Compare
-        Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaConAnsiedad","IsShared":true,"IsGlobal":true,"BooleanmValue":false},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(94.8009949,204.401733)","Comment":"Busca
+        Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaConAnsiedad","IsShared":true,"IsGlobal":true,"BooleanmValue":true},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(94.8009949,204.401733)","Comment":"Busca
         el Escenario"},"ID":11,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":0},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-224.804489,114.927933)"},"ID":12,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-177.398941,121.2634)","Comment":"Si
-        la diva esta inmovilizada"},"ID":13,"Name":"Compare Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaInmovilizada","IsShared":true,"IsGlobal":true,"BooleanmValue":false},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(-2.89590073,121.263306)","Comment":"
+        la diva esta inmovilizada"},"ID":13,"Name":"Compare Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaInmovilizada","IsShared":true,"IsGlobal":true,"BooleanmValue":true},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(-2.89590073,121.263306)","Comment":"
         y ve la celda"},"ID":14,"Name":"Can See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":1},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":360},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":10},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityTransform.SetPosition","NodeData":{"Offset":"(157.065186,121.263336)","Comment":"la
         metemos en la celda"},"ID":15,"Name":"Set Position","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":2},"SharedVector3position":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(317.026428,121.263306)","Comment":"se
         encarcela"},"ID":16,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaEncarcelada","IsShared":true,"IsGlobal":true,"BooleanmValue":false}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(401.949768,114.927948)"},"ID":17,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-133.066284,121.263336)","Comment":"Si
@@ -26041,16 +26041,16 @@ MonoBehaviour:
         pone a cantar"},"ID":29,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaCantando","IsShared":true,"IsGlobal":true,"BooleanmValue":true}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(1925.67175,114.125244)","Comment":"Si
         la diva ve al fantasma\nqueda inmovilizada"},"ID":30,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.CanSeeObject","NodeData":{"Offset":"(-101.261353,111.98172)","Comment":"Ver
         al Fantasma"},"ID":31,"Name":"Can See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":9},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":360},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":""}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(76.51619,109.203918)","Comment":"Inmovilizada"},"ID":32,"Name":"Set
-        Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaInmovilizada","IsShared":true,"IsGlobal":true,"BooleanmValue":false}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(2197.60132,110.65303)","Comment":"Si
+        Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaInmovilizada","IsShared":true,"IsGlobal":true,"BooleanmValue":true}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(2197.60132,110.65303)","Comment":"Si
         la diva est\u00e1 inmovilizada\nse pega al fantasma"},"ID":33,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-42.09491,111.981659)","Comment":"Inmoviliza"},"ID":34,"Name":"Compare
-        Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaInmovilizada","IsShared":true,"IsGlobal":true,"BooleanmValue":false},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(199.315536,114.75943)","Comment":"Se
+        Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaInmovilizada","IsShared":true,"IsGlobal":true,"BooleanmValue":true},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(159.841843,114.75943)","Comment":"Se
         pega al Fantasma"},"ID":35,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":10},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.ReturnSuccess","NodeData":{"Offset":"(2601.3396,110.789871)"},"ID":36,"Name":"Return
         Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,110)"},"ID":37,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-37.48352,110.514465)","Comment":"Est\u00e1
         cantando"},"ID":38,"Name":"Compare Shared Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaCantando","IsShared":true,"IsGlobal":true,"BooleanmValue":true},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.RandomProbability","NodeData":{"Offset":"(50.2059021,239.643219)","Comment":"Puede
         ocurrir una crisis"},"ID":39,"Name":"Random Probability","Instant":true,"SharedFloatsuccessProbability":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.1},"SharedIntseed":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"","Int32mValue":0},"SharedBooluseSeed":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(150.205933,356.3098)","Comment":"Deja
-        de cantar"},"ID":40,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaVaABambalina","IsShared":true,"IsGlobal":true,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(226.205963,474.9764)","Comment":"Va
+        de cantar"},"ID":40,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaVaABambalina","IsShared":true,"IsGlobal":true,"BooleanmValue":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(226.205963,474.9764)","Comment":"Va
         a la bambalina"},"ID":41,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":5},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":11},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(305.206146,588.6437)","Comment":"Le
-        da ansiedad"},"ID":42,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaConAnsiedad","IsShared":true,"IsGlobal":true,"BooleanmValue":false}}]}]}]}]}}'
+        da ansiedad"},"ID":42,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"DivaConAnsiedad","IsShared":true,"IsGlobal":true,"BooleanmValue":true}}]}]}]}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -26167,7 +26167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093407620}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 75.83633, y: 93.42, z: -43.0998}
+  m_LocalPosition: {x: 73.69, y: 93.42, z: -46.36}
   m_LocalScale: {x: 1.31016, y: 1.7082, z: 1.122045}
   m_Children:
   - {fileID: 433460701}
@@ -26181,7 +26181,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093407620}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6838759ce57e6cf4c9adb2a88eee3369, type: 3}
   m_Name: 
@@ -26591,7 +26591,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127032992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.64, y: 0, z: 9.06}
+  m_LocalPosition: {x: 6.64, y: 0.528, z: 9.06}
   m_LocalScale: {x: 2, y: 1, z: 0.5}
   m_Children:
   - {fileID: 2049435117}
