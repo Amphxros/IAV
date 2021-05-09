@@ -32,9 +32,9 @@ public class Barca : MonoBehaviour
 
                 if (other.tag == "Fantasma")
                 {
-                    other.GetComponent<NavMeshAgent>().enabled = false;
+                    //other.GetComponent<NavMeshAgent>().enabled = false;
                     other.transform.position = new Vector3(pos.transform.position.x, other.transform.position.y, pos.transform.position.z);
-                    other.GetComponent<NavMeshAgent>().enabled = true;
+                    //other.GetComponent<NavMeshAgent>().enabled = true;
                 }                
                 else if (other.tag == "Vizconde")
                 {
