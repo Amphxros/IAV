@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BehaviorDesigner.Runtime;
 
 public class Interactuar : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class Interactuar : MonoBehaviour
             if (isInteracting)
             {
                 p.setEnabled(false);
+                var CondeUsandoPiano = (SharedBool)GlobalVariables.Instance.GetVariable("CondeInteractuandoConPiano");
+                CondeUsandoPiano.SetValue(true);
             }
         }
 
@@ -41,6 +44,7 @@ public class Interactuar : MonoBehaviour
 
     void OnTriggerExit(Collider col)
     {
-
+        var CondeUsandoPiano = (SharedBool)GlobalVariables.Instance.GetVariable("CondeInteractuandoConPiano");
+        CondeUsandoPiano.SetValue(false);
     }
 }
