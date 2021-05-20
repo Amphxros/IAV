@@ -79,7 +79,6 @@ namespace es.ucm.fdi.iav.rts{
             }
             else
             {
-
                 Facilities = RTSGameManager.Instance.GetBaseFacilities(MyIndex);
                 PFacilities = RTSGameManager.Instance.GetProcessingFacilities(MyIndex);
                 UnitsExtractList = RTSGameManager.Instance.GetExtractionUnits(MyIndex);
@@ -174,18 +173,30 @@ namespace es.ucm.fdi.iav.rts{
                                 break;
                             case PosibleMovement.MoveRandomExplorer:
                                 Debug.Log("Mueve un explorador x");
+                                int exploradorID = Random.Range(0, UnitsExploreList.Count);
+                                RTSGameManager.Instance.MoveUnit(this, UnitsExploreList[exploradorID], EnemyFacilities[0].transform);
                                 break;
                             case PosibleMovement.MoveRandomDestroyer:
                                 Debug.Log("Mueve un destructor x");
+                                int destructorID = Random.Range(0, UnitsDestroyerList.Count);
+                                RTSGameManager.Instance.MoveUnit(this, UnitsDestroyerList[destructorID], EnemyFacilities[0].transform);
                                 break;
                             case PosibleMovement.MoveAllExtraction:
                                 Debug.Log("Mueve todos los extractores");
                                 break;
                             case PosibleMovement.MoveAllExplorer:
                                 Debug.Log("Mueve todos los exploradores");
+                                foreach (Unit explorador in UnitsExploreList)
+                                {
+                                    RTSGameManager.Instance.MoveUnit(this, explorador, EnemyFacilities[0].transform);
+                                }
                                 break;
                             case PosibleMovement.MoveAllDestroyer:
                                 Debug.Log("Mueve todos los destructores");
+                                foreach (Unit destroyer in UnitsDestroyerList)
+                                {
+                                    RTSGameManager.Instance.MoveUnit(this, destroyer, EnemyFacilities[0].transform);
+                                }
                                 break;
                             case PosibleMovement.MoveLastExtraction:
                                 Debug.Log("Mueve al ultimo extractor");
