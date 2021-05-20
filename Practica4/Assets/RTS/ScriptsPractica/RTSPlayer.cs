@@ -11,6 +11,7 @@ namespace es.ucm.fdi.iav.rts{
             MoveRandomExplorer, MoveAllExplorer, MoveLastExplorer,
             MoveRandomDestroyer, MoveAllDestroyer, MoveLastDestroyer
         }
+
         public int PersonalMaxExtractor;
         public int PersonalMaxExplorer;
         public int PersonalMaxDestroyer;
@@ -47,100 +48,167 @@ namespace es.ucm.fdi.iav.rts{
         private List<LimitedAccess> resourcesList;
         private List<Tower> towersList;
 
+        private int MyIndex { get; set; }
+        private int FirstEnemyIndex { get; set; }
 
         private int ThinkStepNumber { get; set; } = 0;
         private Unit LastUnit { get; set; }
 
-        private override void Awake()
+        public void Awake()
         {
-        Name="Player-G10-IAV";
-        Author= "Amparo Rubio Bellón";
-        ThinkStepNumber=0;
-
+            Name="Player-G10-IAV";
+            Author= "Amparo Rubio Bellón";
+            ThinkStepNumber=0;
         }
 
-        protected override voi Think(){
+        protected override void Think(){
             // inicio de la partida
-            if(ThinkStepNumber==0){
+            if (ThinkStepNumber == 0)
+            {
                 // mis referencias
-                MyIndex= RTSGameManager.Instance.GetIndex(this);
+                MyIndex = RTSGameManager.Instance.GetIndex(this);
                 MyFirstBaseFacility = RTSGameManager.Instance.GetBaseFacilities(MyIndex)[0];
                 MyFirstProcessingFacility = RTSGameManager.Instance.GetProcessingFacilities(MyIndex)[0];
 
-                
+
 
 
                 // mapa de influencia
 
 
             }
-            else{
+            else
+            {
 
-                    Facilities = RTSGameManager.Instance.GetBaseFacilities(MyIndex);
-                    PFacilities = RTSGameManager.Instance.GetProcessingFacilities(MyIndex);
-                    UnitsExtractList = RTSGameManager.Instance.GetExtractionUnits(MyIndex);
-                    UnitsExploreList = RTSGameManager.Instance.GetExplorationUnits(MyIndex);
-                    UnitsDestroyerList = RTSGameManager.Instance.GetDestructionUnits(MyIndex);
-1
-                    EnemyFacilities = RTSGameManager.Instance.GetBaseFacilities(FirstEnemyIndex);
-                    EnemyPFacilities = RTSGameManager.Instance.GetProcessingFacilities(FirstEnemyIndex);
-                    EnemyUnitsExtractList = RTSGameManager.Instance.GetExtractionUnits(FirstEnemyIndex);
-                    EnemyUnitsExploreList = RTSGameManager.Instance.GetExplorationUnits(FirstEnemyIndex);
-                    EnemyUnitsDestroyerList = RTSGameManager.Instance.GetDestructionUnits(FirstEnemyIndex);
+                Facilities = RTSGameManager.Instance.GetBaseFacilities(MyIndex);
+                PFacilities = RTSGameManager.Instance.GetProcessingFacilities(MyIndex);
+                UnitsExtractList = RTSGameManager.Instance.GetExtractionUnits(MyIndex);
+                UnitsExploreList = RTSGameManager.Instance.GetExplorationUnits(MyIndex);
+                UnitsDestroyerList = RTSGameManager.Instance.GetDestructionUnits(MyIndex);
 
-                    towersList = RTSScenarioManager.Instance.Towers;
+                EnemyFacilities = RTSGameManager.Instance.GetBaseFacilities(FirstEnemyIndex);
+                EnemyPFacilities = RTSGameManager.Instance.GetProcessingFacilities(FirstEnemyIndex);
+                EnemyUnitsExtractList = RTSGameManager.Instance.GetExtractionUnits(FirstEnemyIndex);
+                EnemyUnitsExploreList = RTSGameManager.Instance.GetExplorationUnits(FirstEnemyIndex);
+                EnemyUnitsDestroyerList = RTSGameManager.Instance.GetDestructionUnits(FirstEnemyIndex);
 
-                    if (Facilities.Count > 0) // Si hay instalaciones base podemos construir
+                towersList = RTSScenarioManager.Instance.Towers;
+
+                if (Facilities.Count > 0) // Si hay instalaciones base podemos construir
+                {
+                    bool[] canCreateUnits = new bool[3];
+                    if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.ExtractionUnitCost)
                     {
-                        bool [] canCreateUnits= new bool[3];
-                        if(RTSGameManager.Instance.GetMoney(MyIndex)>RTSGameManager.Instance.ExtractionUnitCost){
-                            canCreateUnits[0]=true;
-                        }
-   
-                        if(RTSGameManager.Instance.GetMoney(MyIndex)>RTSGameManager.Instance.DestructionUnitCost){
-                            canCreateUnits[1]=true;
-                        }
-                        if(RTSGameManager.Instance.GetMoney(MyIndex)>RTSGameManager.Instance.ExplorationUnitCost){
-                            canCreateUnits[2]=true; 
-                        }
-                        if(!canCreateUnits[0] && !canCreateUnits[1] && !canCreateUnits[2]){ //no hay dinero para crear asi que podemos intentar ver si hay unidades para mmover
-                            
-                            bool thereAreUnits=false;
-                            if(UnitsExtractList.Count>0){
-                                thereAreUnits=true;
-
-                            }
-                            if(UnitsExploreList.Count>0){
-                                thereAreUnits=true;
-
-                            }
-                            if(UnitsDestroyerList.Count>0){
-                                thereAreUnits=true;
-
-                            }
-
-                            if(!thereAreUnits){
-                                // si no hemos podido mover unidades -> no habia unidades
-                                // ademas en este caso no contaríamos con dinero para construirlas
-                                // es decir tendríamos edificios pero ni unidades ni dinero para construirlas
-                                Debug.Log("no hay unidades ni dinero para construirlas");
-                            }
-
-                            // en este caso como contamos con unidades pero noo dinero debemos mover las que tenemos
-                            else{
-
-                            }
-                        }
-
-                        // como podemos crear unidades podemos decidir si crear o mover las que tenemos
-                        else{
-
-                        }
-  
-
+                        canCreateUnits[0] = true;
                     }
 
+                    if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.DestructionUnitCost)
+                    {
+                        canCreateUnits[1] = true;
+                    }
+                    if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.ExplorationUnitCost)
+                    {
+                        canCreateUnits[2] = true;
+                    }
 
+                    //no hay dinero para crear asi que podemos intentar ver si hay unidades para mover
+                    if (!canCreateUnits[0] && !canCreateUnits[1] && !canCreateUnits[2])
+                    {
+
+                        bool thereAreUnits = false;
+                        if (UnitsExtractList.Count > 0)
+                        {
+                            thereAreUnits = true;
+
+                        }
+                        if (UnitsExploreList.Count > 0)
+                        {
+                            thereAreUnits = true;
+
+                        }
+                        if (UnitsDestroyerList.Count > 0)
+                        {
+                            thereAreUnits = true;
+
+                        }
+
+                        if (!thereAreUnits)
+                        {
+                            // si no hemos podido mover unidades -> no habia unidades
+                            // ademas en este caso no contaríamos con dinero para construirlas
+                            // es decir tendríamos edificios pero ni unidades ni dinero para construirlas
+                            Debug.Log("no hay unidades ni dinero para construirlas");
+                        }
+
+                        // en este caso como contamos con unidades pero no dinero debemos mover las que tenemos
+                        else
+                        {
+
+                        }
+                    }
+
+                    // como podemos crear unidades podemos decidir si crear o mover las que tenemos
+                    else
+                    {
+                        // Se da prioridad a construir las unidades
+                        if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.ExtractionUnitCost && UnitsExtractList.Count < RTSGameManager.Instance.ExtractionUnitsMax)
+                        {
+                            Debug.Log("Creando un nuevo extractor");
+                            RTSGameManager.Instance.CreateUnit(this, MyFirstBaseFacility, RTSGameManager.UnitType.EXTRACTION);
+                        }
+                        if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.ExplorationUnitCost && UnitsExploreList.Count < RTSGameManager.Instance.ExplorationUnitsMax)
+                        {
+                            Debug.Log("Creando un nuevo explorador");
+                            RTSGameManager.Instance.CreateUnit(this, MyFirstBaseFacility, RTSGameManager.UnitType.EXPLORATION);
+                        }
+                        if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.DestructionUnitCost && UnitsDestroyerList.Count < RTSGameManager.Instance.DestructionUnitsMax)
+                        {
+                            Debug.Log("Creando un nuevo destructor");
+                            RTSGameManager.Instance.CreateUnit(this, MyFirstBaseFacility, RTSGameManager.UnitType.DESTRUCTION);
+                        }
+                        // Luego elige un tipo de movimiento al azar y lo ejecuta
+                        switch(Moves[nextMove])
+                        {
+                            case PosibleMovement.MoveRandomExtraction:
+                                Debug.Log("Mueve un extractor x");
+                                break;
+                            case PosibleMovement.MoveRandomExplorer:
+                                Debug.Log("Mueve un explorador x");
+                                break;
+                            case PosibleMovement.MoveRandomDestroyer:
+                                Debug.Log("Mueve un destructor x");
+                                break;
+                            case PosibleMovement.MoveAllExtraction:
+                                Debug.Log("Mueve todos los extractores");
+                                break;
+                            case PosibleMovement.MoveAllExplorer:
+                                Debug.Log("Mueve todos los exploradores");
+                                break;
+                            case PosibleMovement.MoveAllDestroyer:
+                                Debug.Log("Mueve todos los destructores");
+                                break;
+                            case PosibleMovement.MoveLastExtraction:
+                                Debug.Log("Mueve al ultimo extractor");
+                                break;
+                            case PosibleMovement.MoveLastExplorer:
+                                Debug.Log("Mueve al ultimo explorador");
+                                break;
+                            case PosibleMovement.MoveLastDestroyer:
+                                Debug.Log("Mueve al ultimo destructor");
+                                break;
+                        }
+                        // Selecciona un valor arbitrario del enum
+                        nextMove = NextMovement();
+                        Debug.Log("Siguiente movimiento es " + nextMove);
+                    }
+                }
+            }
+            ThinkStepNumber++;
+        }
+        private int NextMovement()
+        {
+            int posibleMovements = PosibleMovement.GetNames(typeof(PosibleMovement)).Length;
+            return Random.Range(0, posibleMovements);
         }
 
     }
