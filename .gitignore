@@ -42,6 +42,16 @@ Practica4/[Ll]ogs/
 Practica4/[Uu]ser[Ss]ettings/
 
 
+#Ignora archivos generados de la practica 4
+Practica4Version2/EvaluacionCoordinacion/[Ll]ibrary/
+Practica4Version2/EvaluacionCoordinacion/[Tt]emp/
+Practica4Version2/EvaluacionCoordinacion/[Oo]bj/
+Practica4Version2/EvaluacionCoordinacion/[Bb]uild/
+Practica4Version2/EvaluacionCoordinacion/[Bb]uilds/
+Practica4Version2/EvaluacionCoordinacion/[Ll]ogs/
+Practica4Version2/EvaluacionCoordinacion/[Uu]ser[Ss]ettings/
+
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
