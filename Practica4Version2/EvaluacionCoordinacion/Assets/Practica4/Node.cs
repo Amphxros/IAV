@@ -12,19 +12,21 @@ public class Node : MonoBehaviour
     private void Start() {
      mState_=State.None; 
      NoneNode.SetActive(true);
-     
-     TeamANode.SetActive(true); 
+     TeamANode.SetActive(false);
+     TeamBNode.SetActive(false); 
     }
     public void SetTeamA(){
         mState_= State.TeamA;
         
      NoneNode.SetActive(false);
      TeamANode.SetActive(true);
+     TeamBNode.SetActive(false);
     }
 
     public void SetTeamB(){
         mState_= State.TeamB;
      NoneNode.SetActive(false);
-     TeamANode.SetActive(true);
+     TeamANode.SetActive(false);
+     TeamBNode.SetActive(true);
     }
 }

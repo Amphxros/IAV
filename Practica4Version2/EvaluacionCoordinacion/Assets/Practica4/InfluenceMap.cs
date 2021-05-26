@@ -6,6 +6,9 @@ namespace es.ucm.fdi.iav.rts
 {
     public class InfluenceMap : MonoBehaviour
     {
+        public GameObject node;
+        private List<Node> nodes;
+        
         public int dimensionX, dimensionY, dimensionZ;
         private Vector3[,] points; 
 
@@ -23,37 +26,34 @@ namespace es.ucm.fdi.iav.rts
         private List<DestructionUnit> TeamBUnitsDestroyerList;
     
         bool hasReferences_=false;
-        void Start()
+      
+        void OnEnable()
         {
         int dimX= -dimensionX/2;
         int dimZ= -dimensionZ/2;
 
-        points = new Vector3[dimensionX, dimensionZ];
-
-        for(int i=0;i<dimensionX;i++){
-            for(int j=0;j<dimensionZ;j++){
-                points[i,j]=new Vector3(dimX + i, dimensionY, dimZ+ j);
+        for(int i=dimX ; i<dimensionX;i++){
+            for(int j=dimZ ; j<dimensionZ;j++){
+                GameObject g= Instantiate(node, this.transform);
+                g.transform.position=new Vector3( i, dimensionY,j);
+                nodes.Add(g.GetComponent<Node>());
+                Debug.Log(i + " " + j);
             }
         }
 
         }   
-
-        void Update()
-        {
-            if(!hasReferences_){
-            // pillar todas las referencias del GM
-        
-
-            hasReferences_=true;
-            }
-        }
-
+      
         void UpdateNodes(){
             if(!hasReferences_){
-                return;
+            
+            
             }
             else{
+
+                for(int i=0;i<nodes.Count;i++){
                 
+                }
+
             }
         }
     }
