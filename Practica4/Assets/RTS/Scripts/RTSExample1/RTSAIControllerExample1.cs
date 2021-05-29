@@ -122,6 +122,7 @@ namespace es.ucm.fdi.iav.rts
                 EnemyUnitsDestroyerList = RTSGameManager.Instance.GetDestructionUnits(FirstEnemyIndex);
 
                 towersList = RTSScenarioManager.Instance.Towers;
+                resourcesList = RTSScenarioManager.Instance.LimitedAccesses;
 
                 if (Facilities.Count > 0) // Si hay instalaciones base podemos construir
                 {
@@ -200,18 +201,17 @@ namespace es.ucm.fdi.iav.rts
             if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.ExtractionUnitCost && UnitsExtractList.Count < RTSGameManager.Instance.ExtractionUnitsMax)
             {
                 // Aqui crea un extractor y lo mueve a la zona de recursos mas cercanas
-                Debug.Log("Creando un nuevo extractor");
                 RTSGameManager.Instance.CreateUnit(this, MyFirstBaseFacility, RTSGameManager.UnitType.EXTRACTION);
                 RTSGameManager.Instance.MoveUnit(this, UnitsExtractList[UnitsExtractList.Count - 1], ChooseObjective(UnitsExtractList[UnitsExtractList.Count - 1].transform, PosibleObjective.ClosestResourceZone).transform);
             }
             if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.ExplorationUnitCost && UnitsExploreList.Count < RTSGameManager.Instance.ExplorationUnitsMax)
             {
-                Debug.Log("Creando un nuevo explorador");
+                //Debug.Log("Creando un nuevo explorador");
                 RTSGameManager.Instance.CreateUnit(this, MyFirstBaseFacility, RTSGameManager.UnitType.EXPLORATION);
             }
             if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.DestructionUnitCost && UnitsDestroyerList.Count < RTSGameManager.Instance.DestructionUnitsMax)
             {
-                Debug.Log("Creando un nuevo destructor");
+                //Debug.Log("Creando un nuevo destructor");
                 RTSGameManager.Instance.CreateUnit(this, MyFirstBaseFacility, RTSGameManager.UnitType.DESTRUCTION);
             }
         }
@@ -301,6 +301,7 @@ namespace es.ucm.fdi.iav.rts
         private Transform ChooseObjective(Transform origen, PosibleObjective obj)
         {
             Transform objetivo = origen;
+            GameObject aux;
             int rand = -1;
 
             PosibleObjective val;
@@ -374,6 +375,7 @@ namespace es.ucm.fdi.iav.rts
                     if (resourcesList != null && resourcesList.Count > 0)
                     {
                         objetivo = GetNewObjective(resourcesList.ToArray(), origen, true).transform;
+                        Debug.Log("Devolviendo " + objetivo);
                     }
                     break;
                 case PosibleObjective.ClosestExtractor:
