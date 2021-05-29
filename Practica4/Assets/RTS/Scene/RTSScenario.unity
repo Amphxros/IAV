@@ -520,7 +520,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thinkTime: 0.5
-  moves: 000000000100000002000000030000000400000005000000060000000700000008000000
+  PersonalMaxExtractor: 0
+  PersonalMaxExplorer: 0
+  PersonalMaxDestroyer: 0
+  Moves: 000000000100000002000000030000000400000005000000060000000700000008000000
 --- !u!1001 &243753206
 PrefabInstance:
   m_ObjectHideFlags: 0
