@@ -6,16 +6,13 @@ namespace es.ucm.fdi.iav.rts
 {
     public class RTSAIControllerExample1 : RTSAIController
     {
-        public enum PosibleMovement
-        {
-            MoveRandomExtraction, MoveAllExtraction, MoveLastExtraction,
-            MoveRandomExplorer, MoveAllExplorer, MoveLastExplorer,
-            MoveRandomDestroyer, MoveAllDestroyer, MoveLastDestroyer
-        }
+        // El estilo para las etiquetas de la interfaz
+        private GUIStyle _labelStyle;
+        private GUIStyle _labelSmallStyle;
 
         // Todos los posibles objetivos que puede poner a sus movimientos este IA
         public enum PosibleObjective
-        { // Tamaño = 35
+        { // Tamaño = 38
             // Ninguno
             RandomObjective,
             // Edificios Enemigos
@@ -32,6 +29,8 @@ namespace es.ucm.fdi.iav.rts
             ClosestEnemyExtractor, ClosestEnemyExplorer, ClosestEnemyDestroyer, ClosestRandomEnemyUnity,
             LastEnemyExtractor, LastEnemyExplorer, LastEnemyDestroyer, LastRandomEnemyUnit,
             FurthestEnemyExtractor, FurthestEnemyExplorer, FurthesEnemytDestroyer, FurthestRandomEnemyUnit,
+            // Torres
+            FurthestTorret, ClosestTorret, RandomTorret
         }
 
         private List<PosibleObjective> objetivos;
@@ -41,13 +40,18 @@ namespace es.ucm.fdi.iav.rts
         public int PersonalMaxExplorer;
         public int PersonalMaxDestroyer;
 
-        [SerializeField]
+        public enum PosibleMovement
+        {
+            MoveRandomExtraction, MoveAllExtraction, MoveLastExtraction,
+            MoveRandomExplorer, MoveAllExplorer, MoveLastExplorer,
+            MoveRandomDestroyer, MoveAllDestroyer, MoveLastDestroyer
+        }
+
         // Los movimientos que estaran disponibles de verdad
-        public List<PosibleMovement> Moves;
+        private List<PosibleMovement> Moves;
         private int nextMove = 0; // indice para ir eligiendo enumerados de movimiento
 
         private Unit movedUnit;
-
 
         // informacion del "tablero"
         private BaseFacility MyFirstBaseFacility { get; set; }
@@ -86,12 +90,27 @@ namespace es.ucm.fdi.iav.rts
             ThinkStepNumber = 0;
 
             objetivos = new List<PosibleObjective>();
-
             PosibleObjective[] objs = (PosibleObjective[])PosibleObjective.GetValues(typeof(PosibleObjective));
             for (int i = 1; i < objs.Length; i++)
             {
                 objetivos.Add(objs[i]);
             }
+
+            Moves = new List<PosibleMovement>();
+            PosibleMovement[] moves = (PosibleMovement[])PosibleMovement.GetValues(typeof(PosibleMovement));
+            for (int i = 0; i < moves.Length; i++)
+            {
+                Moves.Add(moves[i]);
+            }
+
+            // Aumenta el tamaño y cambia el color de fuente de letra para OnGUI (amarillo para las IAs)
+            _labelStyle = new GUIStyle();
+            _labelStyle.fontSize = 16;
+            _labelStyle.normal.textColor = Color.yellow;
+
+            _labelSmallStyle = new GUIStyle();
+            _labelSmallStyle.fontSize = 11;
+            _labelSmallStyle.normal.textColor = Color.yellow;
         }
 
         protected override void Think()
@@ -189,11 +208,6 @@ namespace es.ucm.fdi.iav.rts
             }
             ThinkStepNumber++;
         }
-        private int NextMovement()
-        {
-            int posibleMovements = PosibleMovement.GetNames(typeof(PosibleMovement)).Length;
-            return Random.Range(0, posibleMovements);
-        }
 
         private void CreateUnits()
         {
@@ -222,12 +236,16 @@ namespace es.ucm.fdi.iav.rts
             {
                 case PosibleMovement.MoveRandomExtraction:
                     int extractorId = Random.Range(0, UnitsExtractList.Count);
-                    
+
                     // Solo mueve un extractor si no esta del todo lleno
                     if (UnitsExtractList[extractorId].Resources < UnitsExtractList[extractorId].ExtractableAmmount)
                     {
-                        // Lo mueve a la zona de extraccion mas cercana
-                        RTSGameManager.Instance.MoveUnit(this, UnitsExtractList[extractorId], ChooseObjective(UnitsExtractList[extractorId].transform, PosibleObjective.ClosestResourceZone).transform);
+                        // Hacer que la posibilidad sea pequeña para que no haga este movimiento muchas veces
+                        if (Posibilidad(25) > 24)
+                        {
+                            // Si entra, lo mueve a la zona de extraccion mas cercana
+                            RTSGameManager.Instance.MoveUnit(this, UnitsExtractList[extractorId], ChooseObjective(UnitsExtractList[extractorId].transform, PosibleObjective.ClosestResourceZone).transform);
+                        }
                     }
                     break;
                 case PosibleMovement.MoveRandomExplorer:
@@ -247,9 +265,8 @@ namespace es.ucm.fdi.iav.rts
                     }
                     break;
                 case PosibleMovement.MoveAllExtraction:
-                    // Lo hace pocas veces por lo inefectivo que es este tipo de movimiento
-                    int posibilidad = Random.Range(0, 25);
-                    if (posibilidad > 24)
+                    // Posibilidad extremadamente pequeña
+                    if (Posibilidad(100) > 99)
                     {
                         foreach (ExtractionUnit extractor in UnitsExtractList)
                         {
@@ -297,11 +314,17 @@ namespace es.ucm.fdi.iav.rts
             }
         }
 
+        private int Posibilidad(int n)
+        {
+            int posibilidad = Random.Range(0, n);
+
+            return posibilidad;
+        }
+
         // Recibe un origen y devuelve un objetivo en una posicion relativa a dicho origen
         private Transform ChooseObjective(Transform origen, PosibleObjective obj)
         {
             Transform objetivo = origen;
-            GameObject aux;
             int rand = -1;
 
             PosibleObjective val;
@@ -662,7 +685,7 @@ namespace es.ucm.fdi.iav.rts
             return objetivo;
         }
 
-        // Método auxiliar que sirve para devolver tanto el objeto más cercano como el más lejano a una transformada 'from'
+        // Metodo que selecciona un nuevo objetivo cercano o lejano, relativo a la posicion de origen que se le da
         protected GameObject GetNewObjective(MonoBehaviour[] list, Transform from, bool close)
         {
             int it = 1;
@@ -671,8 +694,6 @@ namespace es.ucm.fdi.iav.rts
             float maxDistance = Vector3.Distance(list[0].transform.position, from.position);
             float minDistance = Vector3.Distance(list[0].transform.position, from.position);
 
-            // No es una implementación muy eficiente porque mido distancias con respecto a todos los objetos de la lista
-            // (y realmente no haría falta estar recalculando esto tantas veces... se debería cachear, o incluso recalcular sólo cada varios ciclos
             while (it < list.Length)
             {
                 float distance = Vector3.Distance(list[it].transform.position, from.position);
@@ -692,6 +713,31 @@ namespace es.ucm.fdi.iav.rts
                 return list[minIt].gameObject;
             else
                 return list[maxIt].gameObject;
+        }
+
+        // Dibuja la interfaz gráfica de usuario para que se vea la información en pantalla
+        private void OnGUI()
+        {
+            // Abrimos un área de distribución arriba y a la izquierda (si el índice del controlador es par) o a la derecha (si el índice es impar), con contenido en vertical
+            float areaWidth = 150;
+            float areaHeight = 250;
+            if (MyIndex % 2 == 0)
+                GUILayout.BeginArea(new Rect(0, 0, areaWidth, areaHeight));
+            else
+                GUILayout.BeginArea(new Rect(Screen.width - areaWidth, 0, Screen.width, areaHeight));
+            GUILayout.BeginVertical();
+
+            // Lista las variables importantes como el índice del jugador y su cantidad de dinero
+            GUILayout.Label("[ C" + MyIndex + " ] " + RTSGameManager.Instance.GetMoney(MyIndex) + " solaris", _labelStyle);
+
+            // Aunque no exista el concepto de unidad seleccionada, podríamos mostrar cual ha sido la última en moverse
+            if (movedUnit != null)
+                // Una etiqueta para indicar la última unidad movida, si la hay
+                GUILayout.Label(movedUnit.gameObject.name + " moved", _labelSmallStyle);
+
+            // Cerramos el área de distribución con contenido en vertical
+            GUILayout.EndVertical();
+            GUILayout.EndArea();
         }
     }
 }
