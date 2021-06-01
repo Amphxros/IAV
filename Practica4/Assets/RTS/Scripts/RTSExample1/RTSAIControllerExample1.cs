@@ -12,7 +12,7 @@ namespace es.ucm.fdi.iav.rts
 
         // Todos los posibles objetivos que puede poner a sus movimientos este IA
         public enum PosibleObjective
-        { // Tamaño = 38
+        {
             // Ninguno
             RandomObjective,
             // Edificios Enemigos
@@ -27,18 +27,13 @@ namespace es.ucm.fdi.iav.rts
             FurthestExtractor, FurthestExplorer, FurthestDestroyer, FurthestRandomFriendlyUnit,
             // Unidades Enemigas
             ClosestEnemyExtractor, ClosestEnemyExplorer, ClosestEnemyDestroyer, ClosestRandomEnemyUnity,
-            LastEnemyExtractor, LastEnemyExplorer, LastEnemyDestroyer, LastRandomEnemyUnit,
             FurthestEnemyExtractor, FurthestEnemyExplorer, FurthesEnemytDestroyer, FurthestRandomEnemyUnit,
             // Torres
-            FurthestTorret, ClosestTorret, RandomTorret
+            FurthestTorret, ClosestTorret
         }
 
         private List<PosibleObjective> objetivos;
         private int nextObjective = 0;
-
-        public int PersonalMaxExtractor;
-        public int PersonalMaxExplorer;
-        public int PersonalMaxDestroyer;
 
         public enum PosibleMovement
         {
@@ -204,6 +199,10 @@ namespace es.ucm.fdi.iav.rts
                         // Luego elige un tipo de movimiento al azar y lo ejecuta
                         MoveUnits();
                     }
+                }
+                else if (Facilities.Count <= 0 || EnemyFacilities.Count <= 0)
+                {
+                    Stop = true;
                 }
             }
             ThinkStepNumber++;
@@ -398,7 +397,6 @@ namespace es.ucm.fdi.iav.rts
                     if (resourcesList != null && resourcesList.Count > 0)
                     {
                         objetivo = GetNewObjective(resourcesList.ToArray(), origen, true).transform;
-                        Debug.Log("Devolviendo " + objetivo);
                     }
                     break;
                 case PosibleObjective.ClosestExtractor:
@@ -587,49 +585,6 @@ namespace es.ucm.fdi.iav.rts
                             break;
                     }
                     break;
-                case PosibleObjective.LastEnemyExtractor:
-                    if (EnemyUnitsExtractList != null && EnemyUnitsExtractList.Count > 0)
-                    {
-                        objetivo = EnemyUnitsExtractList[EnemyUnitsExtractList.Count - 1].transform;
-                    }
-                    break;
-                case PosibleObjective.LastEnemyExplorer:
-                    if (EnemyUnitsExploreList != null && EnemyUnitsExploreList.Count > 0)
-                    {
-                        objetivo = EnemyUnitsExploreList[EnemyUnitsExploreList.Count - 1].transform;
-                    }
-                    break;
-                case PosibleObjective.LastEnemyDestroyer:
-                    if (EnemyUnitsDestroyerList != null && EnemyUnitsDestroyerList.Count > 0)
-                    {
-                        objetivo = EnemyUnitsDestroyerList[EnemyUnitsDestroyerList.Count - 1].transform;
-                    }
-                    break;
-                case PosibleObjective.LastRandomEnemyUnit:
-                    rand = Random.Range(0, 3);
-                    switch(rand) {
-                        case 0:
-                            if (EnemyUnitsExtractList != null && EnemyUnitsExtractList.Count > 0)
-                            {
-                                objetivo = EnemyUnitsExtractList[EnemyUnitsExtractList.Count - 1].transform;
-                            }
-                            break;
-                        case 1:
-                            if (EnemyUnitsExploreList != null && EnemyUnitsExploreList.Count > 0)
-                            {
-                                objetivo = EnemyUnitsExploreList[EnemyUnitsExploreList.Count - 1].transform;
-                            }
-                            break;
-                        case 2:
-                            if (EnemyUnitsDestroyerList != null && EnemyUnitsDestroyerList.Count > 0)
-                            {
-                                objetivo = EnemyUnitsDestroyerList[EnemyUnitsDestroyerList.Count - 1].transform;
-                            }
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
                 case PosibleObjective.FurthestEnemyExtractor:
                     if (EnemyUnitsExtractList != null && EnemyUnitsExtractList.Count > 0)
                     {
@@ -676,6 +631,18 @@ namespace es.ucm.fdi.iav.rts
                         default:
                             // No se mueve
                             break;
+                    }
+                    break;
+                case PosibleObjective.FurthestTorret:
+                    if (towersList != null && towersList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(towersList.ToArray(), origen, false).transform;
+                    }
+                    break;
+                case PosibleObjective.ClosestTorret:
+                    if (towersList != null && towersList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(towersList.ToArray(), origen, true).transform;
                     }
                     break;
                 default:
