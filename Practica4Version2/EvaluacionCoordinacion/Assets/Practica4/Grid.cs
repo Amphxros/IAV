@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
+namespace  es.ucm.fdi.iav.rts
+{
 public interface GridNode
 {
     int Width{get;}
@@ -127,18 +127,18 @@ public class Grid : MonoBehaviour
 	}
 
     // Update is called once per frame
-    void Update()
+    void Update() 
     {
-        if(mData_!=null){
-            for(int i=0;i<mData_[0].Height; i++){
-                for(int j=0;j<mData_[0].Width; j++){
-                    float val=0, maxValue=0;
-                    for(int k=0; k<mData_.Length; k++){
-                        if (Mathf.Abs(mData_[k].GetValue (j, i)) > maxValue) {
+            if(mData_!=null){
+                for(int i=0;i<mData_[0].Height; i++){
+                    for(int j=0;j<mData_[0].Width; j++){
+                        float val=0, maxValue=0;
+                        for(int k=0; k<mData_.Length; k++){
+                            if (Mathf.Abs(mData_[k].GetValue (j, i)) > maxValue) {
 							maxValue = Mathf.Abs(mData_[k].GetValue (j, i));
 							val = mData_[k].GetValue (j, i);
-						}
-                    }
+						    }
+                        }
 
                     Color c= mNeutralColor;
                     if(val>0.5f){
@@ -159,11 +159,12 @@ public class Grid : MonoBehaviour
                     SetColor(j,i,c);
 
 
-                }   
+                    }   
+                }
+
+                mMesh.colors=_colors;
             }
 
-            mMesh.colors=_colors;
         }
-        
     }
 }
