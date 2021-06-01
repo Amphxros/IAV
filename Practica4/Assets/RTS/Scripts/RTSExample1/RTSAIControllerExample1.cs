@@ -1,129 +1,710 @@
-/*    
-   Copyright (C) 2020 Federico Peinado
-   http://www.federicopeinado.com
-
-   Este fichero forma parte del material de la asignatura Inteligencia Artificial para Videojuegos.
-   Esta asignatura se imparte en la Facultad de Informática de la Universidad Complutense de Madrid (España).
-
-   Autores originales: Opsive (Behavior Designer Samples)
-   Revisión: Federico Peinado 
-   Contacto: email@federicopeinado.com
-*/
-
-using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace es.ucm.fdi.iav.rts.example1
+namespace es.ucm.fdi.iav.rts
 {
-    // El controlador táctico que proporciono de ejemplo... simplemente manda órdenes RANDOM, y no hace ninguna interpretación (localizar puntos de ruta bien, análisis táctico, acción coordinada...) 
     public class RTSAIControllerExample1 : RTSAIController
     {
-        // No necesita guardar mucha información porque puede consultar la que desee por sondeo, incluida toda la información de instalaciones y unidades, tanto propias como ajenas
+        // El estilo para las etiquetas de la interfaz
+        private GUIStyle _labelStyle;
+        private GUIStyle _labelSmallStyle;
 
-        // Mi índice de controlador y un par de instalaciones para referenciar
-        private int MyIndex { get; set; }
-        private BaseFacility MyBaseFacility { get; set; }
-        private BaseFacility OtherBaseFacility { get; set; }
-        private ProcessingFacility MyProcessingFacility { get; set; }
-
-        // Número de paso de pensamiento 
-        private int ThinkStepNumber { get; set; } = 0;
-
-        // Última unidad creada
-        private Unit LastUnit { get; set; }
-
-        // Despierta el controlado y configura toda estructura interna que sea necesaria
-        private void Awake()
+        // Todos los posibles objetivos que puede poner a sus movimientos este IA
+        public enum PosibleObjective
         {
-            Name = "Example 1";
-            Author = "Federico Peinado";
+            // Ninguno
+            RandomObjective,
+            // Edificios Enemigos
+            FurthestEnemyBase, FurthestEnemyProcessinFacility, ClosestEnemyBase, ClosestEnemyProcessingFacility,
+            // Edificios Amigos
+            FurthestBase, FurthestProcessingFacility, ClosestBase, ClosestProcessingFacility,
+            // Zonas de extraccion
+            FurthestResourceZone, ClosestResourceZone,
+            // Unidades Amigas
+            ClosestExtractor,  ClosestExplorer, ClosestDestroyer, ClosestRandomFriendlyUnit,
+            LastExtractor, LastExplorer, LastDestroyer, LastRandomFriendlyUnit,
+            FurthestExtractor, FurthestExplorer, FurthestDestroyer, FurthestRandomFriendlyUnit,
+            // Unidades Enemigas
+            ClosestEnemyExtractor, ClosestEnemyExplorer, ClosestEnemyDestroyer, ClosestRandomEnemyUnity,
+            FurthestEnemyExtractor, FurthestEnemyExplorer, FurthesEnemytDestroyer, FurthestRandomEnemyUnit,
+            // Torres
+            FurthestTorret, ClosestTorret
         }
 
-        // El método de pensar que sobreescribe e implementa el controlador, para percibir (hacer mapas de influencia, etc.) y luego actuar.
+        private List<PosibleObjective> objetivos;
+        private int nextObjective = 0;
+
+        public enum PosibleMovement
+        {
+            MoveRandomExtraction, MoveAllExtraction, MoveLastExtraction,
+            MoveRandomExplorer, MoveAllExplorer, MoveLastExplorer,
+            MoveRandomDestroyer, MoveAllDestroyer, MoveLastDestroyer
+        }
+
+        // Los movimientos que estaran disponibles de verdad
+        private List<PosibleMovement> Moves;
+        private int nextMove = 0; // indice para ir eligiendo enumerados de movimiento
+
+        private Unit movedUnit;
+
+        // informacion del "tablero"
+        private BaseFacility MyFirstBaseFacility { get; set; }
+        private ProcessingFacility MyFirstProcessingFacility { get; set; }
+        private BaseFacility FirstEnemyFirstBaseFacility { get; set; }
+        private ProcessingFacility FirstEnemyFirstProcessingFacility { get; set; }
+
+        // Mis listas completas de instalaciones y unidades
+        private List<BaseFacility> Facilities;
+        private List<ProcessingFacility> PFacilities;
+        private List<ExtractionUnit> UnitsExtractList;
+        private List<ExplorationUnit> UnitsExploreList;
+        private List<DestructionUnit> UnitsDestroyerList;
+
+        // Las listas completas de instalaciones y unidades del enemigo
+        private List<BaseFacility> EnemyFacilities;
+        private List<ProcessingFacility> EnemyPFacilities;
+        private List<ExtractionUnit> EnemyUnitsExtractList;
+        private List<ExplorationUnit> EnemyUnitsExploreList;
+        private List<DestructionUnit> EnemyUnitsDestroyerList;
+
+        // Las listas completas de accesos limitados y torretas 
+        private List<LimitedAccess> resourcesList;
+        private List<Tower> towersList;
+
+        private int MyIndex { get; set; }
+        private int FirstEnemyIndex { get; set; }
+
+        private int ThinkStepNumber { get; set; } = 0;
+        private Unit LastUnit { get; set; }
+
+        public void Awake()
+        {
+            Name = "Player-G10-IAV";
+            Author = "Amparo Rubio Bellón";
+            ThinkStepNumber = 0;
+
+            objetivos = new List<PosibleObjective>();
+            PosibleObjective[] objs = (PosibleObjective[])PosibleObjective.GetValues(typeof(PosibleObjective));
+            for (int i = 1; i < objs.Length; i++)
+            {
+                objetivos.Add(objs[i]);
+            }
+
+            Moves = new List<PosibleMovement>();
+            PosibleMovement[] moves = (PosibleMovement[])PosibleMovement.GetValues(typeof(PosibleMovement));
+            for (int i = 0; i < moves.Length; i++)
+            {
+                Moves.Add(moves[i]);
+            }
+
+            // Aumenta el tamaño y cambia el color de fuente de letra para OnGUI (amarillo para las IAs)
+            _labelStyle = new GUIStyle();
+            _labelStyle.fontSize = 16;
+            _labelStyle.normal.textColor = Color.yellow;
+
+            _labelSmallStyle = new GUIStyle();
+            _labelSmallStyle.fontSize = 11;
+            _labelSmallStyle.normal.textColor = Color.yellow;
+        }
+
         protected override void Think()
         {
-            // Actualizo el mapa de influencia 
-            // ...
-
-            // Para las órdenes aquí estoy asumiendo que tengo dinero de sobra y que se dan las condiciones de todas las cosas...
-            // (Ojo: esto no debería hacerse porque si me equivoco, causaré fallos en el juego... hay que comprobar que cada llamada tiene sentido y es posible hacerla)
-
-            // Aquí lo suyo sería elegir bien la acción a realizar. 
-            // En este caso como es para probar, voy dando a cada vez una orden de cada tipo, todo de seguido y muy aleatorio...
-
-            switch (ThinkStepNumber)
+            // inicio de la partida
+            if (ThinkStepNumber == 0)
             {
-                case 0: // El primer contacto, un paso especial
-                    // Lo primer es conocer el índice que me ha asignado el gestor del juego
-                    MyIndex = RTSGameManager.Instance.GetIndex(this);
+                // mis referencias
+                MyIndex = RTSGameManager.Instance.GetIndex(this);
+                MyFirstBaseFacility = RTSGameManager.Instance.GetBaseFacilities(MyIndex)[0];
+                MyFirstProcessingFacility = RTSGameManager.Instance.GetProcessingFacilities(MyIndex)[0];
 
-                    // Obtengo referencias a mis cosas
-                    MyBaseFacility = RTSGameManager.Instance.GetBaseFacilities(MyIndex)[0];
-                    List<int> OtherIndexes = RTSGameManager.Instance.GetIndexes();
-                    OtherIndexes.Remove(MyIndex); // Entiendo que no estoy modificando la lista original de índices...
-                    OtherBaseFacility = RTSGameManager.Instance.GetBaseFacilities(OtherIndexes[0])[0];
-                    MyProcessingFacility = RTSGameManager.Instance.GetProcessingFacilities(MyIndex)[0];
-                    // ...
+                // mapa de influencia
 
-                    // Obtengo referencias a las cosas de mi enemigo
-                    // ...
+            }
+            else
+            {
+                Facilities = RTSGameManager.Instance.GetBaseFacilities(MyIndex);
+                PFacilities = RTSGameManager.Instance.GetProcessingFacilities(MyIndex);
+                UnitsExtractList = RTSGameManager.Instance.GetExtractionUnits(MyIndex);
+                UnitsExploreList = RTSGameManager.Instance.GetExplorationUnits(MyIndex);
+                UnitsDestroyerList = RTSGameManager.Instance.GetDestructionUnits(MyIndex);
 
-                    // Construyo por primera vez el mapa de influencia (con las 'capas' que necesite)
-                    // ...
-                    break;
+                EnemyFacilities = RTSGameManager.Instance.GetBaseFacilities(FirstEnemyIndex);
+                EnemyPFacilities = RTSGameManager.Instance.GetProcessingFacilities(FirstEnemyIndex);
+                EnemyUnitsExtractList = RTSGameManager.Instance.GetExtractionUnits(FirstEnemyIndex);
+                EnemyUnitsExploreList = RTSGameManager.Instance.GetExplorationUnits(FirstEnemyIndex);
+                EnemyUnitsDestroyerList = RTSGameManager.Instance.GetDestructionUnits(FirstEnemyIndex);
 
-                case 1:
+                towersList = RTSScenarioManager.Instance.Towers;
+                resourcesList = RTSScenarioManager.Instance.LimitedAccesses;
 
-                    LastUnit = RTSGameManager.Instance.CreateUnit(this, MyBaseFacility, RTSGameManager.UnitType.EXTRACTION);
-                    break;
+                if (Facilities.Count > 0) // Si hay instalaciones base podemos construir
+                {
+                    bool[] canCreateUnits = new bool[3];
+                    if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.ExtractionUnitCost)
+                    {
+                        canCreateUnits[0] = true;
+                    }
 
-                case 2:
-                    RTSGameManager.Instance.MoveUnit(this, LastUnit, OtherBaseFacility.transform);
-                    break;
+                    if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.DestructionUnitCost)
+                    {
+                        canCreateUnits[1] = true;
+                    }
+                    if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.ExplorationUnitCost)
+                    {
+                        canCreateUnits[2] = true;
+                    }
 
-                case 3:
-                    LastUnit = RTSGameManager.Instance.CreateUnit(this, MyBaseFacility, RTSGameManager.UnitType.DESTRUCTION);
-                    break;
+                    //no hay dinero para crear asi que podemos intentar ver si hay unidades para mover
+                    if (!canCreateUnits[0] && !canCreateUnits[1] && !canCreateUnits[2])
+                    {
 
-                case 4:
-                    RTSGameManager.Instance.MoveUnit(this, LastUnit, OtherBaseFacility.transform);
-                    break;
+                        bool thereAreUnits = false;
+                        if (UnitsExtractList.Count > 0)
+                        {
+                            thereAreUnits = true;
 
-                case 5:
-                    LastUnit = RTSGameManager.Instance.CreateUnit(this, MyBaseFacility, RTSGameManager.UnitType.EXTRACTION);
-                    break;
+                        }
+                        if (UnitsExploreList.Count > 0)
+                        {
+                            thereAreUnits = true;
 
-                case 6:
-                    RTSGameManager.Instance.MoveUnit(this, LastUnit, OtherBaseFacility.transform);
-                    break;
+                        }
+                        if (UnitsDestroyerList.Count > 0)
+                        {
+                            thereAreUnits = true;
 
-                case 7:
-                    RTSGameManager.Instance.MoveUnit(this, LastUnit, MyProcessingFacility.transform);
-                    break;
+                        }
 
-                case 8:
-                    LastUnit = RTSGameManager.Instance.CreateUnit(this, MyBaseFacility, RTSGameManager.UnitType.EXPLORATION);
-                    break;
+                        if (!thereAreUnits)
+                        {
+                            // si no hemos podido mover unidades -> no habia unidades
+                            // ademas en este caso no contaríamos con dinero para construirlas
+                            // es decir tendríamos edificios pero ni unidades ni dinero para construirlas
+                            Debug.Log("no hay unidades ni dinero para construirlas");
+                        }
 
-                case 9:
-                    RTSGameManager.Instance.MoveUnit(this, LastUnit, OtherBaseFacility.transform);
-                    break;
+                        // en este caso como contamos con unidades pero no dinero debemos mover las que tenemos
+                        else
+                        {
+                            MoveUnits();
+                        }
+                    }
 
-                case 10:
-                    LastUnit = RTSGameManager.Instance.CreateUnit(this, MyBaseFacility, RTSGameManager.UnitType.EXPLORATION);
-                    break;
-
-                case 11:
-                    RTSGameManager.Instance.MoveUnit(this, LastUnit, MyProcessingFacility.transform);
-                    // No lo hago... pero también se podrían crear y mover varias unidades en el mismo momento, claro...
-                    break;
-
-                case 12:
+                    // como podemos crear unidades podemos decidir si crear o mover las que tenemos
+                    else
+                    {
+                        // Se da prioridad a construir las unidades
+                        CreateUnits();
+                        // Luego elige un tipo de movimiento al azar y lo ejecuta
+                        MoveUnits();
+                    }
+                }
+                else if (Facilities.Count <= 0 || EnemyFacilities.Count <= 0)
+                {
                     Stop = true;
+                }
+            }
+            ThinkStepNumber++;
+        }
+
+        private void CreateUnits()
+        {
+            // Prioridad a los extractores, luego exploradores, finalmente destructores
+            if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.ExtractionUnitCost && UnitsExtractList.Count < RTSGameManager.Instance.ExtractionUnitsMax)
+            {
+                // Aqui crea un extractor y lo mueve a la zona de recursos mas cercanas
+                RTSGameManager.Instance.CreateUnit(this, MyFirstBaseFacility, RTSGameManager.UnitType.EXTRACTION);
+                RTSGameManager.Instance.MoveUnit(this, UnitsExtractList[UnitsExtractList.Count - 1], ChooseObjective(UnitsExtractList[UnitsExtractList.Count - 1].transform, PosibleObjective.ClosestResourceZone).transform);
+            }
+            if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.ExplorationUnitCost && UnitsExploreList.Count < RTSGameManager.Instance.ExplorationUnitsMax)
+            {
+                //Debug.Log("Creando un nuevo explorador");
+                RTSGameManager.Instance.CreateUnit(this, MyFirstBaseFacility, RTSGameManager.UnitType.EXPLORATION);
+            }
+            if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.DestructionUnitCost && UnitsDestroyerList.Count < RTSGameManager.Instance.DestructionUnitsMax)
+            {
+                //Debug.Log("Creando un nuevo destructor");
+                RTSGameManager.Instance.CreateUnit(this, MyFirstBaseFacility, RTSGameManager.UnitType.DESTRUCTION);
+            }
+        }
+
+        private void MoveUnits()
+        {
+            switch (Moves[nextMove])
+            {
+                case PosibleMovement.MoveRandomExtraction:
+                    int extractorId = Random.Range(0, UnitsExtractList.Count);
+
+                    // Solo mueve un extractor si no esta del todo lleno
+                    if (UnitsExtractList[extractorId].Resources < UnitsExtractList[extractorId].ExtractableAmmount)
+                    {
+                        // Hacer que la posibilidad sea pequeña para que no haga este movimiento muchas veces
+                        if (Posibilidad(25) > 24)
+                        {
+                            // Si entra, lo mueve a la zona de extraccion mas cercana
+                            RTSGameManager.Instance.MoveUnit(this, UnitsExtractList[extractorId], ChooseObjective(UnitsExtractList[extractorId].transform, PosibleObjective.ClosestResourceZone).transform);
+                        }
+                    }
+                    break;
+                case PosibleMovement.MoveRandomExplorer:
+                    // Solo mueve exploradores si al menos hay 2 exploradores mas que mantendran su posicion defensiva
+                    if (UnitsExploreList.Count > 2)
+                    {
+                        int exploradorId = Random.Range(0, UnitsExploreList.Count);
+                        RTSGameManager.Instance.MoveUnit(this, UnitsExploreList[exploradorId], ChooseObjective(UnitsExtractList[exploradorId].transform, PosibleObjective.RandomObjective));
+                    }
+                    break;
+                case PosibleMovement.MoveRandomDestroyer:
+                    // Solo mueve destructores si hay al menos 1 destructor mas que se quedan en su posicion actual
+                    if (UnitsDestroyerList.Count > 1)
+                    {
+                        int destructorID = Random.Range(0, UnitsDestroyerList.Count);
+                        RTSGameManager.Instance.MoveUnit(this, UnitsDestroyerList[destructorID], ChooseObjective(UnitsExtractList[destructorID].transform, PosibleObjective.RandomObjective));
+                    }
+                    break;
+                case PosibleMovement.MoveAllExtraction:
+                    // Posibilidad extremadamente pequeña
+                    if (Posibilidad(100) > 99)
+                    {
+                        foreach (ExtractionUnit extractor in UnitsExtractList)
+                        {
+                            // Solo si no estan llenos ya
+                            if (extractor.Resources < extractor.ExtractableAmmount)
+                            {
+                                // Lo mueve a la zona de extraccion mas cercana
+                                RTSGameManager.Instance.MoveUnit(this, extractor, ChooseObjective(extractor.transform, PosibleObjective.ClosestResourceZone));
+                            }
+                        }
+                    }
+                    break;
+                case PosibleMovement.MoveAllExplorer:
+                    // Mueve todos los exploradores que existan excepto dos que deja a la retaguardia
+                    for (int i = 0; i < UnitsExploreList.Count - 2; i++)
+                    {
+                        RTSGameManager.Instance.MoveUnit(this, UnitsExploreList[i], ChooseObjective(UnitsExploreList[i].transform, PosibleObjective.RandomObjective));
+                    }
+                    break;
+                case PosibleMovement.MoveAllDestroyer:
+                    // Mueve todos los destructores que existan excepto uno que deja a la retaguardia
+                    for (int i = 0; i < UnitsDestroyerList.Count - 1; i++)
+                    {
+                        RTSGameManager.Instance.MoveUnit(this, UnitsDestroyerList[i], ChooseObjective(UnitsDestroyerList[i].transform, PosibleObjective.RandomObjective));
+                    }
+                    break;
+                case PosibleMovement.MoveLastExtraction:
+                    // Mueve el ultimo extractor a la zona de extraccion mas lejana
+                    RTSGameManager.Instance.MoveUnit(this, UnitsExtractList[UnitsExtractList.Count - 1], ChooseObjective(UnitsExtractList[UnitsExtractList.Count - 1].transform, PosibleObjective.FurthestResourceZone));
+                    break;
+                case PosibleMovement.MoveLastExplorer:
+                    RTSGameManager.Instance.MoveUnit(this, UnitsExploreList[UnitsExploreList.Count - 1], ChooseObjective(UnitsExploreList[UnitsExploreList.Count - 1].transform, PosibleObjective.RandomObjective));
+                    break;
+                case PosibleMovement.MoveLastDestroyer:
+                    RTSGameManager.Instance.MoveUnit(this, UnitsDestroyerList[UnitsDestroyerList.Count - 1], ChooseObjective(UnitsDestroyerList[UnitsDestroyerList.Count - 1].transform, PosibleObjective.RandomObjective));
                     break;
             }
-            //Debug.Log("Controlador automático " + MyIndex + " ha finalizado el paso de pensamiento " + ThinkStepNumber);
-            ThinkStepNumber++;
+
+            // Selecciona un valor arbitrario del enum
+            // Evita realizar el mismo movimiento dos veces consecutivas
+            int move = nextMove;
+            while (move == nextMove)
+            {
+                nextMove = Random.Range(0, PosibleMovement.GetNames(typeof(PosibleMovement)).Length);
+            }
+        }
+
+        private int Posibilidad(int n)
+        {
+            int posibilidad = Random.Range(0, n);
+
+            return posibilidad;
+        }
+
+        // Recibe un origen y devuelve un objetivo en una posicion relativa a dicho origen
+        private Transform ChooseObjective(Transform origen, PosibleObjective obj)
+        {
+            Transform objetivo = origen;
+            int rand = -1;
+
+            PosibleObjective val;
+            // Puede recibir un objetivo en especifico
+            if (obj != PosibleObjective.RandomObjective)
+            {
+                val = obj;
+            }
+            // o no
+            else {
+                nextObjective = Random.Range(0, PosibleObjective.GetNames(typeof(PosibleObjective)).Length);
+                val = objetivos[nextObjective];
+            }
+            switch (val)
+            {
+                case PosibleObjective.FurthestEnemyBase:
+                    if (EnemyFacilities != null && EnemyFacilities.Count > 0)
+                    {
+                        objetivo = GetNewObjective(EnemyFacilities.ToArray(), origen, false).transform;
+                    }
+                    break;
+                case PosibleObjective.FurthestEnemyProcessinFacility:
+                    if (EnemyPFacilities != null && EnemyPFacilities.Count > 0)
+                    {
+                        objetivo = GetNewObjective(EnemyPFacilities.ToArray(), origen, false).transform;
+                    }
+                    break;
+                case PosibleObjective.ClosestEnemyBase:
+                    if (EnemyFacilities != null && EnemyFacilities.Count > 0)
+                    {
+                        objetivo = GetNewObjective(EnemyFacilities.ToArray(), origen, true).transform;
+                    }
+                    break;
+                case PosibleObjective.ClosestEnemyProcessingFacility:
+                    if (EnemyPFacilities != null && EnemyPFacilities.Count > 0)
+                    {
+                        objetivo = GetNewObjective(EnemyPFacilities.ToArray(), origen, true).transform;
+                    }
+                    break;
+                case PosibleObjective.FurthestBase:
+                    if (Facilities != null && Facilities.Count > 0)
+                    {
+                        objetivo = GetNewObjective(Facilities.ToArray(), origen, false).transform;
+                    }
+                    break;
+                case PosibleObjective.FurthestProcessingFacility:
+                    if (PFacilities != null && PFacilities.Count > 0)
+                    {
+                        objetivo = GetNewObjective(PFacilities.ToArray(), origen, false).transform;
+                    }
+                    break;
+                case PosibleObjective.ClosestBase:
+                    if (Facilities != null && Facilities.Count > 0)
+                    {
+                        objetivo = GetNewObjective(Facilities.ToArray(), origen, true).transform;
+                    }
+                    break;
+                case PosibleObjective.ClosestProcessingFacility:
+                    if (PFacilities != null && PFacilities.Count > 0)
+                    {
+                        objetivo = GetNewObjective(PFacilities.ToArray(), origen, true).transform;
+                    }
+                    break;
+                case PosibleObjective.FurthestResourceZone:
+                    if (resourcesList != null && resourcesList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(resourcesList.ToArray(), origen, false).transform;
+                    }
+                    break;
+                case PosibleObjective.ClosestResourceZone:
+                    if (resourcesList != null && resourcesList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(resourcesList.ToArray(), origen, true).transform;
+                    }
+                    break;
+                case PosibleObjective.ClosestExtractor:
+                    if (UnitsExtractList != null && UnitsExtractList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(UnitsExtractList.ToArray(), origen, true).transform;
+                    }
+                    break;
+                case PosibleObjective.ClosestExplorer:
+                    if (UnitsExploreList != null && UnitsExploreList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(UnitsExploreList.ToArray(), origen, true).transform;
+                    }
+                    break;
+                case PosibleObjective.ClosestDestroyer:
+                    if (UnitsDestroyerList != null && UnitsDestroyerList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(UnitsDestroyerList.ToArray(), origen, true).transform;
+                    }
+                    break;
+                case PosibleObjective.ClosestRandomFriendlyUnit:
+                    rand = Random.Range(0, 3);
+                    switch (rand)
+                    {
+                        case 0:
+                            // Extractor
+                            if (UnitsExtractList != null && UnitsExtractList.Count > 0)
+                            {
+                                objetivo = GetNewObjective(UnitsExtractList.ToArray(), origen, false).transform;
+                            }
+                            break;
+                        case 1:
+                            // Explorador
+                            if (UnitsExploreList != null && UnitsExploreList.Count > 0)
+                            {
+                                objetivo = GetNewObjective(UnitsExploreList.ToArray(), origen, false).transform;
+                            }
+                            break;
+                        case 2:
+                            // Destructor
+                            if (UnitsDestroyerList != null && UnitsDestroyerList.Count > 0)
+                            {
+                                objetivo = GetNewObjective(UnitsDestroyerList.ToArray(), origen, false).transform;
+                            }
+                            break;
+                        default:
+                            // No se mueve
+                            break;
+                    }
+                    break;
+                case PosibleObjective.LastExtractor:
+                    if (UnitsExtractList != null && UnitsExtractList.Count > 0)
+                        objetivo = UnitsExtractList[UnitsExtractList.Count - 1].transform;
+                    break;
+                case PosibleObjective.LastExplorer:
+                    if (UnitsExploreList != null && UnitsExploreList.Count > 0)
+                        objetivo = UnitsExploreList[UnitsExploreList.Count - 1].transform;
+                    break;
+                case PosibleObjective.LastDestroyer:
+                    if (UnitsDestroyerList != null && UnitsDestroyerList.Count > 0)
+                        objetivo = UnitsDestroyerList[UnitsDestroyerList.Count - 1].transform;
+                    break;
+                case PosibleObjective.LastRandomFriendlyUnit:
+                    rand = Random.Range(0, 3);
+                    switch (rand)
+                    {
+                        case 0:
+                            // Extractor
+                            if (UnitsExtractList != null && UnitsExtractList.Count > 0)
+                            {
+                                objetivo = UnitsExtractList[UnitsExtractList.Count - 1].transform;
+                            }
+                            break;
+                        case 1:
+                            // Explorador
+                            if (UnitsExploreList != null && UnitsExploreList.Count > 0)
+                            {
+                                objetivo = UnitsExploreList[UnitsExploreList.Count - 1].transform;
+                            }
+                            break;
+                        case 2:
+                            // Destructor
+                            if (UnitsDestroyerList != null && UnitsDestroyerList.Count > 0)
+                            {
+                                objetivo = UnitsDestroyerList[UnitsDestroyerList.Count - 1].transform;
+                            }
+                            break;
+                        default:
+                            // No se mueve
+                            break;
+                    }
+                    break;
+                case PosibleObjective.FurthestExtractor:
+                    if (UnitsExtractList != null && UnitsExtractList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(UnitsExtractList.ToArray(), origen, false).transform;
+                    }
+                    break;
+                case PosibleObjective.FurthestExplorer:
+                    if (UnitsExploreList != null && UnitsExploreList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(UnitsExploreList.ToArray(), origen, false).transform;
+                    }
+                    break;
+                case PosibleObjective.FurthestDestroyer:
+                    if (UnitsDestroyerList != null && UnitsDestroyerList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(UnitsDestroyerList.ToArray(), origen, false).transform;
+                    }
+                    break;
+                case PosibleObjective.FurthestRandomFriendlyUnit:
+                    rand = Random.Range(0, 3);
+                    switch (rand)
+                    {
+                        case 0:
+                            // Extractor
+                            if (UnitsExtractList != null && UnitsExtractList.Count > 0)
+                            {
+                                objetivo = GetNewObjective(UnitsExtractList.ToArray(), origen, false).transform;
+                            }
+                            break;
+                        case 1:
+                            // Explorador
+                            if (UnitsExploreList != null && UnitsExploreList.Count > 0)
+                            {
+                                objetivo = GetNewObjective(UnitsExploreList.ToArray(), origen, false).transform;
+                            }
+                            break;
+                        case 2:
+                            // Destructor
+                            if (UnitsDestroyerList != null && UnitsDestroyerList.Count > 0)
+                            {
+                                objetivo = GetNewObjective(UnitsDestroyerList.ToArray(), origen, false).transform;
+                            }
+                            break;
+                        default:
+                            // No se mueve
+                            break;
+                    }
+                    break;
+                case PosibleObjective.ClosestEnemyExtractor:
+                    if (EnemyUnitsExtractList != null && EnemyUnitsExtractList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(EnemyUnitsExtractList.ToArray(), origen, true).transform;
+                    }
+                    break;
+                case PosibleObjective.ClosestEnemyExplorer:
+                    if (EnemyUnitsExploreList != null && EnemyUnitsExploreList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(EnemyUnitsExploreList.ToArray(), origen, true).transform;
+                    }
+                    break;
+                case PosibleObjective.ClosestEnemyDestroyer:
+                    if (EnemyUnitsDestroyerList != null && EnemyUnitsDestroyerList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(EnemyUnitsDestroyerList.ToArray(), origen, true).transform;
+                    }
+                    break;
+                case PosibleObjective.ClosestRandomEnemyUnity:
+                    rand = Random.Range(0, 3);
+                    switch (rand)
+                    {
+                        case 0:
+                            // Extractor
+                            if (EnemyUnitsExtractList != null && EnemyUnitsExtractList.Count > 0)
+                            {
+                                objetivo = GetNewObjective(EnemyUnitsExtractList.ToArray(), origen, true).transform;
+                            }
+                            break;
+                        case 1:
+                            // Explorador
+                            if (EnemyUnitsExploreList != null && EnemyUnitsExploreList.Count > 0)
+                            {
+                                objetivo = GetNewObjective(EnemyUnitsExploreList.ToArray(), origen, true).transform;
+                            }
+                            break;
+                        case 2:
+                            // Destructor
+                            if (EnemyUnitsDestroyerList != null && EnemyUnitsDestroyerList.Count > 0)
+                            {
+                                objetivo = GetNewObjective(EnemyUnitsDestroyerList.ToArray(), origen, true).transform;
+                            }
+                            break;
+                        default:
+                            // No se mueve
+                            break;
+                    }
+                    break;
+                case PosibleObjective.FurthestEnemyExtractor:
+                    if (EnemyUnitsExtractList != null && EnemyUnitsExtractList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(EnemyUnitsExtractList.ToArray(), origen, false).transform;
+                    }
+                    break;
+                case PosibleObjective.FurthestEnemyExplorer:
+                    if (EnemyUnitsExploreList != null && EnemyUnitsExploreList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(EnemyUnitsExploreList.ToArray(), origen, false).transform;
+                    }
+                    break;
+                case PosibleObjective.FurthesEnemytDestroyer:
+                    if (EnemyUnitsDestroyerList != null && EnemyUnitsDestroyerList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(EnemyUnitsDestroyerList.ToArray(), origen, false).transform;
+                    }
+                    break;
+                case PosibleObjective.FurthestRandomEnemyUnit:
+                    rand = Random.Range(0, 3);
+                    switch(rand)
+                    {
+                        case 0:
+                            // Extractor
+                            if (EnemyUnitsExtractList != null && EnemyUnitsExtractList.Count > 0)
+                            {
+                                objetivo = GetNewObjective(EnemyUnitsExtractList.ToArray(), origen, false).transform;
+                            }
+                            break;
+                        case 1:
+                            // Explorador
+                            if (EnemyUnitsExploreList != null && EnemyUnitsExploreList.Count > 0)
+                            {
+                                objetivo = GetNewObjective(EnemyUnitsExploreList.ToArray(), origen, false).transform;
+                            }
+                            break;
+                        case 2:
+                            // Destructor
+                            if (EnemyUnitsDestroyerList != null && EnemyUnitsDestroyerList.Count > 0)
+                            {
+                                objetivo = GetNewObjective(EnemyUnitsDestroyerList.ToArray(), origen, false).transform;
+                            }
+                            break;
+                        default:
+                            // No se mueve
+                            break;
+                    }
+                    break;
+                case PosibleObjective.FurthestTorret:
+                    if (towersList != null && towersList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(towersList.ToArray(), origen, false).transform;
+                    }
+                    break;
+                case PosibleObjective.ClosestTorret:
+                    if (towersList != null && towersList.Count > 0)
+                    {
+                        objetivo = GetNewObjective(towersList.ToArray(), origen, true).transform;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            return objetivo;
+        }
+
+        // Metodo que selecciona un nuevo objetivo cercano o lejano, relativo a la posicion de origen que se le da
+        protected GameObject GetNewObjective(MonoBehaviour[] list, Transform from, bool close)
+        {
+            int it = 1;
+            int maxIt = 0;
+            int minIt = 0;
+            float maxDistance = Vector3.Distance(list[0].transform.position, from.position);
+            float minDistance = Vector3.Distance(list[0].transform.position, from.position);
+
+            while (it < list.Length)
+            {
+                float distance = Vector3.Distance(list[it].transform.position, from.position);
+                if (distance > maxDistance)
+                {
+                    maxIt = it;
+                    maxDistance = distance;
+                }
+                if (distance < minDistance)
+                {
+                    minIt = it;
+                    minDistance = distance;
+                }
+                it++;
+            }
+            if (close)
+                return list[minIt].gameObject;
+            else
+                return list[maxIt].gameObject;
+        }
+
+        // Dibuja la interfaz gráfica de usuario para que se vea la información en pantalla
+        private void OnGUI()
+        {
+            // Abrimos un área de distribución arriba y a la izquierda (si el índice del controlador es par) o a la derecha (si el índice es impar), con contenido en vertical
+            float areaWidth = 150;
+            float areaHeight = 250;
+            if (MyIndex % 2 == 0)
+                GUILayout.BeginArea(new Rect(0, 0, areaWidth, areaHeight));
+            else
+                GUILayout.BeginArea(new Rect(Screen.width - areaWidth, 0, Screen.width, areaHeight));
+            GUILayout.BeginVertical();
+
+            // Lista las variables importantes como el índice del jugador y su cantidad de dinero
+            GUILayout.Label("[ C" + MyIndex + " ] " + RTSGameManager.Instance.GetMoney(MyIndex) + " solaris", _labelStyle);
+
+            // Aunque no exista el concepto de unidad seleccionada, podríamos mostrar cual ha sido la última en moverse
+            if (movedUnit != null)
+                // Una etiqueta para indicar la última unidad movida, si la hay
+                GUILayout.Label(movedUnit.gameObject.name + " moved", _labelSmallStyle);
+
+            // Cerramos el área de distribución con contenido en vertical
+            GUILayout.EndVertical();
+            GUILayout.EndArea();
         }
     }
 }

@@ -451,7 +451,6 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Physics\Spherecast.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\GetParticleCount.cs" />
     <Compile Include="Assets\RTS\Scripts\DestructionUnit.cs" />
-    <Compile Include="Assets\RTS\ScriptsPractica\RTSPlayer.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Input\IsButtonDown.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\CircleCollider2D\GetOffset.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Math\FloatOperator.cs" />

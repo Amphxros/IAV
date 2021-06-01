@@ -494,14 +494,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 199240326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1a5751a9a6e0d143ab233a14462eef3, type: 3}
+  m_Script: {fileID: 11500000, guid: bcb3792ea0b63d8448ef8f1dcf6c86e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thinkTime: 0.5
-  PersonalMaxExtractor: 5
-  PersonalMaxExplorer: 15
-  PersonalMaxDestroyer: 5
-  Moves: 000000000300000006000000010000000400000007000000020000000500000008000000
+  PersonalMaxExtractor: 0
+  PersonalMaxExplorer: 0
+  PersonalMaxDestroyer: 0
 --- !u!4 &199240328
 Transform:
   m_ObjectHideFlags: 0
