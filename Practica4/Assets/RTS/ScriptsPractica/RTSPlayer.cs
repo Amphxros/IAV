@@ -15,7 +15,9 @@ namespace es.ucm.fdi.iav.rts{
         public int PersonalMaxExtractor;
         public int PersonalMaxExplorer;
         public int PersonalMaxDestroyer;
-        
+
+        public InfluenceMapController myMap;
+
         [SerializeField]
         // Los movimientos que estaran disponibles de verdad
         public List<PosibleMovement> Moves;
@@ -74,11 +76,14 @@ namespace es.ucm.fdi.iav.rts{
 
 
                 // mapa de influencia
+                myMap.CreateMap();
 
 
             }
             else
             {
+                myMap.UpdateMap(MyIndex, FirstEnemyIndex);
+
                 Facilities = RTSGameManager.Instance.GetBaseFacilities(MyIndex);
                 PFacilities = RTSGameManager.Instance.GetProcessingFacilities(MyIndex);
                 UnitsExtractList = RTSGameManager.Instance.GetExtractionUnits(MyIndex);
