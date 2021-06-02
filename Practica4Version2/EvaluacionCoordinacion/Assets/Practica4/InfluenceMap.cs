@@ -30,8 +30,6 @@ namespace  es.ucm.fdi.iav.rts
         private List<LimitedAccess> resourcesList;
         private List<Tower> towersList;
 
-
-
         float[,] influences;
         
         float[,] influenceBuffer;
@@ -82,10 +80,68 @@ namespace  es.ucm.fdi.iav.rts
 		for (int i = 0; i< influences.GetLength(0); i++) 
 			for (int j = 0; j < influences.GetLength(1); j++) 
 				influenceBuffer[i, j] = influences[i, j];
-	}
+    	}
 
 
+        public void UpdateMap() {
+                
+            var indexList = RTSGameManager.Instance.GetIndexes();
+            var MyIndex =RTSGameManager.Instance.GetIndex(RTSGameManager.Instance.Controllers[indexList[0]]);
+            Facilities = RTSGameManager.Instance.GetBaseFacilities(MyIndex);
+            PFacilities = RTSGameManager.Instance.GetProcessingFacilities(MyIndex);
+            UnitsExtractList = RTSGameManager.Instance.GetExtractionUnits(MyIndex);
+            UnitsExploreList = RTSGameManager.Instance.GetExplorationUnits(MyIndex);
+            UnitsDestroyerList = RTSGameManager.Instance.GetDestructionUnits(MyIndex);
+                
+            foreach(Facility f in Facilities){
+                SetInfluence((int)f.transform.position.x, (int)f.transform.position.z, 1.0f);
+            }
+                
+            foreach(var f in PFacilities){
+                SetInfluence((int)f.transform.position.x, (int)f.transform.position.z, 1.0f);
+            }
+                
+            foreach(var f in UnitsExtractList){
+                SetInfluence((int)f.transform.position.x, (int)f.transform.position.z, 1.0f);
+            }
+                
+            foreach(var f in UnitsExploreList){
+                SetInfluence((int)f.transform.position.x, (int)f.transform.position.z, 1.0f);
+            }
+            foreach(var f in UnitsDestroyerList){
+                SetInfluence((int)f.transform.position.x, (int)f.transform.position.z, 1.0f);
+            }
 
+
+            indexList.Remove(MyIndex);
+            var FirstEnemyIndex = indexList[0];
+            EnemyFacilities = RTSGameManager.Instance.GetBaseFacilities(FirstEnemyIndex);
+            EnemyPFacilities = RTSGameManager.Instance.GetProcessingFacilities(FirstEnemyIndex);
+            EnemyUnitsExtractList = RTSGameManager.Instance.GetExtractionUnits(FirstEnemyIndex);
+            EnemyUnitsExploreList = RTSGameManager.Instance.GetExplorationUnits(FirstEnemyIndex);
+            EnemyUnitsDestroyerList = RTSGameManager.Instance.GetDestructionUnits(FirstEnemyIndex);
+
+
+            foreach(Facility f in EnemyFacilities){
+                SetInfluence((int)f.transform.position.x, (int)f.transform.position.z, -1.0f);
+            }
+                
+            foreach(var f in EnemyPFacilities){
+                SetInfluence((int)f.transform.position.x, (int)f.transform.position.z, -1.0f);
+            }
+                
+            foreach(var f in EnemyUnitsExtractList){
+                SetInfluence((int)f.transform.position.x, (int)f.transform.position.z, -1.0f);
+            }
+                
+            foreach(var f in EnemyUnitsExploreList){
+                SetInfluence((int)f.transform.position.x, (int)f.transform.position.z, -1.0f);
+            }
+            foreach(var f in EnemyUnitsDestroyerList){
+                SetInfluence((int)f.transform.position.x, (int)f.transform.position.z, -1.0f);
+            }
+
+        }
 
 
     }
