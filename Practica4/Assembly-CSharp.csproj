@@ -338,6 +338,7 @@
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\SetAngularDrag.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\IsStopped.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\AudioSource\SetIgnoreListenerVolume.cs" />
+     <Compile Include="Assets\Practica4\InfluenceMapController.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\NavMeshAgent\GetRemainingDistance.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Rigidbody\SetCenterOfMass.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Timeline\Play.cs" />
@@ -516,6 +517,7 @@
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Math\RandomBool.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\MoveRotation.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Input\GetKey.cs" />
+     <Compile Include="Assets\Practica4\Grid.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Vector2\GetXY.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\GetLoop.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Rigidbody2D\WakeUp.cs" />
@@ -603,6 +605,7 @@
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Light\GetIntensity.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\GameObject\CompareTag.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\ParticleSystem\SetEmissionRate.cs" />
+     <Compile Include="Assets\Practica4\InfluenceMap.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Physics2D\Linecast.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\AudioSource\SetPan.cs" />
      <Compile Include="Assets\RTS\Scripts\Tasks\UnloadResources.cs" />
@@ -630,9 +633,6 @@
      <Compile Include="Assets\Behavior Designer\Runtime\Tasks\Unity\Behaviour\SetEnabled.cs" />
      <Compile Include="Assets\RTS\Scripts\Tasks\HasAttackTarget.cs" />
      <Compile Include="Assets\RTS\Scripts\LimitedAccess.cs" />
-     <Compile Include="Assets\Practica4\InfluenceMapController.cs" />
-     <Compile Include="Assets\Practica4\Grid.cs" />
-     <Compile Include="Assets\Practica4\InfluenceMap.cs" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />
      <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Engine.xml" />
      <None Include="Assets\Ludiq\Assemblies\Bolt.State.Runtime.xml" />

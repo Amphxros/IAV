@@ -20,14 +20,26 @@ namespace es.ucm.fdi.iav.rts
             int width = (int)(Mathf.Abs(topRightPoint.position.x - bottomLeftPoint.position.x) / gridDim);
             int height = (int)(Mathf.Abs(topRightPoint.position.z - bottomLeftPoint.position.z) / gridDim);
 
-            mMap = new InfluenceMap(width, height, decay, momentum);
+            mMap = gameObject.GetComponent<InfluenceMap>();
+            
         }
 
         public void UpdateMap(int player1, int player2)
         {
             CreateMap();
-            mMap.UpdateMap(player1, player2);
+            // Hacemos la actualización por separado para evitar que el mapa de influencia
+            // se distorsione en funcion del orden de procesado
+            mMap.UpdateUnits(player1, player2);
+            mMap.UpdateMap();
 
+        }
+
+        public Vector2Nodo GetGridPosition(Vector3 pos)
+        {
+            int x = (int)((pos.x - bottomLeftPoint.position.x) / gridDim);
+            int y = (int)((pos.z - bottomLeftPoint.position.z) / gridDim);
+
+            return new Vector2Nodo(x, y);
         }
     }
 }
