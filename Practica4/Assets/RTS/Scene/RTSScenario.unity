@@ -3835,7 +3835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomLeftPoint: {fileID: 954956120}
   topRightPoint: {fileID: 1945649149}
-  gridDim: 50
+  gridDim: 2
   decay: 0.3
   momentum: 0.1
 --- !u!4 &2036083419
@@ -3867,10 +3867,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LeftBottomStartPoint: {x: 0, y: 0, z: 0}
-  mMaterial: {fileID: 0}
+  mMaterial: {fileID: -5392006913770775352, guid: 6e3a10b4d9c7ca5429d2d2630f666946,
+    type: 3}
   mNeutralColor: {r: 0, g: 0, b: 0, a: 0}
   mColorP1: {r: 0, g: 0.40000004, b: 0.90196085, a: 0}
   mColorP2: {r: 0.6745098, g: 0.72156864, b: 0, a: 0}
+  mMesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &2051847490
 PrefabInstance:
   m_ObjectHideFlags: 0

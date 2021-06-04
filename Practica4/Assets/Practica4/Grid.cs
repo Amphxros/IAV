@@ -18,7 +18,6 @@ public class Grid : MonoBehaviour
     MeshRenderer mMeshRenderer_;
 
     MeshFilter mMeshFilter_;
-    Mesh mMesh;
 
     GridNode [] mData_;
      
@@ -35,6 +34,9 @@ public class Grid : MonoBehaviour
 	
 	[SerializeField]
 	Color mColorP2 = Color.blue;
+
+    [SerializeField]
+    Mesh mMesh;
 
 	
 	Color[] _colors;

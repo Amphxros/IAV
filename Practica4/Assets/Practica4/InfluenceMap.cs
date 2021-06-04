@@ -54,7 +54,12 @@ namespace es.ucm.fdi.iav.rts
             return influences[x, y];
         }
 
+        public void setDimension(int w, int h)
+        {
+            influences = new float[w, h];
 
+            influenceBuffer = new float[w, h];
+        }
         public InfluenceMap(int size, float decay, float momentum)
         {
             influences = new float[size, size];
@@ -82,13 +87,14 @@ namespace es.ucm.fdi.iav.rts
 
         }
 
-        public void SetInfluence(Vector2 pos, float value)
+        public void SetInfluence(Vector2Nodo pos, float value)
         {
             if (pos.x < Width && pos.y < Height)
             {
-                influences[(int)pos.x, (int)pos.y] = value;
-                influenceBuffer[(int)pos.x, (int)pos.y] = value;
 
+                    influences[(int)pos.x, (int)pos.y] = value;
+                    influenceBuffer[(int)pos.x, (int)pos.y] = value;
+                    Debug.Log("Pos: "+ pos.x + " " + pos.y);
             }
         }
 
@@ -127,17 +133,17 @@ namespace es.ucm.fdi.iav.rts
             var UnitsExploreList = RTSGameManager.Instance.GetExplorationUnits(player1);
             var UnitsDestroyerList = RTSGameManager.Instance.GetDestructionUnits(player1);
 
-            foreach (var p in UnitsExtractList)
+            foreach (var u in UnitsExtractList)
             {
-                mUnits.Add(p);
+                mUnits.Add(u);
             }
-            foreach (var p in UnitsExploreList)
+            foreach (var i in UnitsExploreList)
             {
-                mUnits.Add(p);
+                mUnits.Add(i);
             }
-            foreach (var p in UnitsDestroyerList)
+            foreach (var o in UnitsDestroyerList)
             {
-                mUnits.Add(p);
+                mUnits.Add(o);
             }
 
             var EnemyFacilities = RTSGameManager.Instance.GetBaseFacilities(player2);
@@ -169,27 +175,34 @@ namespace es.ucm.fdi.iav.rts
                 nUnits.Add(p);
             }
 
+
+            InfluenceMapController map = this.gameObject.GetComponent<InfluenceMapController>();
             foreach (var p in mFacilities)
             {
-
+                Vector2Nodo v = map.GetGridPosition(p.transform.position);
+                SetInfluence(v, 5);
 
             }
 
             foreach (var p in mUnits)
             {
 
+                Vector2Nodo v = map.GetGridPosition(p.transform.position);
+                SetInfluence(v, 5);
 
             }
             foreach (var p in nFacilities)
             {
 
+                Vector2Nodo v = map.GetGridPosition(p.transform.position);
+                SetInfluence(v, -5);
 
             }
 
             foreach (var p in nUnits)
             {
-
-
+                Vector2Nodo v = map.GetGridPosition(p.transform.position);
+                SetInfluence(v, -5);
             }
 
         }
